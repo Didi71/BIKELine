@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
+		F6D000A81799838200B3B8B4 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A61799838200B3B8B4 /* libGoogleAnalytics_debug.a */; };
+		F6D000AF179984A500B3B8B4 /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */; };
+		F6D000B1179985E100B3B8B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */; };
+		F6D000B3179985EB00B3B8B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B2179985EB00B3B8B4 /* CoreData.framework */; };
 		F6EA787817996BC30063B0A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787717996BC30063B0A5 /* UIKit.framework */; };
 		F6EA787A17996BC30063B0A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787917996BC30063B0A5 /* Foundation.framework */; };
 		F6EA787C17996BC30063B0A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787B17996BC30063B0A5 /* CoreGraphics.framework */; };
@@ -23,6 +28,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F6D000A01799838200B3B8B4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		F6D000A11799838200B3B8B4 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		F6D000A21799838200B3B8B4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		F6D000A31799838200B3B8B4 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		F6D000A41799838200B3B8B4 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		F6D000A61799838200B3B8B4 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		F6D000AA179984A500B3B8B4 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		F6D000AB179984A500B3B8B4 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		F6D000AC179984A500B3B8B4 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_2.a; sourceTree = "<group>"; };
+		F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F6D000B2179985EB00B3B8B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F6EA787417996BC30063B0A5 /* BIKELine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIKELine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EA787717996BC30063B0A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F6EA787917996BC30063B0A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,21 +68,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D000B3179985EB00B3B8B4 /* CoreData.framework in Frameworks */,
+				F6D000B1179985E100B3B8B4 /* SystemConfiguration.framework in Frameworks */,
 				F6EA787817996BC30063B0A5 /* UIKit.framework in Frameworks */,
 				F6EA787A17996BC30063B0A5 /* Foundation.framework in Frameworks */,
 				F6EA787C17996BC30063B0A5 /* CoreGraphics.framework in Frameworks */,
+				F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */,
+				F6D000A81799838200B3B8B4 /* libGoogleAnalytics_debug.a in Frameworks */,
+				F6D000AF179984A500B3B8B4 /* libCrittercism_v4_0_2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6D0009F1799838200B3B8B4 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				F6D000A01799838200B3B8B4 /* GAI.h */,
+				F6D000A11799838200B3B8B4 /* GAITrackedViewController.h */,
+				F6D000A21799838200B3B8B4 /* GAITracker.h */,
+				F6D000A31799838200B3B8B4 /* GAITransaction.h */,
+				F6D000A41799838200B3B8B4 /* GAITransactionItem.h */,
+				F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */,
+				F6D000A61799838200B3B8B4 /* libGoogleAnalytics_debug.a */,
+			);
+			name = GoogleAnalytics;
+			path = Librarys/GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		F6D000A9179984A500B3B8B4 /* Crittercism */ = {
+			isa = PBXGroup;
+			children = (
+				F6D000AA179984A500B3B8B4 /* Crittercism.h */,
+				F6D000AB179984A500B3B8B4 /* CrittercismDelegate.h */,
+				F6D000AC179984A500B3B8B4 /* dsym_upload.sh */,
+				F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */,
+			);
+			name = Crittercism;
+			path = Librarys/Crittercism;
+			sourceTree = "<group>";
+		};
 		F6EA786B17996BC30063B0A5 = {
 			isa = PBXGroup;
 			children = (
 				F6EA787D17996BC30063B0A5 /* Classes */,
 				F6EA787617996BC30063B0A5 /* Frameworks */,
-				F6EA78A5179978C40063B0A5 /* Librarys */,
+				F6EA78A5179978C40063B0A5 /* Libraries */,
 				F6EA787E17996BC30063B0A5 /* Supporting Files */,
 				F6EA787517996BC30063B0A5 /* Products */,
 			);
@@ -81,9 +131,11 @@
 		F6EA787617996BC30063B0A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6EA787717996BC30063B0A5 /* UIKit.framework */,
-				F6EA787917996BC30063B0A5 /* Foundation.framework */,
+				F6D000B2179985EB00B3B8B4 /* CoreData.framework */,
 				F6EA787B17996BC30063B0A5 /* CoreGraphics.framework */,
+				F6EA787917996BC30063B0A5 /* Foundation.framework */,
+				F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */,
+				F6EA787717996BC30063B0A5 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,11 +214,13 @@
 			name = "BikeBird API";
 			sourceTree = "<group>";
 		};
-		F6EA78A5179978C40063B0A5 /* Librarys */ = {
+		F6EA78A5179978C40063B0A5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F6D000A9179984A500B3B8B4 /* Crittercism */,
+				F6D0009F1799838200B3B8B4 /* GoogleAnalytics */,
 			);
-			name = Librarys;
+			name = Libraries;
 			path = BIKELine;
 			sourceTree = "<group>";
 		};
@@ -195,6 +249,7 @@
 				F6EA787117996BC30063B0A5 /* Frameworks */,
 				F6EA787217996BC30063B0A5 /* Resources */,
 				F6EA789C17996CE60063B0A5 /* ShellScript */,
+				F61B05251799886F00A08BB7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -247,6 +302,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F61B05251799886F00A08BB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Upload dsym to crittercism\nAPP_ID=\"51e94ce7c463c21148000007\"\nAPI_KEY=\"0td1nvjg6pv9nghqsxlobxifcbcpkzas\"\nsource ${SRCROOT}/BIKELine/Librarys/Crittercism/dsym_upload.sh";
+		};
 		F6EA789C17996CE60063B0A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +420,11 @@
 				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
 				INFOPLIST_FILE = "BIKELine/BIKELine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BIKELine/Librarys/GoogleAnalytics\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/Crittercism\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -364,6 +437,11 @@
 				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
 				INFOPLIST_FILE = "BIKELine/BIKELine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BIKELine/Librarys/GoogleAnalytics\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/Crittercism\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
