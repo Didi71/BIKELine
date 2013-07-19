@@ -14,3 +14,7 @@
 // Google Analytics
 #define GOOGLE_ANALYTICS_ID @"UA-42588248-1"
 #define GOOGLE_ANALYTICS_DISPATCH 10
+
+
+// BIKEBIRD QR-Validation
+#define BIKEBIRD_QRCODE_VERIFICATION_PREFIX @"http://www.bikebird.at/BIKElineCheckPoint/index.php"

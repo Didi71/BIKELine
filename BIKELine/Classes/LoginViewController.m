@@ -10,6 +10,18 @@
 
 @implementation LoginViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+
+#pragma mark
+#pragma mark - View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

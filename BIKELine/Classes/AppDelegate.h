@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) UIStoryboard *storyboard;
+
++ (AppDelegate *)appDelegate;
+
+- (void)loginUser;
+- (void)logoutUser;
 
 @end

@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXL-s9-Msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="-183"/>
+            <point key="canvasLocation" x="-985" y="-185"/>
         </scene>
         <!--View Controller - Statistik-->
         <scene sceneID="qkV-Lx-hDI">
@@ -37,8 +37,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Vqt-sK-DUZ">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="1n8-lU-yO3" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController definesPresentationContext="YES" id="1n8-lU-yO3" customClass="BBTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uv3-cn-ZDQ">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -56,16 +56,34 @@
             </objects>
             <point key="canvasLocation" x="-1786" y="503"/>
         </scene>
-        <!--View Controller - QRCode Reader-->
+        <!--Reader View Controller - QRReader-->
         <scene sceneID="rkF-8h-SIX">
             <objects>
-                <viewController title="QRCode Reader" id="9ph-38-7kO" sceneMemberID="viewController">
+                <viewController title="QRReader" id="9ph-38-7kO" customClass="QRReaderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ngs-Zm-af0">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Test" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ClZ-hC-nJw">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="fNT-b6-RDW"/>
+                                    <constraint firstAttribute="width" constant="240" id="fnP-gg-moH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerX" secondItem="Ngs-Zm-af0" secondAttribute="centerX" type="default" id="Kwb-Cz-Kvf"/>
+                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="170" id="dAP-Hh-aCq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 3" id="AUW-AK-ogW"/>
+                    <connections>
+                        <outlet property="resultTextView" destination="ClZ-hC-nJw" id="I4T-7O-PgD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-0M-Byp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="280-As-RYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="1195"/>
+            <point key="canvasLocation" x="-985" y="1197"/>
         </scene>
         <!--View Controller - Logout-->
         <scene sceneID="suP-9g-DHR">
@@ -99,9 +117,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZd-hu-McZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="1894"/>
+            <point key="canvasLocation" x="-985" y="1894"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BBTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBTabBarController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QRReaderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QRReaderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="StartScan:"/>
+                <relationship kind="outlet" name="resultTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
