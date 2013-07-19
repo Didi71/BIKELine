@@ -18,6 +18,8 @@
 		F6EA789117996BC30063B0A5 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788F17996BC30063B0A5 /* LoginStoryboard.storyboard */; };
 		F6EA789417996BC30063B0A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA789317996BC30063B0A5 /* LoginViewController.m */; };
 		F6EA78A0179971B80063B0A5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */; };
+		F6EA78A41799776D0063B0A5 /* BBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A31799776D0063B0A5 /* BBApi.m */; };
+		F6EA78AA179980DA0063B0A5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A9179980DA0063B0A5 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		F6EA789217996BC30063B0A5 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
 		F6EA789317996BC30063B0A5 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
 		F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F6EA78A21799776D0063B0A5 /* BBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApi.h; path = Classes/BBApi.h; sourceTree = "<group>"; };
+		F6EA78A31799776D0063B0A5 /* BBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApi.m; path = Classes/BBApi.m; sourceTree = "<group>"; };
+		F6EA78A8179980DA0063B0A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		F6EA78A9179980DA0063B0A5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			children = (
 				F6EA787D17996BC30063B0A5 /* Classes */,
 				F6EA787617996BC30063B0A5 /* Frameworks */,
+				F6EA78A5179978C40063B0A5 /* Librarys */,
 				F6EA787E17996BC30063B0A5 /* Supporting Files */,
 				F6EA787517996BC30063B0A5 /* Products */,
 			);
@@ -85,7 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				F6EA789D17996FE30063B0A5 /* AppDelegate & Constants */,
-				F6EA789E17996FF30063B0A5 /* LoginViewController */,
+				F6EA78A1179977410063B0A5 /* BikeBird API */,
+				F6EA789E17996FF30063B0A5 /* LoginViewControllers */,
+				F6EA78A617997B7D0063B0A5 /* RootViewControllers */,
+				F6EA78A717997D630063B0A5 /* Utils */,
 			);
 			name = Classes;
 			path = BIKELine;
@@ -94,7 +104,7 @@
 		F6EA787E17996BC30063B0A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F6EA789B17996C1C0063B0A5 /* Nibs */,
+				F6EA789B17996C1C0063B0A5 /* Storyboards */,
 				F6EA789A17996C0F0063B0A5 /* Images */,
 				F6EA787F17996BC30063B0A5 /* BIKELine-Info.plist */,
 				F6EA788317996BC30063B0A5 /* main.m */,
@@ -114,13 +124,13 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		F6EA789B17996C1C0063B0A5 /* Nibs */ = {
+		F6EA789B17996C1C0063B0A5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				F6EA788F17996BC30063B0A5 /* LoginStoryboard.storyboard */,
 				F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */,
 			);
-			name = Nibs;
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		F6EA789D17996FE30063B0A5 /* AppDelegate & Constants */ = {
@@ -128,17 +138,50 @@
 			children = (
 				F6EA788617996BC30063B0A5 /* AppDelegate.h */,
 				F6EA788717996BC30063B0A5 /* AppDelegate.m */,
+				F6EA78A8179980DA0063B0A5 /* Constants.h */,
+				F6EA78A9179980DA0063B0A5 /* Constants.m */,
 			);
 			name = "AppDelegate & Constants";
 			sourceTree = "<group>";
 		};
-		F6EA789E17996FF30063B0A5 /* LoginViewController */ = {
+		F6EA789E17996FF30063B0A5 /* LoginViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F6EA789217996BC30063B0A5 /* LoginViewController.h */,
 				F6EA789317996BC30063B0A5 /* LoginViewController.m */,
 			);
-			name = LoginViewController;
+			name = LoginViewControllers;
+			sourceTree = "<group>";
+		};
+		F6EA78A1179977410063B0A5 /* BikeBird API */ = {
+			isa = PBXGroup;
+			children = (
+				F6EA78A21799776D0063B0A5 /* BBApi.h */,
+				F6EA78A31799776D0063B0A5 /* BBApi.m */,
+			);
+			name = "BikeBird API";
+			sourceTree = "<group>";
+		};
+		F6EA78A5179978C40063B0A5 /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Librarys;
+			path = BIKELine;
+			sourceTree = "<group>";
+		};
+		F6EA78A617997B7D0063B0A5 /* RootViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RootViewControllers;
+			sourceTree = "<group>";
+		};
+		F6EA78A717997D630063B0A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +270,8 @@
 				F6EA788417996BC30063B0A5 /* main.m in Sources */,
 				F6EA788817996BC30063B0A5 /* AppDelegate.m in Sources */,
 				F6EA789417996BC30063B0A5 /* LoginViewController.m in Sources */,
+				F6EA78A41799776D0063B0A5 /* BBApi.m in Sources */,
+				F6EA78AA179980DA0063B0A5 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,11 @@
 
     storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
     
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:[storyboard instantiateInitialViewController]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     return YES;
 }
-
 
 @end
