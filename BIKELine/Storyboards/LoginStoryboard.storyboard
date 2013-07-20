@@ -92,6 +92,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Unw-oP-X8I" eventType="touchUpInside" id="wg9-Aw-CvP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="eMail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xV6-Gi-Lw4">
                                 <constraints>
@@ -99,6 +102,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textFieldValueChanged:" destination="Unw-oP-X8I" eventType="editingChanged" id="SF5-Dw-a7d"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -118,6 +124,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MjV-hC-thi"/>
+                    <connections>
+                        <outlet property="eMailTextField" destination="xV6-Gi-Lw4" id="Anu-UC-txX"/>
+                        <outlet property="loginButton" destination="6gG-GU-Mba" id="s5G-td-g7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6V-Yf-4um" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,7 +276,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="axb-XF-dRZ" userLabel="Label - Teaser Text">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="281" translatesAutoresizingMaskIntoConstraints="NO" id="axb-XF-dRZ" userLabel="Label - Teaser Text">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="R96-GQ-bJd"/>
                                 </constraints>
@@ -325,6 +335,12 @@
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
+                <relationship kind="action" name="textFieldValueChanged:"/>
+                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

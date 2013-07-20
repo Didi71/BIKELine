@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController {
+    IBOutlet UITextField *eMailTextField;
+    IBOutlet UIButton *loginButton;
+    
+    __block NSString *eMail;
+}
 
 @end

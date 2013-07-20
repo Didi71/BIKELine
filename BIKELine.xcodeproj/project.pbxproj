@@ -31,6 +31,19 @@
 		F69028D3179A698A006FA715 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */; };
 		F69028D8179A6CF4006FA715 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69028D7179A6CF4006FA715 /* MapKit.framework */; };
 		F69028DB179A6E0C006FA715 /* NSUserDefaults+BIKELine.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */; };
+		F6A21D2D179AA6EE0010D145 /* BBApiAbstractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */; };
+		F6A21D30179AA74F0010D145 /* BBApiRegistrationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */; };
+		F6A21D4A179AA7950010D145 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D33179AA7950010D145 /* AFHTTPClient.m */; };
+		F6A21D4B179AA7950010D145 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D35179AA7950010D145 /* AFHTTPRequestOperation.m */; };
+		F6A21D4C179AA7950010D145 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D37179AA7950010D145 /* AFImageRequestOperation.m */; };
+		F6A21D4D179AA7950010D145 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D39179AA7950010D145 /* AFJSONRequestOperation.m */; };
+		F6A21D4E179AA7950010D145 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D3B179AA7950010D145 /* AFNetworkActivityIndicatorManager.m */; };
+		F6A21D4F179AA7950010D145 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D3E179AA7950010D145 /* AFPropertyListRequestOperation.m */; };
+		F6A21D50179AA7950010D145 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D40179AA7950010D145 /* AFURLConnectionOperation.m */; };
+		F6A21D51179AA7950010D145 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D42179AA7950010D145 /* AFXMLRequestOperation.m */; };
+		F6A21D52179AA7950010D145 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D44179AA7950010D145 /* UIImageView+AFNetworking.m */; };
+		F6A21D53179AA7950010D145 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D47179AA7950010D145 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6A21D54179AA7950010D145 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F6AF3A81179A700B006B4B72 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A80179A700B006B4B72 /* AccountService.m */; };
 		F6AF3A84179A7087006B4B72 /* CheckinService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A83179A7087006B4B72 /* CheckinService.m */; };
 		F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A86179A7138006B4B72 /* BLUtils.m */; };
@@ -51,6 +64,9 @@
 		F6EA78A0179971B80063B0A5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */; };
 		F6EA78A41799776D0063B0A5 /* BBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A31799776D0063B0A5 /* BBApi.m */; };
 		F6EA78AA179980DA0063B0A5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A9179980DA0063B0A5 /* Constants.m */; };
+		F6FFF1D6179ACB53002C547C /* BBApiLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */; };
+		F6FFF1D9179B0274002C547C /* BBApiActivationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */; };
+		F6FFF1DC179B07BF002C547C /* BBApiCheckinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +124,33 @@
 		F69028D7179A6CF4006FA715 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F69028D9179A6E0C006FA715 /* NSUserDefaults+BIKELine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+BIKELine.h"; path = "Classes/NSUserDefaults+BIKELine.h"; sourceTree = "<group>"; };
 		F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+BIKELine.m"; path = "Classes/NSUserDefaults+BIKELine.m"; sourceTree = "<group>"; };
+		F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiAbstractOperation.h; path = Classes/API/BBApiAbstractOperation.h; sourceTree = "<group>"; };
+		F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiAbstractOperation.m; path = Classes/API/BBApiAbstractOperation.m; sourceTree = "<group>"; };
+		F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiRegistrationOperation.h; path = Classes/API/BBApiRegistrationOperation.h; sourceTree = "<group>"; };
+		F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiRegistrationOperation.m; path = Classes/API/BBApiRegistrationOperation.m; sourceTree = "<group>"; };
+		F6A21D32179AA7950010D145 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		F6A21D33179AA7950010D145 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		F6A21D34179AA7950010D145 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		F6A21D35179AA7950010D145 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		F6A21D36179AA7950010D145 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		F6A21D37179AA7950010D145 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		F6A21D38179AA7950010D145 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		F6A21D39179AA7950010D145 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		F6A21D3A179AA7950010D145 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		F6A21D3B179AA7950010D145 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		F6A21D3C179AA7950010D145 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		F6A21D3D179AA7950010D145 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		F6A21D3E179AA7950010D145 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		F6A21D3F179AA7950010D145 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		F6A21D40179AA7950010D145 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		F6A21D41179AA7950010D145 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		F6A21D42179AA7950010D145 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		F6A21D43179AA7950010D145 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		F6A21D44179AA7950010D145 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		F6A21D46179AA7950010D145 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		F6A21D47179AA7950010D145 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		F6A21D48179AA7950010D145 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 		F6AF3A7F179A700B006B4B72 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountService.h; path = Classes/AccountService.h; sourceTree = "<group>"; };
 		F6AF3A80179A700B006B4B72 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountService.m; path = Classes/AccountService.m; sourceTree = "<group>"; };
 		F6AF3A82179A7087006B4B72 /* CheckinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckinService.h; path = Classes/CheckinService.h; sourceTree = "<group>"; };
@@ -146,6 +189,12 @@
 		F6EA78A31799776D0063B0A5 /* BBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApi.m; path = Classes/BBApi.m; sourceTree = "<group>"; };
 		F6EA78A8179980DA0063B0A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
 		F6EA78A9179980DA0063B0A5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Constants.m; sourceTree = "<group>"; };
+		F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiLoginOperation.h; path = Classes/API/BBApiLoginOperation.h; sourceTree = "<group>"; };
+		F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiLoginOperation.m; path = Classes/API/BBApiLoginOperation.m; sourceTree = "<group>"; };
+		F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiActivationOperation.h; path = Classes/API/BBApiActivationOperation.h; sourceTree = "<group>"; };
+		F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiActivationOperation.m; path = Classes/API/BBApiActivationOperation.m; sourceTree = "<group>"; };
+		F6FFF1DA179B07BF002C547C /* BBApiCheckinOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiCheckinOperation.h; path = Classes/API/BBApiCheckinOperation.h; sourceTree = "<group>"; };
+		F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiCheckinOperation.m; path = Classes/API/BBApiCheckinOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +334,57 @@
 			);
 			name = JSONKit;
 			path = Librarys/JSONKit;
+			sourceTree = "<group>";
+		};
+		F6A21D2A179AA6BD0010D145 /* API Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */,
+				F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */,
+				F6FFF1E1179B0C69002C547C /* Login / Registration */,
+				F6FFF1DA179B07BF002C547C /* BBApiCheckinOperation.h */,
+				F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */,
+			);
+			name = "API Classes";
+			sourceTree = "<group>";
+		};
+		F6A21D31179AA7950010D145 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F6A21D32179AA7950010D145 /* AFHTTPClient.h */,
+				F6A21D33179AA7950010D145 /* AFHTTPClient.m */,
+				F6A21D34179AA7950010D145 /* AFHTTPRequestOperation.h */,
+				F6A21D35179AA7950010D145 /* AFHTTPRequestOperation.m */,
+				F6A21D36179AA7950010D145 /* AFImageRequestOperation.h */,
+				F6A21D37179AA7950010D145 /* AFImageRequestOperation.m */,
+				F6A21D38179AA7950010D145 /* AFJSONRequestOperation.h */,
+				F6A21D39179AA7950010D145 /* AFJSONRequestOperation.m */,
+				F6A21D3A179AA7950010D145 /* AFNetworkActivityIndicatorManager.h */,
+				F6A21D3B179AA7950010D145 /* AFNetworkActivityIndicatorManager.m */,
+				F6A21D3C179AA7950010D145 /* AFNetworking.h */,
+				F6A21D3D179AA7950010D145 /* AFPropertyListRequestOperation.h */,
+				F6A21D3E179AA7950010D145 /* AFPropertyListRequestOperation.m */,
+				F6A21D3F179AA7950010D145 /* AFURLConnectionOperation.h */,
+				F6A21D40179AA7950010D145 /* AFURLConnectionOperation.m */,
+				F6A21D41179AA7950010D145 /* AFXMLRequestOperation.h */,
+				F6A21D42179AA7950010D145 /* AFXMLRequestOperation.m */,
+				F6A21D43179AA7950010D145 /* UIImageView+AFNetworking.h */,
+				F6A21D44179AA7950010D145 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = Librarys/AFNetworking;
+			sourceTree = "<group>";
+		};
+		F6A21D45179AA7950010D145 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				F6A21D46179AA7950010D145 /* Jastor.h */,
+				F6A21D47179AA7950010D145 /* Jastor.m */,
+				F6A21D48179AA7950010D145 /* JastorRuntimeHelper.h */,
+				F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */,
+			);
+			name = Jastor;
+			path = Librarys/Jastor;
 			sourceTree = "<group>";
 		};
 		F6D0009F1799838200B3B8B4 /* GoogleAnalytics */ = {
@@ -430,6 +530,7 @@
 			children = (
 				F6EA78A21799776D0063B0A5 /* BBApi.h */,
 				F6EA78A31799776D0063B0A5 /* BBApi.m */,
+				F6A21D2A179AA6BD0010D145 /* API Classes */,
 			);
 			name = "BikeBird API";
 			sourceTree = "<group>";
@@ -437,8 +538,10 @@
 		F6EA78A5179978C40063B0A5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F6A21D31179AA7950010D145 /* AFNetworking */,
 				F6D000A9179984A500B3B8B4 /* Crittercism */,
 				F6D0009F1799838200B3B8B4 /* GoogleAnalytics */,
+				F6A21D45179AA7950010D145 /* Jastor */,
 				F69028C5179A6889006FA715 /* JSONKit */,
 				F61B05361799A9FD00A08BB7 /* ZBar */,
 			);
@@ -470,6 +573,19 @@
 				F6AF3A86179A7138006B4B72 /* BLUtils.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		F6FFF1E1179B0C69002C547C /* Login / Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */,
+				F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */,
+				F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */,
+				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
+				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
+				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
+			);
+			name = "Login / Registration";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +694,22 @@
 				F6AF3A81179A700B006B4B72 /* AccountService.m in Sources */,
 				F6AF3A84179A7087006B4B72 /* CheckinService.m in Sources */,
 				F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */,
+				F6A21D2D179AA6EE0010D145 /* BBApiAbstractOperation.m in Sources */,
+				F6A21D30179AA74F0010D145 /* BBApiRegistrationOperation.m in Sources */,
+				F6A21D4A179AA7950010D145 /* AFHTTPClient.m in Sources */,
+				F6A21D4B179AA7950010D145 /* AFHTTPRequestOperation.m in Sources */,
+				F6A21D4C179AA7950010D145 /* AFImageRequestOperation.m in Sources */,
+				F6A21D4D179AA7950010D145 /* AFJSONRequestOperation.m in Sources */,
+				F6A21D4E179AA7950010D145 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				F6A21D4F179AA7950010D145 /* AFPropertyListRequestOperation.m in Sources */,
+				F6A21D50179AA7950010D145 /* AFURLConnectionOperation.m in Sources */,
+				F6A21D51179AA7950010D145 /* AFXMLRequestOperation.m in Sources */,
+				F6A21D52179AA7950010D145 /* UIImageView+AFNetworking.m in Sources */,
+				F6A21D53179AA7950010D145 /* Jastor.m in Sources */,
+				F6A21D54179AA7950010D145 /* JastorRuntimeHelper.m in Sources */,
+				F6FFF1D6179ACB53002C547C /* BBApiLoginOperation.m in Sources */,
+				F6FFF1D9179B0274002C547C /* BBApiActivationOperation.m in Sources */,
+				F6FFF1DC179B07BF002C547C /* BBApiCheckinOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

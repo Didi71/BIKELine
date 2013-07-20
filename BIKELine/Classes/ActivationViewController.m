@@ -7,6 +7,7 @@
 //
 
 #import "ActivationViewController.h"
+#import "BBApi.h"
 
 @implementation ActivationViewController
 
@@ -25,6 +26,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+
+#pragma mark
+#pragma mark - Actions
+
+- (IBAction)activateButtonPressed:(id)sender {
+    BBApiActivationOperation *op = [SharedAPI activateUserWithId: [NSNumber numberWithInt:11]
+                                               andActivationCode: [NSNumber numberWithLong:07260]];
+    
+    [op setCompletionBlock:^{
+        // Login user
+    }];
+    
+    [SharedAPI.queue addOperation:op];
 }
 
 

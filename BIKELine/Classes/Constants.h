@@ -7,6 +7,10 @@
 //
 
 
+// Bikebird Server
+#define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/bb/bikebird/BIKElinePublic"
+
+
 
 // Crittercism
 #define CRITTERCISM_APP_ID @"51e94ce7c463c21148000007"

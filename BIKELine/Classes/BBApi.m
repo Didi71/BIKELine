@@ -18,6 +18,9 @@ const int kMaxQueueObjects = 15;
 
 const int kMaxRequestRetry = 5;
 
+NSString *kRequestStatusOK = @"OK";
+NSString *kRequestStatusNOK = @"NOK";
+
 
 + (BBApi *)sharedAPI {
 	return sharedInstance ?: [self new];
@@ -62,7 +65,34 @@ const int kMaxRequestRetry = 5;
 #pragma mark
 #pragma mark - Private methods
 
+- (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:eMail, @"emailAddress", nil];
+    return [[BBApiLoginOperation alloc] initWithPath:@"reloginBiker.php" andParameters:parameters];
+}
 
+- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city andEMail:(NSString *)eMail {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: first, @"firstName",
+                                                                           last, @"lastName",
+                                                                           street, @"street",
+                                                                           code, @"postalCode",
+                                                                           city, @"city",
+                                                                           eMail, @"emailAddress", nil];
+    
+    return [[BBApiRegistrationOperation alloc] initWithPath:@"loginBiker.php" andParameters:parameters];
+}
+
+- (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"id",
+                                                                           code, @"PIN", nil];
+    return [[BBApiActivationOperation alloc] initWithPath:@"activateBiker.php" andParameters:parameters];
+}
+
+- (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId andTeamId:(NSNumber *)teamId {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
+                                                                           pointId, @"checkPointId",
+                                                                           teamId, @"teamBikerId", nil];
+    return [[BBApiCheckinOperation alloc] initWithPath:@"checkIn.php" andParameters:parameters];
+}
 
 
 

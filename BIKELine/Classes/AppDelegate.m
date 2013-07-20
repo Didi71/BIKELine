@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Crittercism.h"
+#import "BBApi.h"
 
 @implementation AppDelegate
 @synthesize storyboard;
@@ -28,7 +29,13 @@
 #endif
 
     // Configure app
-    [self loadMainStoryboard];
+    [self loadLoginStoryboard];
+    
+    
+    
+    BBApiLoginOperation *op = [SharedAPI loginUserWitheMail:@"oe8clr@me.com"];
+    [SharedAPI.queue addOperation:op];
+        
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:[storyboard instantiateInitialViewController]];
