@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F61B052A1799955500A08BB7 /* BBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05291799955500A08BB7 /* BBTabBarController.m */; };
+		F61B052A1799955500A08BB7 /* BLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05291799955500A08BB7 /* BLTabBarController.m */; };
 		F61B052D1799982A00A08BB7 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B052C1799982A00A08BB7 /* RegistrationViewController.m */; };
 		F61B05301799984200A08BB7 /* ActivationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B052F1799984200A08BB7 /* ActivationViewController.m */; };
 		F61B05331799997200A08BB7 /* QRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05321799997200A08BB7 /* QRReaderViewController.m */; };
@@ -23,6 +23,17 @@
 		F61B05601799AA4000A08BB7 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
 		F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
+		F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
+		F69028C8179A6889006FA715 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F69028CB179A6920006FA715 /* FactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028CA179A6920006FA715 /* FactsViewController.m */; };
+		F69028CE179A6937006FA715 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028CD179A6937006FA715 /* MapViewController.m */; };
+		F69028D1179A694C006FA715 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028D0179A694C006FA715 /* TeamViewController.m */; };
+		F69028D3179A698A006FA715 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */; };
+		F69028D8179A6CF4006FA715 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69028D7179A6CF4006FA715 /* MapKit.framework */; };
+		F69028DB179A6E0C006FA715 /* NSUserDefaults+BIKELine.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */; };
+		F6AF3A81179A700B006B4B72 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A80179A700B006B4B72 /* AccountService.m */; };
+		F6AF3A84179A7087006B4B72 /* CheckinService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A83179A7087006B4B72 /* CheckinService.m */; };
+		F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A86179A7138006B4B72 /* BLUtils.m */; };
 		F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
 		F6D000A81799838200B3B8B4 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A61799838200B3B8B4 /* libGoogleAnalytics_debug.a */; };
 		F6D000AF179984A500B3B8B4 /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */; };
@@ -36,7 +47,6 @@
 		F6EA788A17996BC30063B0A5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788917996BC30063B0A5 /* Default.png */; };
 		F6EA788C17996BC30063B0A5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788B17996BC30063B0A5 /* Default@2x.png */; };
 		F6EA788E17996BC30063B0A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788D17996BC30063B0A5 /* Default-568h@2x.png */; };
-		F6EA789117996BC30063B0A5 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788F17996BC30063B0A5 /* LoginStoryboard.storyboard */; };
 		F6EA789417996BC30063B0A5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA789317996BC30063B0A5 /* LoginViewController.m */; };
 		F6EA78A0179971B80063B0A5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */; };
 		F6EA78A41799776D0063B0A5 /* BBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A31799776D0063B0A5 /* BBApi.m */; };
@@ -44,8 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F61B05281799955500A08BB7 /* BBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBTabBarController.h; path = Classes/BBTabBarController.h; sourceTree = "<group>"; };
-		F61B05291799955500A08BB7 /* BBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBTabBarController.m; path = Classes/BBTabBarController.m; sourceTree = "<group>"; };
+		F61B05281799955500A08BB7 /* BLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLTabBarController.h; path = Classes/BLTabBarController.h; sourceTree = "<group>"; };
+		F61B05291799955500A08BB7 /* BLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLTabBarController.m; path = Classes/BLTabBarController.m; sourceTree = "<group>"; };
 		F61B052B1799982A00A08BB7 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = Classes/RegistrationViewController.h; sourceTree = "<group>"; };
 		F61B052C1799982A00A08BB7 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = Classes/RegistrationViewController.m; sourceTree = "<group>"; };
 		F61B052E1799984200A08BB7 /* ActivationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivationViewController.h; path = Classes/ActivationViewController.h; sourceTree = "<group>"; };
@@ -84,6 +94,26 @@
 		F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
 		F61B05611799AA4700A08BB7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B05631799AA4C00A08BB7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F69028C0179A6680006FA715 /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLNavigationController.h; path = Classes/BLNavigationController.h; sourceTree = "<group>"; };
+		F69028C1179A6680006FA715 /* BLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLNavigationController.m; path = Classes/BLNavigationController.m; sourceTree = "<group>"; };
+		F69028C6179A6889006FA715 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F69028C7179A6889006FA715 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		F69028C9179A6920006FA715 /* FactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FactsViewController.h; path = Classes/FactsViewController.h; sourceTree = "<group>"; };
+		F69028CA179A6920006FA715 /* FactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactsViewController.m; path = Classes/FactsViewController.m; sourceTree = "<group>"; };
+		F69028CC179A6937006FA715 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Classes/MapViewController.h; sourceTree = "<group>"; };
+		F69028CD179A6937006FA715 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Classes/MapViewController.m; sourceTree = "<group>"; };
+		F69028CF179A694C006FA715 /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamViewController.h; path = Classes/TeamViewController.h; sourceTree = "<group>"; };
+		F69028D0179A694C006FA715 /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamViewController.m; path = Classes/TeamViewController.m; sourceTree = "<group>"; };
+		F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LoginStoryboard.storyboard; path = Storyboards/LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		F69028D7179A6CF4006FA715 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F69028D9179A6E0C006FA715 /* NSUserDefaults+BIKELine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+BIKELine.h"; path = "Classes/NSUserDefaults+BIKELine.h"; sourceTree = "<group>"; };
+		F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+BIKELine.m"; path = "Classes/NSUserDefaults+BIKELine.m"; sourceTree = "<group>"; };
+		F6AF3A7F179A700B006B4B72 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountService.h; path = Classes/AccountService.h; sourceTree = "<group>"; };
+		F6AF3A80179A700B006B4B72 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountService.m; path = Classes/AccountService.m; sourceTree = "<group>"; };
+		F6AF3A82179A7087006B4B72 /* CheckinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckinService.h; path = Classes/CheckinService.h; sourceTree = "<group>"; };
+		F6AF3A83179A7087006B4B72 /* CheckinService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckinService.m; path = Classes/CheckinService.m; sourceTree = "<group>"; };
+		F6AF3A85179A7138006B4B72 /* BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLUtils.h; path = Classes/BLUtils.h; sourceTree = "<group>"; };
+		F6AF3A86179A7138006B4B72 /* BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLUtils.m; path = Classes/BLUtils.m; sourceTree = "<group>"; };
 		F6D000A01799838200B3B8B4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		F6D000A11799838200B3B8B4 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		F6D000A21799838200B3B8B4 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
@@ -109,10 +139,9 @@
 		F6EA788917996BC30063B0A5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		F6EA788B17996BC30063B0A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
 		F6EA788D17996BC30063B0A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images/Default-568h@2x.png"; sourceTree = "<group>"; };
-		F6EA789017996BC30063B0A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		F6EA789217996BC30063B0A5 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
 		F6EA789317996BC30063B0A5 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
-		F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Storyboards/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F6EA78A21799776D0063B0A5 /* BBApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApi.h; path = Classes/BBApi.h; sourceTree = "<group>"; };
 		F6EA78A31799776D0063B0A5 /* BBApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApi.m; path = Classes/BBApi.m; sourceTree = "<group>"; };
 		F6EA78A8179980DA0063B0A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
@@ -124,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69028D8179A6CF4006FA715 /* MapKit.framework in Frameworks */,
 				F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */,
 				F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */,
 				F61B055E1799AA3400A08BB7 /* QuartzCore.framework in Frameworks */,
@@ -156,8 +186,10 @@
 		F61B05271799950200A08BB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F61B05281799955500A08BB7 /* BBTabBarController.h */,
-				F61B05291799955500A08BB7 /* BBTabBarController.m */,
+				F69028C0179A6680006FA715 /* BLNavigationController.h */,
+				F69028C1179A6680006FA715 /* BLNavigationController.m */,
+				F61B05281799955500A08BB7 /* BLTabBarController.h */,
+				F61B05291799955500A08BB7 /* BLTabBarController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +259,34 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F69028C3179A6819006FA715 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F6AF3A7F179A700B006B4B72 /* AccountService.h */,
+				F6AF3A80179A700B006B4B72 /* AccountService.m */,
+				F6AF3A82179A7087006B4B72 /* CheckinService.h */,
+				F6AF3A83179A7087006B4B72 /* CheckinService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		F69028C4179A682A006FA715 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		F69028C5179A6889006FA715 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				F69028C6179A6889006FA715 /* JSONKit.h */,
+				F69028C7179A6889006FA715 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			path = Librarys/JSONKit;
+			sourceTree = "<group>";
+		};
 		F6D0009F1799838200B3B8B4 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +336,7 @@
 		F6EA787617996BC30063B0A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F69028D7179A6CF4006FA715 /* MapKit.framework */,
 				F61B05631799AA4C00A08BB7 /* CoreVideo.framework */,
 				F61B05611799AA4700A08BB7 /* AVFoundation.framework */,
 				F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */,
@@ -296,9 +357,11 @@
 			children = (
 				F6EA789D17996FE30063B0A5 /* AppDelegate & Constants */,
 				F6EA78A1179977410063B0A5 /* BikeBird API */,
+				F69028C4179A682A006FA715 /* Database */,
 				F6EA789E17996FF30063B0A5 /* LoginViewControllers */,
 				F6EA78A617997B7D0063B0A5 /* RootViewControllers */,
 				F61B0526179994F300A08BB7 /* Other */,
+				F69028C3179A6819006FA715 /* Services */,
 				F6EA78A717997D630063B0A5 /* Utils */,
 			);
 			name = Classes;
@@ -332,7 +395,7 @@
 		F6EA789B17996C1C0063B0A5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F6EA788F17996BC30063B0A5 /* LoginStoryboard.storyboard */,
+				F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */,
 				F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */,
 			);
 			name = Storyboards;
@@ -374,9 +437,10 @@
 		F6EA78A5179978C40063B0A5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				F61B05361799A9FD00A08BB7 /* ZBar */,
 				F6D000A9179984A500B3B8B4 /* Crittercism */,
 				F6D0009F1799838200B3B8B4 /* GoogleAnalytics */,
+				F69028C5179A6889006FA715 /* JSONKit */,
+				F61B05361799A9FD00A08BB7 /* ZBar */,
 			);
 			name = Libraries;
 			path = BIKELine;
@@ -385,8 +449,14 @@
 		F6EA78A617997B7D0063B0A5 /* RootViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F69028C9179A6920006FA715 /* FactsViewController.h */,
+				F69028CA179A6920006FA715 /* FactsViewController.m */,
+				F69028CC179A6937006FA715 /* MapViewController.h */,
+				F69028CD179A6937006FA715 /* MapViewController.m */,
 				F61B05311799997200A08BB7 /* QRReaderViewController.h */,
 				F61B05321799997200A08BB7 /* QRReaderViewController.m */,
+				F69028CF179A694C006FA715 /* TeamViewController.h */,
+				F69028D0179A694C006FA715 /* TeamViewController.m */,
 			);
 			name = RootViewControllers;
 			sourceTree = "<group>";
@@ -394,6 +464,10 @@
 		F6EA78A717997D630063B0A5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F69028D9179A6E0C006FA715 /* NSUserDefaults+BIKELine.h */,
+				F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */,
+				F6AF3A85179A7138006B4B72 /* BLUtils.h */,
+				F6AF3A86179A7138006B4B72 /* BLUtils.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -408,7 +482,6 @@
 				F6EA787017996BC30063B0A5 /* Sources */,
 				F6EA787117996BC30063B0A5 /* Frameworks */,
 				F6EA787217996BC30063B0A5 /* Resources */,
-				F61B05251799886F00A08BB7 /* ShellScript */,
 				F6EA789C17996CE60063B0A5 /* ShellScript */,
 			);
 			buildRules = (
@@ -454,32 +527,19 @@
 				F6EA788A17996BC30063B0A5 /* Default.png in Resources */,
 				F6EA788C17996BC30063B0A5 /* Default@2x.png in Resources */,
 				F6EA788E17996BC30063B0A5 /* Default-568h@2x.png in Resources */,
-				F6EA789117996BC30063B0A5 /* LoginStoryboard.storyboard in Resources */,
 				F6EA78A0179971B80063B0A5 /* MainStoryboard.storyboard in Resources */,
 				F61B05351799A6F100A08BB7 /* Localizable.strings in Resources */,
 				F61B05551799A9FD00A08BB7 /* zbar-back.png in Resources */,
 				F61B05561799A9FD00A08BB7 /* zbar-help.html in Resources */,
 				F61B05571799A9FD00A08BB7 /* zbar-helpicons.png in Resources */,
 				F61B05581799A9FD00A08BB7 /* zbar-samples.png in Resources */,
+				F69028D3179A698A006FA715 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F61B05251799886F00A08BB7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Upload dsym to crittercism\n#APP_ID=\"51e94ce7c463c21148000007\"\n#API_KEY=\"0td1nvjg6pv9nghqsxlobxifcbcpkzas\"\n#source ${SRCROOT}/BIKELine/Librarys/Crittercism/dsym_upload.sh";
-		};
 		F6EA789C17996CE60063B0A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,25 +565,23 @@
 				F6EA789417996BC30063B0A5 /* LoginViewController.m in Sources */,
 				F6EA78A41799776D0063B0A5 /* BBApi.m in Sources */,
 				F6EA78AA179980DA0063B0A5 /* Constants.m in Sources */,
-				F61B052A1799955500A08BB7 /* BBTabBarController.m in Sources */,
+				F61B052A1799955500A08BB7 /* BLTabBarController.m in Sources */,
 				F61B052D1799982A00A08BB7 /* RegistrationViewController.m in Sources */,
 				F61B05301799984200A08BB7 /* ActivationViewController.m in Sources */,
 				F61B05331799997200A08BB7 /* QRReaderViewController.m in Sources */,
+				F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */,
+				F69028C8179A6889006FA715 /* JSONKit.m in Sources */,
+				F69028CB179A6920006FA715 /* FactsViewController.m in Sources */,
+				F69028CE179A6937006FA715 /* MapViewController.m in Sources */,
+				F69028D1179A694C006FA715 /* TeamViewController.m in Sources */,
+				F69028DB179A6E0C006FA715 /* NSUserDefaults+BIKELine.m in Sources */,
+				F6AF3A81179A700B006B4B72 /* AccountService.m in Sources */,
+				F6AF3A84179A7087006B4B72 /* CheckinService.m in Sources */,
+				F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F6EA788F17996BC30063B0A5 /* LoginStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6EA789017996BC30063B0A5 /* en */,
-			);
-			name = LoginStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F6EA789517996BC30063B0A5 /* Debug */ = {

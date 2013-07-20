@@ -16,7 +16,7 @@
     
     // Initialize Crittercism
     [Crittercism enableWithAppID:CRITTERCISM_APP_ID];
-    
+
     // Initialize Google Analytics
     [GAI sharedInstance].dispatchInterval = GOOGLE_ANALYTICS_DISPATCH;
     [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_ID];

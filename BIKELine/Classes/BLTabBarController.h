@@ -1,5 +1,5 @@
 //
-//  BBTabBarController.h
+//  BLTabBarController.h
 //  BIKELine
 //
 //  Created by Christoph Lückler on 19.07.13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BBTabBarController : UITabBarController
+@interface BLTabBarController : UITabBarController
 
 @end
