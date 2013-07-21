@@ -31,6 +31,6 @@ extern NSString *kRequestStatusNOK;
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail;
 - (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city andEMail:(NSString *)eMail;
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code;
-- (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId andTeamId:(NSNumber *)teamId;
+- (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin;
 
 @end

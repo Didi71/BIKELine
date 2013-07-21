@@ -32,11 +32,6 @@
     [self loadLoginStoryboard];
     
     
-    
-    BBApiLoginOperation *op = [SharedAPI loginUserWitheMail:@"oe8clr@me.com"];
-    [SharedAPI.queue addOperation:op];
-        
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:[storyboard instantiateInitialViewController]];
     [self.window setBackgroundColor:[UIColor whiteColor]];

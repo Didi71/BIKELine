@@ -94,6 +94,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="Unw-oP-X8I" eventType="touchUpInside" id="wg9-Aw-CvP"/>
+                                    <segue destination="wg0-LO-i00" kind="push" id="zut-gT-ID0"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="eMail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xV6-Gi-Lw4">
@@ -302,10 +303,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCw-Bs-wlm">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Aktivieren">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wg0-LO-i00" kind="push" id="S1b-UC-PmW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lPu-yv-yeP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="269-Wh-idy"/>
+                            <constraint firstAttribute="trailing" secondItem="BCw-Bs-wlm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="36f-V4-wuN"/>
                             <constraint firstItem="KeZ-WH-FiG" firstAttribute="centerX" secondItem="axb-XF-dRZ" secondAttribute="centerX" type="default" id="5jQ-aB-ofp"/>
                             <constraint firstAttribute="trailing" secondItem="zZn-z1-Bb4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8W0-eN-bWa"/>
                             <constraint firstItem="zZn-z1-Bb4" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FHb-Km-4mP"/>
@@ -313,10 +328,13 @@
                             <constraint firstItem="KeZ-WH-FiG" firstAttribute="top" secondItem="axb-XF-dRZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sej-UM-Pom"/>
                             <constraint firstItem="zZn-z1-Bb4" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uwa-mF-kr8"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" type="default" id="Z2i-G8-4N5"/>
+                            <constraint firstItem="BCw-Bs-wlm" firstAttribute="top" secondItem="lPu-yv-yeP" secondAttribute="top" type="default" id="Zka-bv-2dc"/>
                             <constraint firstAttribute="bottom" secondItem="lPu-yv-yeP" secondAttribute="bottom" constant="55" id="c8c-T2-3aQ"/>
                             <constraint firstItem="axb-XF-dRZ" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dXw-Pj-RXu"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="bottom" secondItem="BNg-ea-9ei" secondAttribute="bottom" type="default" id="f5c-uf-buF"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="trailing" secondItem="BNg-ea-9ei" secondAttribute="trailing" type="default" id="fPp-fG-CYE"/>
+                            <constraint firstItem="BCw-Bs-wlm" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="i0M-PM-gHq"/>
+                            <constraint firstItem="BCw-Bs-wlm" firstAttribute="baseline" secondItem="lPu-yv-yeP" secondAttribute="baseline" type="default" id="pN0-aV-mhq"/>
                             <constraint firstItem="axb-XF-dRZ" firstAttribute="top" secondItem="zZn-z1-Bb4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r2S-yL-1MF"/>
                             <constraint firstItem="lPu-yv-yeP" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tLe-LN-kfW"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" type="default" id="xjg-gd-B8Q"/>
@@ -328,10 +346,38 @@
             </objects>
             <point key="canvasLocation" x="548" y="179"/>
         </scene>
+        <!--Team View Controller - Item 4-->
+        <scene sceneID="Hcj-rT-9Rl">
+            <objects>
+                <viewController id="wg0-LO-i00" customClass="TeamViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="niL-Rj-JQw">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mut-ao-3JL" userLabel="Image View - Background"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mut-ao-3JL" firstAttribute="trailing" secondItem="niL-Rj-JQw" secondAttribute="trailing" type="default" id="JML-za-7qa"/>
+                            <constraint firstItem="mut-ao-3JL" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" type="default" id="gL4-4C-2cZ"/>
+                            <constraint firstItem="mut-ao-3JL" firstAttribute="bottom" secondItem="niL-Rj-JQw" secondAttribute="bottom" type="default" id="lI7-N9-iHP"/>
+                            <constraint firstItem="mut-ao-3JL" firstAttribute="top" secondItem="niL-Rj-JQw" secondAttribute="top" type="default" id="zxh-9g-S2N"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 4" id="ogo-uw-0U9"/>
+                    <navigationItem key="navigationItem" id="tK6-N4-GzR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoe-A9-GPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="-208"/>
+        </scene>
     </scenes>
     <classes>
         <class className="ActivationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="activateButtonPressed:"/>
+            </relationships>
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
@@ -347,6 +393,12 @@
         </class>
         <class className="RegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="registrationButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="TeamViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeamViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -354,4 +406,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zut-gT-ID0"/>
+    </inferredMetricsTieBreakers>
 </document>

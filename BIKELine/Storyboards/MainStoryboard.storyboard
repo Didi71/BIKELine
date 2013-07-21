@@ -33,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXL-s9-Msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="-185"/>
+            <point key="canvasLocation" x="-985" y="585"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="vhh-V2-ILp">
@@ -123,15 +123,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="w6g-jI-bm7" kind="relationship" relationship="viewControllers" id="j22-Zg-wqW"/>
-                        <segue destination="Htc-ZO-4QD" kind="relationship" relationship="viewControllers" id="5QH-D0-mbh"/>
-                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="YDL-Ds-1fQ"/>
-                        <segue destination="8Go-Rp-F9O" kind="relationship" relationship="viewControllers" id="iAu-PL-qhB"/>
-                        <segue destination="r0B-8c-nBH" kind="relationship" relationship="viewControllers" id="Y2o-1H-np1"/>
+                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="gOp-0y-46u"/>
+                        <segue destination="Htc-ZO-4QD" kind="relationship" relationship="viewControllers" id="ySp-5I-Qkh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ann-RD-NJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1786" y="503"/>
+            <point key="canvasLocation" x="-1524" y="-125"/>
         </scene>
         <!--Reader View Controller - QRReader-->
         <scene sceneID="rkF-8h-SIX">
@@ -169,46 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-0M-Byp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="503"/>
-        </scene>
-        <!--Team View Controller - Friends-->
-        <scene sceneID="MCh-kI-A27">
-            <objects>
-                <viewController title="Friends" id="8Go-Rp-F9O" customClass="TeamViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lKK-HM-XyI">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYi-2J-6fc" userLabel="Image View - Background"/>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="XYi-2J-6fc" firstAttribute="leading" secondItem="lKK-HM-XyI" secondAttribute="leading" type="default" id="3YA-eJ-LiX"/>
-                            <constraint firstItem="XYi-2J-6fc" firstAttribute="bottom" secondItem="lKK-HM-XyI" secondAttribute="bottom" type="default" id="T4y-QE-iYO"/>
-                            <constraint firstItem="XYi-2J-6fc" firstAttribute="trailing" secondItem="lKK-HM-XyI" secondAttribute="trailing" type="default" id="aUu-bl-UIN"/>
-                            <constraint firstItem="XYi-2J-6fc" firstAttribute="top" secondItem="lKK-HM-XyI" secondAttribute="top" type="default" id="x7b-vg-3v3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 4" id="NgA-4Y-RCP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="280-As-RYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-985" y="1197"/>
-        </scene>
-        <!--View Controller - Logout-->
-        <scene sceneID="suP-9g-DHR">
-            <objects>
-                <viewController title="Logout" id="r0B-8c-nBH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PHr-0o-Rft">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 5" id="RZJ-De-iaR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UZd-hu-McZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-985" y="1894"/>
+            <point key="canvasLocation" x="-985" y="-125"/>
         </scene>
     </scenes>
     <classes>
@@ -221,7 +180,6 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="segmentControlChangedValue:"/>
                 <relationship kind="outlet" name="checkinsView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
@@ -242,9 +200,6 @@
                 <relationship kind="action" name="StartScan:"/>
                 <relationship kind="outlet" name="resultTextView" candidateClass="UITextView"/>
             </relationships>
-        </class>
-        <class className="TeamViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeamViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

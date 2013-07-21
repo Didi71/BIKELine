@@ -23,6 +23,7 @@
 		F61B05601799AA4000A08BB7 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
 		F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
+		F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */ = {isa = PBXBuildFile; fileRef = F67CE7CC179C15EC00C018B6 /* BikerMO.m */; };
 		F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
 		F69028C8179A6889006FA715 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F69028CB179A6920006FA715 /* FactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028CA179A6920006FA715 /* FactsViewController.m */; };
@@ -110,6 +111,8 @@
 		F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
 		F61B05611799AA4700A08BB7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B05631799AA4C00A08BB7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F67CE7CB179C15EC00C018B6 /* BikerMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BikerMO.h; path = Classes/BikerMO.h; sourceTree = "<group>"; };
+		F67CE7CC179C15EC00C018B6 /* BikerMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BikerMO.m; path = Classes/BikerMO.m; sourceTree = "<group>"; };
 		F69028C0179A6680006FA715 /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLNavigationController.h; path = Classes/BLNavigationController.h; sourceTree = "<group>"; };
 		F69028C1179A6680006FA715 /* BLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLNavigationController.m; path = Classes/BLNavigationController.m; sourceTree = "<group>"; };
 		F69028C6179A6889006FA715 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		F61B0526179994F300A08BB7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				F67CE7C7179C15B800C018B6 /* Modells */,
 				F61B05271799950200A08BB7 /* Controllers */,
 			);
 			name = Other;
@@ -308,6 +312,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F67CE7C7179C15B800C018B6 /* Modells */ = {
+			isa = PBXGroup;
+			children = (
+				F67CE7CB179C15EC00C018B6 /* BikerMO.h */,
+				F67CE7CC179C15EC00C018B6 /* BikerMO.m */,
+			);
+			name = Modells;
+			sourceTree = "<group>";
+		};
 		F69028C3179A6819006FA715 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +354,12 @@
 			children = (
 				F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */,
 				F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */,
-				F6FFF1E1179B0C69002C547C /* Login / Registration */,
+				F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */,
+				F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */,
+				F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */,
+				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
+				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
+				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
 				F6FFF1DA179B07BF002C547C /* BBApiCheckinOperation.h */,
 				F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */,
 			);
@@ -575,19 +593,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		F6FFF1E1179B0C69002C547C /* Login / Registration */ = {
-			isa = PBXGroup;
-			children = (
-				F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */,
-				F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */,
-				F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */,
-				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
-				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
-				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
-			);
-			name = "Login / Registration";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -710,6 +715,7 @@
 				F6FFF1D6179ACB53002C547C /* BBApiLoginOperation.m in Sources */,
 				F6FFF1D9179B0274002C547C /* BBApiActivationOperation.m in Sources */,
 				F6FFF1DC179B07BF002C547C /* BBApiCheckinOperation.m in Sources */,
+				F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

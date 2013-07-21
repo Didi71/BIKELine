@@ -87,8 +87,9 @@ NSString *kRequestStatusNOK = @"NOK";
     return [[BBApiActivationOperation alloc] initWithPath:@"activateBiker.php" andParameters:parameters];
 }
 
-- (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId andTeamId:(NSNumber *)teamId {
+- (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
+                                                                           pin, @"PIN",
                                                                            pointId, @"checkPointId",
                                                                            teamId, @"teamBikerId", nil];
     return [[BBApiCheckinOperation alloc] initWithPath:@"checkIn.php" andParameters:parameters];

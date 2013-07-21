@@ -52,7 +52,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (![wop.response.status isEqualToString:@"NOK"]) {
-                [BLStandardUserDefaults setEMail:eMail];
                 [[AppDelegate appDelegate] loginUser];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil

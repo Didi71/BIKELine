@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BikerMO.h"
 
 #define BLStandardUserDefaults [NSUserDefaults standardUserDefaults]
 
 @interface NSUserDefaults (BIKELine)
 
-@property (nonatomic, retain) NSString *eMail;
+@property (nonatomic, retain) BikerMO *biker;
 
 @end

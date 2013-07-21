@@ -10,13 +10,19 @@
 
 @implementation NSUserDefaults (BIKELine)
 
-- (NSString *)eMail {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:@"eMail"];
+- (BikerMO *)biker {
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"biker"];
+    
+    if (dict) {
+        return [[BikerMO alloc] initWithDictionary:dict];
+    } else {
+        return nil;
+    }
 }
 
-- (void)setEMail:(NSString *)eMail {
-	[[NSUserDefaults standardUserDefaults] setObject:eMail forKey:@"eMail"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+- (void)setBiker:(BikerMO *)biker {
+	[[NSUserDefaults standardUserDefaults] setObject:biker.dictionary forKey:@"biker"];
+	[[NSUserDefaults standardUserDefaults] synchronize]; 
 }
 
 @end
