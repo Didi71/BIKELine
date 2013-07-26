@@ -10,7 +10,10 @@
 #import "BBApiRegistrationOperation.h"
 
 @interface ActivationViewController : UIViewController {
-    
+    IBOutlet UILabel *headerLabel;
+    IBOutlet UILabel *teaserLabel;
+    IBOutlet UITextField *pinTextField;
+    IBOutlet UIButton *activateButton;
 }
 
 @property (nonatomic, retain) NSNumber *registration_userId;

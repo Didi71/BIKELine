@@ -9,7 +9,7 @@
 #import "BBApiActivationOperation.h"
 
 @implementation BBApiActivationResponse
-@synthesize status;
+@synthesize errorCode;
 @end
 
 @implementation BBApiActivationOperation

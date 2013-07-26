@@ -109,7 +109,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SharedAPI displayError:wop.response.errorCode];
             });
-            
             return;
         }
         

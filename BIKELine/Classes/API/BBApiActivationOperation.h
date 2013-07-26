@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 
 @interface BBApiActivationResponse : Jastor
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSNumber *errorCode;
 @end
 
 @interface BBApiActivationOperation : BBApiAbstractOperation

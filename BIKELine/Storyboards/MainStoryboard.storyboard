@@ -90,11 +90,13 @@
                     <navigationItem key="navigationItem" id="vsg-aH-Erf">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="FSQ-70-QJ2">
-                            <rect key="frame" x="91" y="6" width="137" height="32"/>
+                            <rect key="frame" x="22" y="6" width="275" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Facts"/>
                                 <segment title="Checkins"/>
+                                <segment title=""/>
+                                <segment title=""/>
                             </segments>
                             <connections>
                                 <action selector="segmentControlChangedValue:" destination="3fK-DN-J0H" eventType="valueChanged" id="bp3-SG-Ha4"/>
@@ -180,6 +182,7 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="segmentControlChangedValue:"/>
                 <relationship kind="outlet" name="checkinsView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>

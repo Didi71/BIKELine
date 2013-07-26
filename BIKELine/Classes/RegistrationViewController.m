@@ -23,7 +23,6 @@
 - (void)loadView {
     [super loadView];
     
-    
     [teaserLabel setText:NSLocalizedString(@"registerViewTeaserText", @"")];
     [cameraLabel setText:NSLocalizedString(@"registerViewProfilePictureText", @"")];
     [firstNameTextField setPlaceholder:NSLocalizedString(@"placeholderFirstNameTitle", @"")];
@@ -69,7 +68,7 @@
 #pragma mark - Notifications
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    keyboardHeight = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
+    float keyboardHeight = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
     
     NSTimeInterval animationDuration;
     UIViewAnimationCurve animationCurve;
@@ -81,9 +80,16 @@
     [UIView setAnimationCurve:animationCurve];
     [UIView setAnimationDuration:animationDuration];
     
-    [self layoutInterfaceWithOffset:-keyboardHeight];
+    [scrollView setFrame:CGRectMake(scrollView.frame.origin.x,
+                                    scrollView.frame.origin.y,
+                                    scrollView.frame.size.width,
+                                    self.view.frame.size.height - keyboardHeight)];
     
     [UIView commitAnimations];
+    
+    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width, registerButton.frame.origin.y + registerButton.frame.size.height + 10.0)];
+    [scrollView setScrollEnabled:YES];
+    [scrollView flashScrollIndicators];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -97,11 +103,15 @@
     [UIView setAnimationCurve:animationCurve];
     [UIView setAnimationDuration:animationDuration];
     
-    [self layoutInterfaceWithOffset:keyboardHeight];
+    [scrollView setFrame:CGRectMake(scrollView.frame.origin.x,
+                                    scrollView.frame.origin.y,
+                                    scrollView.frame.size.width,
+                                    self.view.frame.size.height)];
     
     [UIView commitAnimations];
     
-    keyboardHeight = 0;
+    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width, registerButton.frame.origin.y + registerButton.frame.size.height + 10.0)];
+    [scrollView setScrollEnabled:NO];
 }
 
 
@@ -177,7 +187,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [SharedAPI displayError:wop.response.errorCode];
             });
-            
             return;
         }
         
@@ -192,11 +201,34 @@
 
 
 #pragma mark
-#pragma mark - Private methods
+#pragma mark - UITextField delegate
 
-- (void)layoutInterfaceWithOffset:(float)offset {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:firstNameTextField]) {
+        [lastNameTextField becomeFirstResponder];
+    }
     
+    if ([textField isEqual:lastNameTextField]) {
+        [streetTextField becomeFirstResponder];
+    }
+    
+    if ([textField isEqual:streetTextField]) {
+        [postalCodeTextField becomeFirstResponder];
+    }
+    
+    if ([textField isEqual:postalCodeTextField]) {
+        [cityTextField becomeFirstResponder];
+    }
+    
+    if ([textField isEqual:cityTextField]) {
+        [eMailTextField becomeFirstResponder];
+    }
+    
+    if ([textField isEqual:eMailTextField]) {
+        [eMailTextField resignFirstResponder];
+    }
+    
+    return YES;
 }
-
 
 @end

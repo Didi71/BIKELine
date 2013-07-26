@@ -20,12 +20,28 @@
     return self;
 }
 
+- (void)loadView {
+    [super loadView];
+    
+    [headerLabel setText:[NSString stringWithFormat:NSLocalizedString(@"activationViewHeaderText", @""), @""]];
+    [teaserLabel setText:NSLocalizedString(@"activationViewTeaserText", @"")];
+    [pinTextField setPlaceholder:NSLocalizedString(@"placeholderPinTitle",@"")];
+    [activateButton setTitle:NSLocalizedString(@"buttonActivateTitle",@"") forState:UIControlStateNormal];
+}
+
 
 #pragma mark
 #pragma mark - View life cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [headerLabel setText:[NSString stringWithFormat:NSLocalizedString(@"activationViewHeaderText", @""), registration_name]];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
 }
 
 
@@ -33,13 +49,25 @@
 #pragma mark - Actions
 
 - (IBAction)activateButtonPressed:(id)sender {
+    if (pinTextField.text.length == 0) {
+        return;
+    }
 
     BBApiActivationOperation *op = [SharedAPI activateUserWithId: registration_userId
-                                               andActivationCode: registration_pin];
+                                               andActivationCode: [NSNumber numberWithDouble:[pinTextField.text doubleValue]]];
     __weak BBApiActivationOperation *wop = op;
     
     [op setCompletionBlock:^{
-        // Login user
+        if ([wop.response.errorCode intValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
+        });
     }];
     
     [SharedAPI.queue addOperation:op];

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BBApiRegistrationOperation.h"
 
-@interface RegistrationViewController : UIViewController {
+@interface RegistrationViewController : UIViewController <UITextFieldDelegate> {
+    IBOutlet UIScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIImageView *formularImageView;
     IBOutlet UIImageView *cameraImageView;
@@ -25,7 +26,6 @@
     IBOutlet UIButton *sexFemaleButton;
     IBOutlet UIButton *registerButton;
     
-    float keyboardHeight;
     UIImage *profilePicture;
     
     __block BBApiRegistrationResponse *response;
