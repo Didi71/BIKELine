@@ -12,6 +12,8 @@
 #import "BBApiRegistrationOperation.h"
 #import "BBApiActivationOperation.h"
 #import "BBApiCheckinOperation.h"
+#import "BBApiGetPricesOperation.h"
+#import "BBApiGetCheckPointsOperation.h"
 
 #define SharedAPI [BBApi sharedAPI]
 
@@ -29,8 +31,12 @@ extern NSString *kRequestStatusNOK;
 - (void)cleanQueue;
 
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail;
-- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city andEMail:(NSString *)eMail;
+- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city eMail:(NSString *)eMail andSex:(BOOL)isMale;
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code;
 - (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin;
+- (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId;
+- (BBApiGetCheckPointsOperation *)getCheckPointsWithLatitude:(double)lat andLongitude:(double)lon;
+
+- (void)displayError:(NSNumber *)errorCode;
 
 @end

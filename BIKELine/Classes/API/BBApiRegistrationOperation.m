@@ -9,7 +9,7 @@
 #import "BBApiRegistrationOperation.h"
 
 @implementation BBApiRegistrationResponse
-@synthesize status, pin, userId;
+@synthesize errorCode, firstName, pin, userId;
 @end
 
 @implementation BBApiRegistrationOperation

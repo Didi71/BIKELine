@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController {
+    IBOutlet UIImageView *logoImageView;
+    IBOutlet UILabel *teaserLabel;
     IBOutlet UITextField *eMailTextField;
     IBOutlet UIButton *loginButton;
     
     __block NSString *eMail;
+    
+    float keyboardHeight;
 }
 
 @end

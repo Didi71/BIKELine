@@ -11,9 +11,10 @@
 #import "JSONKit.h"
 
 @interface BBApiLoginResponse : Jastor
-@property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSNumber *pin;
 @property (nonatomic, retain) NSNumber *userId;
+@property (nonatomic, retain) NSString *firstName;
 @end
 
 @interface BBApiLoginOperation : BBApiAbstractOperation

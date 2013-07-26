@@ -8,7 +8,7 @@
 
 
 // Bikebird Server
-#define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/bb/bikebird/BIKElinePublic"
+#define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoint/App-Scripts"
 
 
 

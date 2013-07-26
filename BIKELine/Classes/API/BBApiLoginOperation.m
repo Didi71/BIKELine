@@ -9,7 +9,7 @@
 #import "BBApiLoginOperation.h"
 
 @implementation BBApiLoginResponse
-@synthesize status, pin, userId;
+@synthesize errorCode, pin, userId, firstName;
 @end
 
 @implementation BBApiLoginOperation

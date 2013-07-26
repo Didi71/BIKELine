@@ -78,17 +78,16 @@
 
 - (NSMutableURLRequest *)configureRequestForPath:(NSString *)path withParameters:(NSDictionary *)params {
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:BIKEBIRD_API_BASE_URL]];
-    [httpClient setParameterEncoding:AFJSONParameterEncoding];
     
-    NSMutableURLRequest *jsonRequest = [httpClient requestWithMethod:@"POST" path:path parameters:params];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
     
     // Configure Request
-    [jsonRequest setTimeoutInterval:30.0];
-    [jsonRequest setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-    [jsonRequest setValue:@"15" forHTTPHeaderField:@"Keep-Alive"];
-    [jsonRequest setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
+    [request setTimeoutInterval:30.0];
+    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+    [request setValue:@"15" forHTTPHeaderField:@"Keep-Alive"];
+    [request setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
     
-    return jsonRequest;
+    return request;
 }
 
 - (void)requestFinishedWithResult:(NSString *)jsonResult {

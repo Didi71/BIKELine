@@ -67,18 +67,19 @@ NSString *kRequestStatusNOK = @"NOK";
 
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:eMail, @"emailAddress", nil];
-    return [[BBApiLoginOperation alloc] initWithPath:@"reloginBiker.php" andParameters:parameters];
+    return [[BBApiLoginOperation alloc] initWithPath:@"loginBiker.php" andParameters:parameters];
 }
 
-- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city andEMail:(NSString *)eMail {
+- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city eMail:(NSString *)eMail andSex:(BOOL)isMale {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: first, @"firstName",
                                                                            last, @"lastName",
                                                                            street, @"street",
                                                                            code, @"postalCode",
                                                                            city, @"city",
-                                                                           eMail, @"emailAddress", nil];
+                                                                           eMail, @"emailAddress",
+                                                                           (isMale == YES ? @"male" : @"female"), @"sex", nil];
     
-    return [[BBApiRegistrationOperation alloc] initWithPath:@"loginBiker.php" andParameters:parameters];
+    return [[BBApiRegistrationOperation alloc] initWithPath:@"registerBiker.php" andParameters:parameters];
 }
 
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code {
@@ -95,6 +96,49 @@ NSString *kRequestStatusNOK = @"NOK";
     return [[BBApiCheckinOperation alloc] initWithPath:@"checkIn.php" andParameters:parameters];
 }
 
+- (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:userId, @"bikerId", nil];
+    return [[BBApiGetPricesOperation alloc] initWithPath:@"getPrices.php" andParameters:parameters];
+}
 
+- (BBApiGetCheckPointsOperation *)getCheckPointsWithLatitude:(double)lat andLongitude:(double)lon {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithDouble:lat], @"latitude",
+                                                                           [NSNumber numberWithDouble:lon], @"longitude", nil];
+    return [[BBApiGetCheckPointsOperation alloc] initWithPath:@"getCheckPoints.php" andParameters:parameters];
+}
+
+
+#pragma mark
+#pragma mark - Error Handling
+
+- (void)displayError:(NSNumber *)errorCode {
+    if (!errorCode) {
+        return;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"errorAlertViewTitle", @"")
+                                                    message: [self getErrorMessageForCode:errorCode]
+                                                   delegate: nil
+                                          cancelButtonTitle: NSLocalizedString(@"buttonOkTitle", @"")
+                                          otherButtonTitles: nil];
+    
+    [alert show];
+}
+
+- (NSString *)getErrorMessageForCode:(NSNumber *)errCode {
+    switch ([errCode intValue]) {
+        case 31:
+            return NSLocalizedString(@"errorInvalidEMailText", @"");
+            break;
+            
+        case 32:
+            return NSLocalizedString(@"errorUnknownEMailText", @"");
+            break;
+            
+        default:
+            return [NSString stringWithFormat:NSLocalizedString(@"errorDefaultText", @""), errCode];
+            break;
+    }
+}
 
 @end

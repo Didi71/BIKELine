@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BBApiRegistrationOperation.h"
 
-@interface ActivationViewController : UIViewController
+@interface ActivationViewController : UIViewController {
+    
+}
+
+@property (nonatomic, retain) NSNumber *registration_userId;
+@property (nonatomic, retain) NSString *registration_name;
+@property (nonatomic, retain) NSNumber *registration_pin;
 
 @end

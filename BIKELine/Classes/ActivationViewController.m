@@ -10,6 +10,7 @@
 #import "BBApi.h"
 
 @implementation ActivationViewController
+@synthesize registration_userId, registration_name, registration_pin;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -25,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 
@@ -33,8 +33,10 @@
 #pragma mark - Actions
 
 - (IBAction)activateButtonPressed:(id)sender {
-    BBApiActivationOperation *op = [SharedAPI activateUserWithId: [NSNumber numberWithInt:11]
-                                               andActivationCode: [NSNumber numberWithLong:07260]];
+
+    BBApiActivationOperation *op = [SharedAPI activateUserWithId: registration_userId
+                                               andActivationCode: registration_pin];
+    __weak BBApiActivationOperation *wop = op;
     
     [op setCompletionBlock:^{
         // Login user
