@@ -127,6 +127,14 @@ NSString *kRequestStatusNOK = @"NOK";
 
 - (NSString *)getErrorMessageForCode:(NSNumber *)errCode {
     switch ([errCode intValue]) {
+        case 20:
+            return NSLocalizedString(@"errorInvalidCheckpointText", @"");
+            break;
+            
+        case 30:
+            return NSLocalizedString(@"errorInvalidPINText", @"");
+            break;
+            
         case 31:
             return NSLocalizedString(@"errorInvalidEMailText", @"");
             break;
