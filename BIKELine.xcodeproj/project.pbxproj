@@ -27,6 +27,8 @@
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
 		F64B897017A3E4F800392CD7 /* LoginChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */; };
 		F64B897317A3EBC800392CD7 /* BLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B897217A3EBC800392CD7 /* BLScrollView.m */; };
+		F64B897617A3F20000392CD7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F64B897417A3F20000392CD7 /* Icon.png */; };
+		F64B897717A3F20000392CD7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F64B897517A3F20000392CD7 /* Icon@2x.png */; };
 		F652FF9A179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */; };
 		F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9417A2FBBE00BA2261 /* cameraButton.png */; };
 		F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */; };
@@ -143,6 +145,8 @@
 		F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginChooserViewController.m; path = Classes/LoginChooserViewController.m; sourceTree = "<group>"; };
 		F64B897117A3EBC800392CD7 /* BLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLScrollView.h; path = Classes/BLScrollView.h; sourceTree = "<group>"; };
 		F64B897217A3EBC800392CD7 /* BLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLScrollView.m; path = Classes/BLScrollView.m; sourceTree = "<group>"; };
+		F64B897417A3F20000392CD7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Icon.png; sourceTree = "<group>"; };
+		F64B897517A3F20000392CD7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icon@2x.png"; sourceTree = "<group>"; };
 		F652FF98179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetCheckPointsOperation.h; path = Classes/API/BBApiGetCheckPointsOperation.h; sourceTree = "<group>"; };
 		F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetCheckPointsOperation.m; path = Classes/API/BBApiGetCheckPointsOperation.m; sourceTree = "<group>"; };
 		F6646F9417A2FBBE00BA2261 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraButton.png; sourceTree = "<group>"; };
@@ -542,6 +546,8 @@
 		F6E5F8A317A2BF850036D3C1 /* AppIcons */ = {
 			isa = PBXGroup;
 			children = (
+				F64B897417A3F20000392CD7 /* Icon.png */,
+				F64B897517A3F20000392CD7 /* Icon@2x.png */,
 				F6EA788917996BC30063B0A5 /* Default.png */,
 				F6EA788B17996BC30063B0A5 /* Default@2x.png */,
 				F6EA788D17996BC30063B0A5 /* Default-568h@2x.png */,
@@ -821,6 +827,8 @@
 				F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */,
 				F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */,
 				F66D870717A390F100E1755C /* Checkmark.png in Resources */,
+				F64B897617A3F20000392CD7 /* Icon.png in Resources */,
+				F64B897717A3F20000392CD7 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
