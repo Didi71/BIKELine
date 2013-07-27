@@ -99,7 +99,7 @@
 #pragma mark - Actions
 
 - (IBAction)loginButtonPressed:(id)sender {
-    if (bikerInfo.eMail.length == 0) {
+    if (eMailTextField.text.length == 0) {
         return;
     }
     
