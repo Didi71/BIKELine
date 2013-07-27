@@ -12,9 +12,6 @@
 @implementation TeamViewController
 @synthesize bikerInfo;
 
-const int kTeamViewNextButtonSkipTag = 0;
-const int kTeamViewNextButtonConnectTag = 1;
-
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -26,8 +23,8 @@ const int kTeamViewNextButtonConnectTag = 1;
 - (void)loadView {
     [super loadView];
     
-    [nextButton setTitle:NSLocalizedString(@"buttonSkipTitle", @"") forState:UIControlStateNormal];
-    [nextButton setTag:kTeamViewNextButtonSkipTag];
+    [joinButton setTitle:NSLocalizedString(@"buttonJoinTeamTitle", @"") forState:UIControlStateNormal];
+    [skipButton setTitle:NSLocalizedString(@"buttonSkipTeamTitle", @"") forState:UIControlStateNormal];
 }
 
 
@@ -38,12 +35,16 @@ const int kTeamViewNextButtonConnectTag = 1;
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+- (void)viewDidAppear:(BOOL)animated {
+    CGSize contentSize = CGSizeMake(scrollView.frame.size.width, skipButton.frame.origin.y + skipButton.frame.size.height + 10.0);
+    
+    if (contentSize.height > self.view.frame.size.height) {
+        [scrollView setContentSize:contentSize];
+        [scrollView setScrollEnabled:YES];
+        [scrollView flashScrollIndicators];
+    } else {
+        [scrollView setScrollEnabled:NO];
+    }
 }
 
 
@@ -61,12 +62,7 @@ const int kTeamViewNextButtonConnectTag = 1;
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
-    if (nextButton.tag == kTeamViewNextButtonSkipTag) {
-        [[AppDelegate appDelegate] loginUser];
-        return;
-    } else {
-        
-    }
+    [[AppDelegate appDelegate] loginUser];
 }
 
 @end

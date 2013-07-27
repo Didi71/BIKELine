@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Root-->
+        <!--Login Chooser View Controller - Root-->
         <scene sceneID="5">
             <objects>
-                <viewController title="Root" id="2" sceneMemberID="viewController">
+                <viewController title="Root" id="2" customClass="LoginChooserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,6 +60,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IAQ-AG-D5V"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="loginButton" destination="80G-FP-NcX" id="HaE-AG-uFr"/>
+                        <outlet property="registerButton" destination="g9F-b6-twg" id="hV9-TI-2aZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +75,7 @@
             <objects>
                 <viewController id="Unw-oP-X8I" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0h-fZ-ne6">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="STW-gD-oOZ" userLabel="Image View - Background"/>
@@ -115,10 +120,10 @@
                             <constraint firstItem="5ht-Qf-zv0" firstAttribute="leading" secondItem="w0h-fZ-ne6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fox-ZL-Zar"/>
                             <constraint firstItem="6gG-GU-Mba" firstAttribute="leading" secondItem="w0h-fZ-ne6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GcZ-em-xn6"/>
                             <constraint firstItem="ago-rE-PrQ" firstAttribute="centerX" secondItem="5ht-Qf-zv0" secondAttribute="centerX" type="default" id="HCo-GN-oLu"/>
-                            <constraint firstItem="ago-rE-PrQ" firstAttribute="top" secondItem="w0h-fZ-ne6" secondAttribute="top" constant="84" id="Ios-OQ-oCQ"/>
                             <constraint firstItem="xV6-Gi-Lw4" firstAttribute="leading" secondItem="w0h-fZ-ne6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KDx-1H-20g"/>
                             <constraint firstItem="6gG-GU-Mba" firstAttribute="top" secondItem="xV6-Gi-Lw4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KFf-tM-KKl"/>
                             <constraint firstItem="STW-gD-oOZ" firstAttribute="trailing" secondItem="w0h-fZ-ne6" secondAttribute="trailing" type="default" id="dNI-p9-PIX"/>
+                            <constraint firstItem="ago-rE-PrQ" firstAttribute="top" secondItem="w0h-fZ-ne6" secondAttribute="top" constant="40" id="dlT-40-J2Y"/>
                             <constraint firstAttribute="trailing" secondItem="6gG-GU-Mba" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="m7V-Y1-BGK"/>
                             <constraint firstAttribute="trailing" secondItem="5ht-Qf-zv0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pbY-Un-hLk"/>
                             <constraint firstItem="STW-gD-oOZ" firstAttribute="top" secondItem="w0h-fZ-ne6" secondAttribute="top" type="default" id="rcc-GD-0IR"/>
@@ -126,6 +131,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MjV-hC-thi"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="eMailTextField" destination="xV6-Gi-Lw4" id="Anu-UC-txX"/>
                         <outlet property="loginButton" destination="6gG-GU-Mba" id="s5G-td-g7m"/>
@@ -142,7 +148,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XgO-cS-659">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Ket-IL-jBo" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Ket-IL-jBo" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9sG-0Y-KXi">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -159,7 +165,7 @@
             <objects>
                 <viewController id="ygj-oK-rhi" customClass="RegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFA-ec-4zW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="eAi-VW-aN5" userLabel="Image View - Background"/>
@@ -386,6 +392,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v9w-Bo-ahc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="avatarImageView" destination="MCD-pG-cZg" id="wGn-or-4Ep"/>
                         <outlet property="cameraButton" destination="n03-uX-nmT" id="Sjh-28-CJR"/>
@@ -415,7 +422,7 @@
             <objects>
                 <viewController id="YTf-yK-q5X" customClass="ActivationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNg-ea-9ei">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="llF-7l-xtL" userLabel="Image View - Background"/>
@@ -479,6 +486,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rKg-4a-aij"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activateButton" destination="BCw-Bs-wlm" id="J02-AQ-zpO"/>
                         <outlet property="headerLabel" destination="zZn-z1-Bb4" id="gZI-bq-4RA"/>
@@ -500,103 +508,126 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="mut-ao-3JL" userLabel="Image View - Background"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KKC-Mc-MAB" userLabel="Label - Teaser Text">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50c-Po-LKV">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KKC-Mc-MAB" userLabel="Label - Teaser Text">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="NSx-2j-RXh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9U-c1-5zA">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Mq4-2b-cYI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Province" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="cKY-bS-8kg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAJ-et-N5C">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="2pC-Gw-tYi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Organisation" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="pUw-kC-DMK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WP-Ha-qMD">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="AxD-sp-R71"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Team" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="wN7-W0-7hA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qg-k2-O9S">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="Team beitreten" backgroundImage="RegisterButton.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y97-jh-Zbe">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="Keinem Team beitreten" backgroundImage="LoginButton.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="NSx-2j-RXh"/>
+                                    <constraint firstItem="aAJ-et-N5C" firstAttribute="leading" secondItem="50c-Po-LKV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2oa-2B-0xu"/>
+                                    <constraint firstItem="KKC-Mc-MAB" firstAttribute="leading" secondItem="50c-Po-LKV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4Gh-Ih-r7t"/>
+                                    <constraint firstItem="aAJ-et-N5C" firstAttribute="top" secondItem="W9U-c1-5zA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AWi-YQ-Esb"/>
+                                    <constraint firstItem="y97-jh-Zbe" firstAttribute="top" secondItem="0Qg-k2-O9S" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AbQ-F3-Ug6"/>
+                                    <constraint firstAttribute="trailing" secondItem="W9U-c1-5zA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BOX-gh-RxY"/>
+                                    <constraint firstItem="8WP-Ha-qMD" firstAttribute="top" secondItem="aAJ-et-N5C" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HJ5-na-qcv"/>
+                                    <constraint firstItem="y97-jh-Zbe" firstAttribute="leading" secondItem="0Qg-k2-O9S" secondAttribute="leading" type="default" id="Q3o-xC-3Ln"/>
+                                    <constraint firstItem="y97-jh-Zbe" firstAttribute="centerX" secondItem="8WP-Ha-qMD" secondAttribute="centerX" type="default" id="Y0Z-0b-f9h"/>
+                                    <constraint firstItem="y97-jh-Zbe" firstAttribute="top" secondItem="50c-Po-LKV" secondAttribute="top" constant="399" id="bwC-mZ-n8h"/>
+                                    <constraint firstAttribute="trailing" secondItem="KKC-Mc-MAB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hCA-hi-STk"/>
+                                    <constraint firstAttribute="bottom" secondItem="y97-jh-Zbe" secondAttribute="bottom" constant="61" id="i1O-Ak-rW2"/>
+                                    <constraint firstItem="8WP-Ha-qMD" firstAttribute="leading" secondItem="50c-Po-LKV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tJd-dQ-yfy"/>
+                                    <constraint firstItem="0Qg-k2-O9S" firstAttribute="top" secondItem="8WP-Ha-qMD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vC0-8S-H7F"/>
+                                    <constraint firstItem="W9U-c1-5zA" firstAttribute="leading" secondItem="50c-Po-LKV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vgy-wo-miR"/>
+                                    <constraint firstItem="KKC-Mc-MAB" firstAttribute="top" secondItem="50c-Po-LKV" secondAttribute="top" constant="20" symbolic="YES" type="default" id="vsG-MM-hpk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y97-jh-Zbe">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                                <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="Überspringen / Team beitreten" backgroundImage="LoginButton.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="Pec-jj-jlJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9U-c1-5zA">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Mq4-2b-cYI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Province" backgroundImage="emptyButton.png">
-                                    <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="cKY-bS-8kg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAJ-et-N5C">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2pC-Gw-tYi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Organisation" backgroundImage="emptyButton.png">
-                                    <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="pUw-kC-DMK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WP-Ha-qMD">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="AxD-sp-R71"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Team" backgroundImage="emptyButton.png">
-                                    <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="openSelectorButtonPressed:" destination="wg0-LO-i00" eventType="touchUpInside" id="wN7-W0-7hA"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="KKC-Mc-MAB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="18z-Nv-0rM"/>
-                            <constraint firstItem="KKC-Mc-MAB" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2KW-JP-AFz"/>
-                            <constraint firstItem="8WP-Ha-qMD" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ApA-8h-iRP"/>
-                            <constraint firstItem="8WP-Ha-qMD" firstAttribute="top" secondItem="aAJ-et-N5C" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JDM-I0-7Fc"/>
                             <constraint firstItem="mut-ao-3JL" firstAttribute="trailing" secondItem="niL-Rj-JQw" secondAttribute="trailing" type="default" id="JML-za-7qa"/>
-                            <constraint firstItem="aAJ-et-N5C" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UtR-i5-bb3"/>
-                            <constraint firstItem="aAJ-et-N5C" firstAttribute="top" secondItem="W9U-c1-5zA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="X5z-xv-D23"/>
-                            <constraint firstAttribute="trailing" secondItem="y97-jh-Zbe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZRr-5l-c90"/>
-                            <constraint firstItem="W9U-c1-5zA" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bTf-0l-7ch"/>
                             <constraint firstItem="mut-ao-3JL" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" type="default" id="gL4-4C-2cZ"/>
-                            <constraint firstItem="W9U-c1-5zA" firstAttribute="top" secondItem="niL-Rj-JQw" secondAttribute="top" constant="191" id="i43-YG-7nA"/>
+                            <constraint firstItem="50c-Po-LKV" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" type="default" id="gqp-AT-2cT"/>
                             <constraint firstItem="mut-ao-3JL" firstAttribute="bottom" secondItem="niL-Rj-JQw" secondAttribute="bottom" type="default" id="lI7-N9-iHP"/>
-                            <constraint firstItem="y97-jh-Zbe" firstAttribute="leading" secondItem="niL-Rj-JQw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="q2D-qZ-ZPV"/>
-                            <constraint firstItem="KKC-Mc-MAB" firstAttribute="top" secondItem="niL-Rj-JQw" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qkh-Ef-zCN"/>
-                            <constraint firstItem="y97-jh-Zbe" firstAttribute="top" secondItem="8WP-Ha-qMD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wl9-LZ-nIo"/>
+                            <constraint firstItem="50c-Po-LKV" firstAttribute="trailing" secondItem="niL-Rj-JQw" secondAttribute="trailing" type="default" id="m6z-nc-tJp"/>
+                            <constraint firstItem="50c-Po-LKV" firstAttribute="top" secondItem="niL-Rj-JQw" secondAttribute="top" type="default" id="rbu-7n-Ipa"/>
+                            <constraint firstItem="50c-Po-LKV" firstAttribute="bottom" secondItem="niL-Rj-JQw" secondAttribute="bottom" type="default" id="wb1-uR-kYt"/>
                             <constraint firstItem="mut-ao-3JL" firstAttribute="top" secondItem="niL-Rj-JQw" secondAttribute="top" type="default" id="zxh-9g-S2N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tK6-N4-GzR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="nextButton" destination="y97-jh-Zbe" id="H8N-gD-Xdl"/>
+                        <outlet property="joinButton" destination="0Qg-k2-O9S" id="x2n-Ov-uh1"/>
                         <outlet property="organisationButton" destination="aAJ-et-N5C" id="O5f-Jt-MxW"/>
                         <outlet property="provinceButton" destination="W9U-c1-5zA" id="xI8-eI-bth"/>
+                        <outlet property="scrollView" destination="50c-Po-LKV" id="lnJ-Ih-peL"/>
+                        <outlet property="skipButton" destination="y97-jh-Zbe" id="s0l-2F-7ZH"/>
                         <outlet property="teamButton" destination="8WP-Ha-qMD" id="yjB-3k-9N2"/>
                         <outlet property="teaserLabel" destination="KKC-Mc-MAB" id="sqf-Uc-6jH"/>
                     </connections>
@@ -628,6 +659,13 @@
         </class>
         <class className="BLViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
+        </class>
+        <class className="LoginChooserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginChooserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="LoginViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
@@ -671,10 +709,11 @@
             <relationships>
                 <relationship kind="action" name="nextButtonPressed:"/>
                 <relationship kind="action" name="openSelectorButtonPressed:"/>
-                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="joinButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="organisationButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="provinceButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="teamButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
             </relationships>

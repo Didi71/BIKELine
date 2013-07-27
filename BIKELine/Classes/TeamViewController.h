@@ -9,11 +9,13 @@
 #import "BLViewController.h"
 
 @interface TeamViewController : BLViewController {
+    IBOutlet UIScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIButton *provinceButton;
     IBOutlet UIButton *organisationButton;
     IBOutlet UIButton *teamButton;
-    IBOutlet UIButton *nextButton;
+    IBOutlet UIButton *joinButton;
+    IBOutlet UIButton *skipButton;
 }
 
 @property (nonatomic, retain) __block BikerMO *bikerInfo;

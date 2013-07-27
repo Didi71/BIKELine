@@ -71,7 +71,7 @@
     [UIView setAnimationCurve:animationCurve];
     [UIView setAnimationDuration:animationDuration];
 
-    [self layoutInterfaceWithOffset:-keyboardHeight];
+    [self layoutInterfaceWithOffset:-(keyboardHeight - 20.0) andLogoOffset:-20.0];
     
     [UIView commitAnimations];
 }
@@ -87,7 +87,7 @@
     [UIView setAnimationCurve:animationCurve];
     [UIView setAnimationDuration:animationDuration];
     
-    [self layoutInterfaceWithOffset:keyboardHeight];
+    [self layoutInterfaceWithOffset:(keyboardHeight - 20.0) andLogoOffset:20.0];
     
     [UIView commitAnimations];
     
@@ -149,17 +149,31 @@
 #pragma mark
 #pragma mark - Private methods
 
-- (void)layoutInterfaceWithOffset:(float)offset {
-    if (offset < 0) {
-        [logoImageView setAlpha:0];
+- (void)layoutInterfaceWithOffset:(float)offset andLogoOffset:(float)logoOffset {
+    if (IS_TALL_IPHONE()) {
+        if (offset < 0) {
+            [teaserLabel setAlpha:0];
+        } else {
+            [teaserLabel setAlpha:1.0];
+        }
+        
+        [logoImageView setFrame:CGRectMake(logoImageView.frame.origin.x,
+                                           logoImageView.frame.origin.y + logoOffset,
+                                           logoImageView.frame.size.width,
+                                           logoImageView.frame.size.height)];
     } else {
-        [logoImageView setAlpha:1.0];
+        if (offset < 0) {
+            [logoImageView setAlpha:0];
+        } else {
+            [logoImageView setAlpha:1.0];
+        }
+        
+        [teaserLabel setFrame:CGRectMake(teaserLabel.frame.origin.x,
+                                         teaserLabel.frame.origin.y + offset,
+                                         teaserLabel.frame.size.width,
+                                         teaserLabel.frame.size.height)];
     }
     
-    [teaserLabel setFrame:CGRectMake(teaserLabel.frame.origin.x,
-                                       teaserLabel.frame.origin.y + offset,
-                                       teaserLabel.frame.size.width,
-                                       teaserLabel.frame.size.height)];
     
     [eMailTextField setFrame:CGRectMake(eMailTextField.frame.origin.x,
                                         eMailTextField.frame.origin.y + offset,

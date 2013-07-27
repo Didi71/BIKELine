@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define IS_TALL_IPHONE() ([UIScreen mainScreen].bounds.size.height == 568)
+
 @interface BLUtils : NSObject
 
 + (UIImage *)resizeImage:(UIImage *)originalImg toSize:(CGSize)newSize withCompression:(float)compression;

@@ -38,6 +38,10 @@
     [super viewDidLoad];
     
     [headerLabel setText:[NSString stringWithFormat:NSLocalizedString(@"activationViewHeaderText", @""), bikerInfo.firstName]];
+    
+#ifdef DEBUG
+    pinTextField.text = [bikerInfo.pin stringValue];
+#endif
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
