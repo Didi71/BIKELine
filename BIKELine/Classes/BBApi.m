@@ -104,6 +104,22 @@ const int kMaxRequestRetry = 5;
     return [[BBApiGetCheckPointsOperation alloc] initWithPath:@"getCheckPoints.php" andParameters:parameters];
 }
 
+- (BBApiGetProvincesOperation *)getProvinces {
+    return [[BBApiGetProvincesOperation alloc] initWithPath:@"getProvinces.php" andParameters:nil];
+}
+
+- (BBApiGetOrganisationsOperation *)getOrganisationsForProvince:(NSString *)prov {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: prov, @"province", nil];
+    return [[BBApiGetOrganisationsOperation alloc] initWithPath:@"getOrgs.php" andParameters:parameters];
+}
+
+- (BBApiGetOrganisationBikersOperation *)getBikersInOrganisation:(NSNumber *)orgId {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: orgId, @"orgId", nil];
+    return [[BBApiGetOrganisationBikersOperation alloc] initWithPath:@"getBikers.php" andParameters:parameters];
+}
+
+
+
 
 #pragma mark
 #pragma mark - Error Handling

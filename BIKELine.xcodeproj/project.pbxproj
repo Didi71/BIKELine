@@ -32,6 +32,9 @@
 		F66D870017A38D4500E1755C /* BLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D86FF17A38D4500E1755C /* BLViewController.m */; };
 		F66D870417A38E4F00E1755C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870317A38E4F00E1755C /* MBProgressHUD.m */; };
 		F66D870717A390F100E1755C /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F66D870617A390F100E1755C /* Checkmark.png */; };
+		F66D870A17A395CE00E1755C /* BBApiGetProvincesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */; };
+		F66D870D17A3965100E1755C /* BBApiGetOrganisationsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */; };
+		F66D871017A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */; };
 		F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */ = {isa = PBXBuildFile; fileRef = F67CE7CC179C15EC00C018B6 /* BikerMO.m */; };
 		F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
 		F69028C8179A6889006FA715 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -144,6 +147,12 @@
 		F66D870217A38E4F00E1755C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		F66D870317A38E4F00E1755C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F66D870617A390F100E1755C /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
+		F66D870817A395CE00E1755C /* BBApiGetProvincesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetProvincesOperation.h; path = Classes/API/BBApiGetProvincesOperation.h; sourceTree = "<group>"; };
+		F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetProvincesOperation.m; path = Classes/API/BBApiGetProvincesOperation.m; sourceTree = "<group>"; };
+		F66D870B17A3965100E1755C /* BBApiGetOrganisationsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetOrganisationsOperation.h; path = Classes/API/BBApiGetOrganisationsOperation.h; sourceTree = "<group>"; };
+		F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetOrganisationsOperation.m; path = Classes/API/BBApiGetOrganisationsOperation.m; sourceTree = "<group>"; };
+		F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetOrganisationBikersOperation.h; path = Classes/API/BBApiGetOrganisationBikersOperation.h; sourceTree = "<group>"; };
+		F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetOrganisationBikersOperation.m; path = Classes/API/BBApiGetOrganisationBikersOperation.m; sourceTree = "<group>"; };
 		F67CE7CB179C15EC00C018B6 /* BikerMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BikerMO.h; path = Classes/BikerMO.h; sourceTree = "<group>"; };
 		F67CE7CC179C15EC00C018B6 /* BikerMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BikerMO.m; path = Classes/BikerMO.m; sourceTree = "<group>"; };
 		F69028C0179A6680006FA715 /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLNavigationController.h; path = Classes/BLNavigationController.h; sourceTree = "<group>"; };
@@ -441,6 +450,12 @@
 				F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */,
 				F652FF98179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.h */,
 				F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */,
+				F66D870817A395CE00E1755C /* BBApiGetProvincesOperation.h */,
+				F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */,
+				F66D870B17A3965100E1755C /* BBApiGetOrganisationsOperation.h */,
+				F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */,
+				F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */,
+				F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */,
 			);
 			name = "API Classes";
 			sourceTree = "<group>";
@@ -856,6 +871,9 @@
 				F652FF9A179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m in Sources */,
 				F66D870017A38D4500E1755C /* BLViewController.m in Sources */,
 				F66D870417A38E4F00E1755C /* MBProgressHUD.m in Sources */,
+				F66D870A17A395CE00E1755C /* BBApiGetProvincesOperation.m in Sources */,
+				F66D870D17A3965100E1755C /* BBApiGetOrganisationsOperation.m in Sources */,
+				F66D871017A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

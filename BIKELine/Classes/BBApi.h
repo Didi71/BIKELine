@@ -14,6 +14,9 @@
 #import "BBApiCheckinOperation.h"
 #import "BBApiGetPricesOperation.h"
 #import "BBApiGetCheckPointsOperation.h"
+#import "BBApiGetProvincesOperation.h"
+#import "BBApiGetOrganisationsOperation.h"
+#import "BBApiGetOrganisationBikersOperation.h"
 
 #define SharedAPI [BBApi sharedAPI]
 
@@ -33,6 +36,9 @@
 - (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin;
 - (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId;
 - (BBApiGetCheckPointsOperation *)getCheckPointsWithLatitude:(double)lat andLongitude:(double)lon;
+- (BBApiGetProvincesOperation *)getProvinces;
+- (BBApiGetOrganisationsOperation *)getOrganisationsForProvince:(NSString *)prov;
+- (BBApiGetOrganisationBikersOperation *)getBikersInOrganisation:(NSNumber *)orgId;
 
 - (void)displayError:(NSNumber *)errorCode;
 
