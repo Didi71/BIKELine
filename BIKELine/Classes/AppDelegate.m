@@ -28,7 +28,14 @@
     [GAI sharedInstance].debug = NO;
 #endif
 
-    // Configure app
+    
+//    BikerMO *biker = BLStandardUserDefaults.biker;
+//    if (biker.userId && biker.eMail && biker.pin) {
+//        [self loadMainStoryboard];
+//    } else {
+//        [self loadLoginStoryboard];
+//    }
+    
     [self loadLoginStoryboard];
     
     

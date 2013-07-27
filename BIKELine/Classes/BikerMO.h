@@ -8,18 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BikerMO : NSObject
+@interface BikerMO : NSObject {
+    UIImage *cachedAvatar;
+}
 
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *street;
 @property (nonatomic, retain) NSNumber *postalcode;
 @property (nonatomic, retain) NSString *city;
-@property (nonatomic, retain) NSString *gender;
+@property (nonatomic, retain) NSNumber *sex;
+@property (nonatomic, retain) UIImage *avatar;
 
 @property (nonatomic, retain) NSNumber *userId;
 @property (nonatomic, retain) NSString *eMail;
 @property (nonatomic, retain) NSNumber *pin;
+
+
+typedef enum {
+    kBikerSexMale,
+    kBikerSexFemale
+} kBikerSex;
+
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionary;

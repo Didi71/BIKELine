@@ -10,7 +10,7 @@
 #import "BBApi.h"
 
 @implementation ActivationViewController
-@synthesize registration_userId, registration_name, registration_pin;
+@synthesize bikerInfo;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [headerLabel setText:[NSString stringWithFormat:NSLocalizedString(@"activationViewHeaderText", @""), registration_name]];
+    [headerLabel setText:[NSString stringWithFormat:NSLocalizedString(@"activationViewHeaderText", @""), bikerInfo.firstName]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -53,19 +53,38 @@
         return;
     }
 
-    BBApiActivationOperation *op = [SharedAPI activateUserWithId: registration_userId
+    // Display progressHUD
+    [self.view endEditing:YES];
+    
+    [self showHUDWithProgressMessage: NSLocalizedString(@"progressActivationText", @"")
+                   andSuccessMessage: NSLocalizedString(@"successActivationText", @"")];
+    
+    
+    // Call API
+    BBApiActivationOperation *op = [SharedAPI activateUserWithId: bikerInfo.userId
                                                andActivationCode: [NSNumber numberWithDouble:[pinTextField.text doubleValue]]];
     __weak BBApiActivationOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideHUD:YES];
                 [SharedAPI displayError:wop.response.errorCode];
             });
             return;
         }
         
+        if (bikerInfo.lastName == nil) {
+            bikerInfo.lastName = wop.response.lastName;
+            bikerInfo.street = wop.response.street;
+            bikerInfo.postalcode = wop.response.postalCode;
+            bikerInfo.city = wop.response.city;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [BLStandardUserDefaults setBiker:bikerInfo];
+            
+            [self hideHUD:NO];
             [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
         });
     }];

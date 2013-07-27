@@ -9,13 +9,14 @@
 #import "LoginViewController.h"
 #import "BBApi.h"
 #import "AppDelegate.h"
+#import "ActivationViewController.h"
 
 @implementation LoginViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        bikerInfo = BLStandardUserDefaults.biker;
     }
     return self;
 }
@@ -45,6 +46,13 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue destinationViewController] isKindOfClass:[ActivationViewController class]]) {
+        ActivationViewController *nextView = [segue destinationViewController];
+        nextView.bikerInfo = bikerInfo;
+    }
 }
 
 
@@ -92,36 +100,50 @@
 #pragma mark - Actions
 
 - (IBAction)loginButtonPressed:(id)sender {
-    if (eMail.length == 0) {
+    if (bikerInfo.eMail.length == 0) {
         return;
     }
     
-    BBApiLoginOperation *op = [SharedAPI loginUserWitheMail:eMail];
+    bikerInfo.eMail = eMailTextField.text;
+    
+    
+    // Display progressHUD
+    [self.view endEditing:YES];
+    
+    [self showHUDWithProgressMessage: NSLocalizedString(@"progressLoginText", @"")
+                   andSuccessMessage: NSLocalizedString(@"successLoginText", @"")];
+    
+    
+    // Setup API-Call
+    BBApiLoginOperation *op = [SharedAPI loginUserWitheMail:bikerInfo.eMail];
     __weak BBApiLoginOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] == 32) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideHUD:YES];
                 [self performSegueWithIdentifier:@"LoginToRegisterSegue" sender:nil];
             });
             return;
         } else if ([wop.response.errorCode intValue] > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideHUD:YES];
                 [SharedAPI displayError:wop.response.errorCode];
             });
             return;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            bikerInfo.userId = wop.response.userId;
+            bikerInfo.firstName = wop.response.firstName;
+            bikerInfo.pin = wop.response.pin;
+            
+            [self hideHUD:NO];
             [self performSegueWithIdentifier:@"LoginToActivateSegue" sender:nil];
         });
     }];
     
     [SharedAPI.queue addOperation:op];
-}
-
-- (IBAction)textFieldValueChanged:(id)sender {
-    eMail = [(UITextField *)sender text];
 }
 
 

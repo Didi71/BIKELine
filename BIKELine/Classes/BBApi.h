@@ -23,15 +23,12 @@
 
 @property (nonatomic, retain) NSOperationQueue *queue;
 
-extern NSString *kRequestStatusOK;
-extern NSString *kRequestStatusNOK;
-
 
 + (BBApi *)sharedAPI;
 - (void)cleanQueue;
 
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail;
-- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city eMail:(NSString *)eMail andSex:(BOOL)isMale;
+- (BBApiRegistrationOperation *)registerBikerWithInfo:(BikerMO *)biker;
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code;
 - (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin;
 - (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId;

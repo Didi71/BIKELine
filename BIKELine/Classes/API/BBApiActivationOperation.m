@@ -9,7 +9,7 @@
 #import "BBApiActivationOperation.h"
 
 @implementation BBApiActivationResponse
-@synthesize errorCode;
+@synthesize errorCode, userId, firstName, lastName, street, postalCode, city;
 @end
 
 @implementation BBApiActivationOperation

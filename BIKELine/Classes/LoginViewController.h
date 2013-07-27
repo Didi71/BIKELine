@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Christoph Lückler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BLViewController.h"
 
-@interface LoginViewController : UIViewController {
+@interface LoginViewController : BLViewController {
     IBOutlet UIImageView *logoImageView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UITextField *eMailTextField;
     IBOutlet UIButton *loginButton;
     
-    __block NSString *eMail;
+    __block BikerMO *bikerInfo;
     
     float keyboardHeight;
 }

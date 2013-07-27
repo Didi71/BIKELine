@@ -18,9 +18,6 @@ const int kMaxQueueObjects = 15;
 
 const int kMaxRequestRetry = 5;
 
-NSString *kRequestStatusOK = @"OK";
-NSString *kRequestStatusNOK = @"NOK";
-
 
 + (BBApi *)sharedAPI {
 	return sharedInstance ?: [self new];
@@ -70,14 +67,14 @@ NSString *kRequestStatusNOK = @"NOK";
     return [[BBApiLoginOperation alloc] initWithPath:@"loginBiker.php" andParameters:parameters];
 }
 
-- (BBApiRegistrationOperation *)registerUserWithFirstName:(NSString *)first lastName:(NSString *)last street:(NSString *)street postalCode:(NSString *)code city:(NSString *)city eMail:(NSString *)eMail andSex:(BOOL)isMale {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: first, @"firstName",
-                                                                           last, @"lastName",
-                                                                           street, @"street",
-                                                                           code, @"postalCode",
-                                                                           city, @"city",
-                                                                           eMail, @"emailAddress",
-                                                                           (isMale == YES ? @"male" : @"female"), @"sex", nil];
+- (BBApiRegistrationOperation *)registerBikerWithInfo:(BikerMO *)biker {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: biker.firstName, @"firstName",
+                                                                           biker.lastName, @"lastName",
+                                                                           biker.street, @"street",
+                                                                           biker.postalcode, @"postalCode",
+                                                                           biker.city, @"city",
+                                                                           biker.eMail, @"emailAddress",
+                                                                           ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"sex", nil];
     
     return [[BBApiRegistrationOperation alloc] initWithPath:@"registerBiker.php" andParameters:parameters];
 }

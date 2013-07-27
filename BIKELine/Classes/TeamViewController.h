@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Christoph Lückler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BLViewController.h"
 
-@interface TeamViewController : UIViewController
+@interface TeamViewController : BLViewController
 
 @end

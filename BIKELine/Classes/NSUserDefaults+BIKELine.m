@@ -16,7 +16,7 @@
     if (dict) {
         return [[BikerMO alloc] initWithDictionary:dict];
     } else {
-        return nil;
+        return [[BikerMO alloc] init];
     }
 }
 

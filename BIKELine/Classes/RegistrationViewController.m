@@ -15,7 +15,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        bikerInfo = BLStandardUserDefaults.biker;
     }
     return self;
 }
@@ -58,9 +58,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ActivationViewController *nextView = [segue destinationViewController];
-    nextView.registration_userId = response.userId;
-    nextView.registration_name = response.firstName;
-    nextView.registration_pin = response.pin;
+    nextView.bikerInfo = bikerInfo;
 }
 
 
@@ -172,26 +170,42 @@
         return;
     }
     
+
+    // Set values to biker info
+    bikerInfo.firstName = firstNameTextField.text;
+    bikerInfo.lastName = lastNameTextField.text;
+    bikerInfo.street = streetTextField.text;
+    bikerInfo.postalcode = [NSNumber numberWithDouble:[postalCodeTextField.text doubleValue]];
+    bikerInfo.city = cityTextField.text;
+    bikerInfo.eMail = eMailTextField.text;
+    bikerInfo.sex = [NSNumber numberWithInt:(sexMaleButton.isSelected == YES ? kBikerSexMale : kBikerSexFemale)];
     
-    BBApiRegistrationOperation *op = [SharedAPI registerUserWithFirstName: firstNameTextField.text
-                                                                 lastName: lastNameTextField.text
-                                                                   street: streetTextField.text
-                                                               postalCode: postalCodeTextField.text
-                                                                     city: cityTextField.text
-                                                                    eMail: eMailTextField.text
-                                                                   andSex: sexMaleButton.isSelected];
+    
+    // Display progressHUD
+    [self.view endEditing:YES];
+    
+    [self showHUDWithProgressMessage: NSLocalizedString(@"progressRegistrationText", @"")
+                   andSuccessMessage: NSLocalizedString(@"successRegistrationText", @"")];
+    
+    
+    // Call API
+    BBApiRegistrationOperation *op = [SharedAPI registerBikerWithInfo:bikerInfo];
     __weak BBApiRegistrationOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideHUD:YES];
                 [SharedAPI displayError:wop.response.errorCode];
             });
             return;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            response = wop.response;
+            bikerInfo.userId = wop.response.userId;
+            bikerInfo.pin = wop.response.pin;
+            
+            [self hideHUD:NO];
             [self performSegueWithIdentifier:@"RegisterToActivateSegue" sender:nil];
         });
     }];

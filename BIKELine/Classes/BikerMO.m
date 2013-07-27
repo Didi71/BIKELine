@@ -9,8 +9,9 @@
 #import "BikerMO.h"
 
 @implementation BikerMO
-@synthesize firstName, lastName, street, postalcode, city, gender;
+@synthesize firstName, lastName, street, postalcode, city, sex;
 @synthesize eMail, pin, userId;
+
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     if ((self = [super init])) {
@@ -19,6 +20,10 @@
         }
     }
     return self;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@> - %@", NSStringFromClass([self class]), [self dictionary]];
 }
 
 - (NSDictionary *)dictionary {
@@ -44,8 +49,8 @@
         [dict setObject:city forKey:@"city"];
     }
     
-    if (gender) {
-        [dict setObject:gender forKey:@"gender"];
+    if (sex) {
+        [dict setObject:sex forKey:@"sex"];
     }
     
     if (eMail) {
@@ -62,5 +67,14 @@
     
     return dict;
 }
+
+- (void)setAvatar:(UIImage *)avatar {
+    
+}
+
+- (UIImage *)avatar {
+    
+}
+
 
 @end

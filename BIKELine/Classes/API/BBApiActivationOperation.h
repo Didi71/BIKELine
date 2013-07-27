@@ -12,6 +12,12 @@
 
 @interface BBApiActivationResponse : Jastor
 @property (nonatomic, retain) NSNumber *errorCode;
+@property (nonatomic, retain) NSNumber *userId;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *street;
+@property (nonatomic, retain) NSNumber *postalCode;
+@property (nonatomic, retain) NSString *city;
 @end
 
 @interface BBApiActivationOperation : BBApiAbstractOperation

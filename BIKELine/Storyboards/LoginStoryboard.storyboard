@@ -96,9 +96,6 @@
                                 <color key="textColor" white="0.74763734879032262" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <connections>
-                                    <action selector="textFieldValueChanged:" destination="Unw-oP-X8I" eventType="editingChanged" id="SF5-Dw-a7d"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5ht-Qf-zv0">
                                 <constraints>
@@ -518,7 +515,7 @@
         <image name="logo.png" width="200" height="126"/>
     </resources>
     <classes>
-        <class className="ActivationViewController" superclassName="UIViewController">
+        <class className="ActivationViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
             <relationships>
                 <relationship kind="action" name="activateButtonPressed:"/>
@@ -528,9 +525,13 @@
                 <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="LoginViewController" superclassName="UIViewController">
+        <class className="BLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
@@ -540,7 +541,7 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="RegistrationViewController" superclassName="UIViewController">
+        <class className="RegistrationViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cameraButtonPressed:"/>

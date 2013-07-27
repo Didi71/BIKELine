@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Christoph Lückler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BLViewController.h"
 #import "BBApiRegistrationOperation.h"
 
-@interface RegistrationViewController : UIViewController <UITextFieldDelegate> {
+@interface RegistrationViewController : BLViewController <UITextFieldDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIImageView *formularImageView;
@@ -26,9 +26,7 @@
     IBOutlet UIButton *sexFemaleButton;
     IBOutlet UIButton *registerButton;
     
-    UIImage *profilePicture;
-    
-    __block BBApiRegistrationResponse *response;
+    __block BikerMO *bikerInfo;
 }
 
 @end

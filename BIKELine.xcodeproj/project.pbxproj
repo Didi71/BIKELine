@@ -29,6 +29,9 @@
 		F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9417A2FBBE00BA2261 /* cameraButton.png */; };
 		F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */; };
 		F667B555179EFB16009E97BC /* BBApiGetPricesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */; };
+		F66D870017A38D4500E1755C /* BLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D86FF17A38D4500E1755C /* BLViewController.m */; };
+		F66D870417A38E4F00E1755C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870317A38E4F00E1755C /* MBProgressHUD.m */; };
+		F66D870717A390F100E1755C /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F66D870617A390F100E1755C /* Checkmark.png */; };
 		F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */ = {isa = PBXBuildFile; fileRef = F67CE7CC179C15EC00C018B6 /* BikerMO.m */; };
 		F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
 		F69028C8179A6889006FA715 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -136,6 +139,11 @@
 		F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraButton@2x.png"; sourceTree = "<group>"; };
 		F667B553179EFB16009E97BC /* BBApiGetPricesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetPricesOperation.h; path = Classes/API/BBApiGetPricesOperation.h; sourceTree = "<group>"; };
 		F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetPricesOperation.m; path = Classes/API/BBApiGetPricesOperation.m; sourceTree = "<group>"; };
+		F66D86FE17A38D4500E1755C /* BLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLViewController.h; path = Classes/BLViewController.h; sourceTree = "<group>"; };
+		F66D86FF17A38D4500E1755C /* BLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLViewController.m; path = Classes/BLViewController.m; sourceTree = "<group>"; };
+		F66D870217A38E4F00E1755C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F66D870317A38E4F00E1755C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F66D870617A390F100E1755C /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
 		F67CE7CB179C15EC00C018B6 /* BikerMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BikerMO.h; path = Classes/BikerMO.h; sourceTree = "<group>"; };
 		F67CE7CC179C15EC00C018B6 /* BikerMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BikerMO.m; path = Classes/BikerMO.m; sourceTree = "<group>"; };
 		F69028C0179A6680006FA715 /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLNavigationController.h; path = Classes/BLNavigationController.h; sourceTree = "<group>"; };
@@ -289,6 +297,8 @@
 				F69028C1179A6680006FA715 /* BLNavigationController.m */,
 				F61B05281799955500A08BB7 /* BLTabBarController.h */,
 				F61B05291799955500A08BB7 /* BLTabBarController.m */,
+				F66D86FE17A38D4500E1755C /* BLViewController.h */,
+				F66D86FF17A38D4500E1755C /* BLViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +366,25 @@
 				F61B05531799A9FD00A08BB7 /* zbar-samples.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F66D870117A38E4F00E1755C /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F66D870217A38E4F00E1755C /* MBProgressHUD.h */,
+				F66D870317A38E4F00E1755C /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			path = Librarys/MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		F66D870517A390F100E1755C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				F66D870617A390F100E1755C /* Checkmark.png */,
+			);
+			name = Misc;
+			path = Images/Misc;
 			sourceTree = "<group>";
 		};
 		F67CE7C7179C15B800C018B6 /* Modells */ = {
@@ -591,6 +620,7 @@
 		F6EA789A17996C0F0063B0A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F66D870517A390F100E1755C /* Misc */,
 				F60A07E117A2C44300976D61 /* Logo */,
 				F6E5F8A317A2BF850036D3C1 /* AppIcons */,
 				F6E5F8A417A2BF910036D3C1 /* Background */,
@@ -652,6 +682,7 @@
 				F6D0009F1799838200B3B8B4 /* GoogleAnalytics */,
 				F6A21D45179AA7950010D145 /* Jastor */,
 				F69028C5179A6889006FA715 /* JSONKit */,
+				F66D870117A38E4F00E1755C /* MBProgressHUD */,
 				F61B05361799A9FD00A08BB7 /* ZBar */,
 			);
 			name = Libraries;
@@ -759,6 +790,7 @@
 				F60A07E517A2C44300976D61 /* logo@2x.png in Resources */,
 				F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */,
 				F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */,
+				F66D870717A390F100E1755C /* Checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +854,8 @@
 				F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */,
 				F667B555179EFB16009E97BC /* BBApiGetPricesOperation.m in Sources */,
 				F652FF9A179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m in Sources */,
+				F66D870017A38D4500E1755C /* BLViewController.m in Sources */,
+				F66D870417A38E4F00E1755C /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

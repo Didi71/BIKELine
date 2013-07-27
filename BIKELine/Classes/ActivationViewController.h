@@ -6,18 +6,15 @@
 //  Copyright (c) 2013 Christoph Lückler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "BBApiRegistrationOperation.h"
+#import "BLViewController.h"
 
-@interface ActivationViewController : UIViewController {
+@interface ActivationViewController : BLViewController {
     IBOutlet UILabel *headerLabel;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UITextField *pinTextField;
     IBOutlet UIButton *activateButton;
 }
 
-@property (nonatomic, retain) NSNumber *registration_userId;
-@property (nonatomic, retain) NSString *registration_name;
-@property (nonatomic, retain) NSNumber *registration_pin;
+@property (nonatomic, retain) __block BikerMO *bikerInfo;
 
 @end
