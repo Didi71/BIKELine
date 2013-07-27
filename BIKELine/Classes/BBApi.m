@@ -118,7 +118,12 @@ const int kMaxRequestRetry = 5;
     return [[BBApiGetOrganisationBikersOperation alloc] initWithPath:@"getBikers.php" andParameters:parameters];
 }
 
-
+- (BBApiUploadAvatarOperation *)uploadAvatar:(NSData *)dataImg forBikerId:(NSNumber *)bikerId andPIN:(NSNumber *)pin {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: dataImg, @"image",
+                                                                           bikerId, @"id",
+                                                                           pin, @"PIN", nil];
+    return [[BBApiUploadAvatarOperation alloc] initWithPath:@"uploadAvatar.php" andParameters:parameters];
+}
 
 
 #pragma mark

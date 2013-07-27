@@ -10,6 +10,56 @@
 #import "BBApi.h"
 #import "ActivationViewController.h"
 
+static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, CGFloat radius_tr, CGFloat radius_bl, CGFloat radius_br) {
+    
+    CGContextRef context;
+    CGColorSpaceRef colorSpace;
+    
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    // create a bitmap graphics context the size of the image
+    context = CGBitmapContextCreate(NULL, rect.size.width, rect.size.height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+    
+    // free the rgb colorspace
+    CGColorSpaceRelease(colorSpace);
+    
+    if (context == NULL) {
+        return NULL;
+    }
+    
+    // cerate mask
+    CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
+    CGFloat miny = CGRectGetMinY(rect), midy = CGRectGetMidY(rect), maxy = CGRectGetMaxY(rect);
+    
+    CGContextBeginPath(context);
+    CGContextSetGrayFillColor(context, 1.0, 0.0);
+    CGContextAddRect(context, rect);
+    CGContextClosePath(context);
+    CGContextDrawPath(context, kCGPathFill);
+    
+    CGContextSetGrayFillColor(context, 1.0, 1.0);
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, minx, midy);
+    CGContextAddArcToPoint(context, minx, miny, midx, miny, radius_bl);
+    CGContextAddArcToPoint(context, maxx, miny, maxx, midy, radius_br);
+    CGContextAddArcToPoint(context, maxx, maxy, midx, maxy, radius_tr);
+    CGContextAddArcToPoint(context, minx, maxy, minx, midy, radius_tl);
+    CGContextClosePath(context);
+    CGContextDrawPath(context, kCGPathFill);
+    
+    // Create CGImageRef of the main view bitmap content, and then release that bitmap context
+    CGImageRef bitmapContext = CGBitmapContextCreateImage(context);
+    CGContextRelease(context);
+    
+    // convert the finished resized image to a UIImage
+    UIImage *theImage = [UIImage imageWithCGImage:bitmapContext];
+    // image is retained by the property setting above, so we can release the original
+    CGImageRelease(bitmapContext);
+    
+    return theImage;
+}
+
+
 @implementation RegistrationViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -23,6 +73,7 @@
 - (void)loadView {
     [super loadView];
     
+    // Set text
     [teaserLabel setText:NSLocalizedString(@"registerViewTeaserText", @"")];
     [cameraLabel setText:NSLocalizedString(@"registerViewProfilePictureText", @"")];
     [firstNameTextField setPlaceholder:NSLocalizedString(@"placeholderFirstNameTitle", @"")];
@@ -34,6 +85,13 @@
     [sexMaleButton setTitle:NSLocalizedString(@"buttonMaleTitle", @"") forState:UIControlStateNormal];
     [sexFemaleButton setTitle:NSLocalizedString(@"buttonFemaleTitle", @"") forState:UIControlStateNormal];
     [registerButton setTitle:NSLocalizedString(@"buttonRegisterTitle", @"") forState:UIControlStateNormal];
+    
+    // Layout avatar view
+    UIImage *mask = ContextCreateRoundedMask(self.view.bounds, 5.0, 0.0, 0.0, 0.0);
+    CALayer *layerMask = [CALayer layer];
+    layerMask.frame = self.view.bounds;
+    layerMask.contents = (id)mask.CGImage;
+    avatarImageView.layer.mask = layerMask;
 }
 
 
@@ -118,7 +176,21 @@
 #pragma mark - Actions
 
 - (IBAction)cameraButtonPressed:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonOpenPhotoLibraryTitle", @"")];
     
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [sheet addButtonWithTitle:NSLocalizedString(@"buttonTakeNewPhotoButtonTitle", @"")];
+    }
+    
+    if (avatarImageView.image != nil) {
+        [sheet addButtonWithTitle:NSLocalizedString(@"buttonRemoveAvatarTitle", @"")];
+    }
+    
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonCancelTitle", @"")];
+    [sheet setCancelButtonIndex:sheet.numberOfButtons - 1];
+    
+    [sheet showInView:self.view];
 }
 
 - (IBAction)sexButtonPressed:(id)sender {
@@ -241,8 +313,66 @@
     if ([textField isEqual:eMailTextField]) {
         [eMailTextField resignFirstResponder];
     }
-    
+
     return YES;
 }
 
+
+#pragma mark
+#pragma mark - UIActionSheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex < 0 || actionSheet.cancelButtonIndex == buttonIndex) {
+        return;
+    }
+    
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonOpenPhotoLibraryTitle", @"")]) {
+        UIImagePickerController *cameraPicker = [[UIImagePickerController alloc] init];
+        cameraPicker.delegate = self;
+        cameraPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:cameraPicker animated:YES completion:nil];
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonTakeNewPhotoButtonTitle", @"")]) {
+        UIImagePickerController *cameraPicker = [[UIImagePickerController alloc] init];
+        cameraPicker.delegate = self;
+        cameraPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:cameraPicker animated:YES completion:nil];
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonRemoveAvatarTitle", @"")]) {
+        [avatarImageView setImage:nil];
+        [avatarImageView setHidden:YES];
+        [cameraImageView setHidden:NO];
+        [cameraLabel setHidden:NO];
+    }
+}
+
+
+#pragma mark
+#pragma mark - UIImagePickerController delegate methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *selectedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil);
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    bikerInfo.avatar = [BLUtils resizeImage:selectedImage toSize:CGSizeMake(200.0, 200.0) withCompression:0.75];
+    
+    [avatarImageView setImage:selectedImage];
+    [avatarImageView setHidden:NO];
+    [cameraImageView setHidden:YES];
+    [cameraLabel setHidden:YES];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
+
+
+
+#pragma mark
+#pragma mark - Inline functions
+

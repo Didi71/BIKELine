@@ -10,7 +10,7 @@
 
 @implementation BikerMO
 @synthesize firstName, lastName, street, postalcode, city, sex;
-@synthesize eMail, pin, userId;
+@synthesize eMail, pin, userId, teamId;
 
 
 - (id)initWithDictionary:(NSDictionary *)dict {
@@ -65,16 +65,25 @@
         [dict setObject:userId forKey:@"userId"];
     }
     
+    if (teamId) {
+        [dict setObject:teamId forKey:@"teamId"];
+    }
+    
     return dict;
 }
 
 - (void)setAvatar:(UIImage *)avatar {
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:@"Avatar.jpeg"];
     
+    [UIImageJPEGRepresentation(avatar, 1.0) writeToFile:filePath atomically:YES];
 }
 
 - (UIImage *)avatar {
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:@"Avatar.jpeg"];
     
+    return [UIImage imageWithData:[NSData dataWithContentsOfFile:filePath]];
 }
-
 
 @end

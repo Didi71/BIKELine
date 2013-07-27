@@ -21,6 +21,7 @@
 @property (nonatomic, retain) UIImage *avatar;
 
 @property (nonatomic, retain) NSNumber *userId;
+@property (nonatomic, retain) NSNumber *teamId;
 @property (nonatomic, retain) NSString *eMail;
 @property (nonatomic, retain) NSNumber *pin;
 

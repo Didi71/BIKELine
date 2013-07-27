@@ -13,5 +13,6 @@
     #import <Foundation/Foundation.h>
     #import "GAI.h"
     #import "Constants.h"
+    #import "BLUtils.h"
     #import "NSUserDefaults+BIKELine.h"
 #endif

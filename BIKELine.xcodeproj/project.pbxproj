@@ -35,6 +35,7 @@
 		F66D870A17A395CE00E1755C /* BBApiGetProvincesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */; };
 		F66D870D17A3965100E1755C /* BBApiGetOrganisationsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */; };
 		F66D871017A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */; };
+		F66D871317A3B30A00E1755C /* BBApiUploadAvatarOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */; };
 		F67CE7CD179C15EC00C018B6 /* BikerMO.m in Sources */ = {isa = PBXBuildFile; fileRef = F67CE7CC179C15EC00C018B6 /* BikerMO.m */; };
 		F69028C2179A6680006FA715 /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
 		F69028C8179A6889006FA715 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -153,6 +154,8 @@
 		F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetOrganisationsOperation.m; path = Classes/API/BBApiGetOrganisationsOperation.m; sourceTree = "<group>"; };
 		F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetOrganisationBikersOperation.h; path = Classes/API/BBApiGetOrganisationBikersOperation.h; sourceTree = "<group>"; };
 		F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetOrganisationBikersOperation.m; path = Classes/API/BBApiGetOrganisationBikersOperation.m; sourceTree = "<group>"; };
+		F66D871117A3B30900E1755C /* BBApiUploadAvatarOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiUploadAvatarOperation.h; path = Classes/API/BBApiUploadAvatarOperation.h; sourceTree = "<group>"; };
+		F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiUploadAvatarOperation.m; path = Classes/API/BBApiUploadAvatarOperation.m; sourceTree = "<group>"; };
 		F67CE7CB179C15EC00C018B6 /* BikerMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BikerMO.h; path = Classes/BikerMO.h; sourceTree = "<group>"; };
 		F67CE7CC179C15EC00C018B6 /* BikerMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BikerMO.m; path = Classes/BikerMO.m; sourceTree = "<group>"; };
 		F69028C0179A6680006FA715 /* BLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLNavigationController.h; path = Classes/BLNavigationController.h; sourceTree = "<group>"; };
@@ -293,8 +296,8 @@
 		F61B0526179994F300A08BB7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				F67CE7C7179C15B800C018B6 /* Modells */,
 				F61B05271799950200A08BB7 /* Controllers */,
+				F67CE7C7179C15B800C018B6 /* Modells */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -456,6 +459,8 @@
 				F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */,
 				F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */,
 				F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */,
+				F66D871117A3B30900E1755C /* BBApiUploadAvatarOperation.h */,
+				F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */,
 			);
 			name = "API Classes";
 			sourceTree = "<group>";
@@ -874,6 +879,7 @@
 				F66D870A17A395CE00E1755C /* BBApiGetProvincesOperation.m in Sources */,
 				F66D870D17A3965100E1755C /* BBApiGetOrganisationsOperation.m in Sources */,
 				F66D871017A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m in Sources */,
+				F66D871317A3B30A00E1755C /* BBApiUploadAvatarOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

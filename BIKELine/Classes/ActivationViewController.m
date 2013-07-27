@@ -8,6 +8,7 @@
 
 #import "ActivationViewController.h"
 #import "BBApi.h"
+#import "TeamViewController.h"
 
 @implementation ActivationViewController
 @synthesize bikerInfo;
@@ -44,6 +45,11 @@
     [self.view endEditing:YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TeamViewController *nextView = [segue destinationViewController];
+    nextView.bikerInfo = bikerInfo;
+}
+
 
 #pragma mark
 #pragma mark - Actions
@@ -52,6 +58,8 @@
     if (pinTextField.text.length == 0) {
         return;
     }
+    
+    bikerInfo.pin = [NSNumber numberWithDouble:[pinTextField.text doubleValue]];
 
     // Display progressHUD
     [self.view endEditing:YES];
@@ -62,7 +70,7 @@
     
     // Call API
     BBApiActivationOperation *op = [SharedAPI activateUserWithId: bikerInfo.userId
-                                               andActivationCode: [NSNumber numberWithDouble:[pinTextField.text doubleValue]]];
+                                               andActivationCode: bikerInfo.pin];
     __weak BBApiActivationOperation *wop = op;
     
     [op setCompletionBlock:^{
@@ -81,12 +89,32 @@
             bikerInfo.city = wop.response.city;
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [BLStandardUserDefaults setBiker:bikerInfo];
+        if (bikerInfo.avatar) {
+            [self showHUDWithProgressMessage: NSLocalizedString(@"progressUploadAvatarText", @"")
+                           andSuccessMessage: nil];
             
-            [self hideHUD:NO];
-            [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
-        });
+            BBApiUploadAvatarOperation *op2 = [SharedAPI uploadAvatar: UIImageJPEGRepresentation(bikerInfo.avatar, 1.0)
+                                                           forBikerId: bikerInfo.userId
+                                                               andPIN: bikerInfo.pin];
+            
+            [op2 setCompletionBlock:^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [BLStandardUserDefaults setBiker:bikerInfo];
+                    
+                    [self hideHUD:NO];
+                    [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
+                });
+            }];
+            
+            [SharedAPI.queue addOperation:op2];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [BLStandardUserDefaults setBiker:bikerInfo];
+                
+                [self hideHUD:NO];
+                [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
+            });
+        }
     }];
     
     [SharedAPI.queue addOperation:op];

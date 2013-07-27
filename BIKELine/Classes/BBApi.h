@@ -17,6 +17,7 @@
 #import "BBApiGetProvincesOperation.h"
 #import "BBApiGetOrganisationsOperation.h"
 #import "BBApiGetOrganisationBikersOperation.h"
+#import "BBApiUploadAvatarOperation.h"
 
 #define SharedAPI [BBApi sharedAPI]
 
@@ -39,6 +40,7 @@
 - (BBApiGetProvincesOperation *)getProvinces;
 - (BBApiGetOrganisationsOperation *)getOrganisationsForProvince:(NSString *)prov;
 - (BBApiGetOrganisationBikersOperation *)getBikersInOrganisation:(NSNumber *)orgId;
+- (BBApiUploadAvatarOperation *)uploadAvatar:(NSData *)dataImg forBikerId:(NSNumber *)bikerId andPIN:(NSNumber *)pin;
 
 - (void)displayError:(NSNumber *)errorCode;
 

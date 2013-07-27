@@ -10,4 +10,6 @@
 
 @interface BLUtils : NSObject
 
++ (UIImage *)resizeImage:(UIImage *)originalImg toSize:(CGSize)newSize withCompression:(float)compression;
+
 @end

@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "BBApi.h"
-#import "AppDelegate.h"
 #import "ActivationViewController.h"
 
 @implementation LoginViewController

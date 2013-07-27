@@ -95,8 +95,8 @@
                             <segments>
                                 <segment title="Facts"/>
                                 <segment title="Checkins"/>
-                                <segment title=""/>
-                                <segment title=""/>
+                                <segment title="Team"/>
+                                <segment title="Preise"/>
                             </segments>
                             <connections>
                                 <action selector="segmentControlChangedValue:" destination="3fK-DN-J0H" eventType="valueChanged" id="bp3-SG-Ha4"/>
@@ -182,7 +182,6 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="segmentControlChangedValue:"/>
                 <relationship kind="outlet" name="checkinsView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>

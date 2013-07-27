@@ -7,13 +7,15 @@
 //
 
 #import "BLViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import "BBApiRegistrationOperation.h"
 
-@interface RegistrationViewController : BLViewController <UITextFieldDelegate> {
+@interface RegistrationViewController : BLViewController <UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     IBOutlet UIScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIImageView *formularImageView;
     IBOutlet UIImageView *cameraImageView;
+    IBOutlet UIImageView *avatarImageView;
     IBOutlet UILabel *cameraLabel;
     IBOutlet UITextField *firstNameTextField;
     IBOutlet UITextField *lastNameTextField;
