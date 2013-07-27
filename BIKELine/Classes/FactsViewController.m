@@ -10,6 +10,9 @@
 
 @implementation FactsViewController
 
+const int kFactsViewSubViewFactsTag = 1;
+const int kFactsViewSubViewTableTag = 2;
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
