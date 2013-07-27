@@ -9,9 +9,10 @@
 #import "BLViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "BBApiRegistrationOperation.h"
+#import "BLScrollView.h"
 
 @interface RegistrationViewController : BLViewController <UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    IBOutlet UIScrollView *scrollView;
+    IBOutlet BLScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIImageView *formularImageView;
     IBOutlet UIImageView *cameraImageView;

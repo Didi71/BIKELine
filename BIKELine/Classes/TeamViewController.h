@@ -7,9 +7,10 @@
 //
 
 #import "BLViewController.h"
+#import "BLScrollView.h"
 
 @interface TeamViewController : BLViewController {
-    IBOutlet UIScrollView *scrollView;
+    IBOutlet BLScrollView *scrollView;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UIButton *provinceButton;
     IBOutlet UIButton *organisationButton;

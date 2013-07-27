@@ -149,33 +149,21 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    NSTimeInterval animationDuration;
-    UIViewAnimationCurve animationCurve;
-    
-    [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
-    [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationCurve:animationCurve];
-    [UIView setAnimationDuration:animationDuration];
-    
     [scrollView setFrame:CGRectMake(scrollView.frame.origin.x,
                                     scrollView.frame.origin.y,
                                     scrollView.frame.size.width,
                                     self.view.frame.size.height)];
     
-    [UIView commitAnimations];
-    
-    [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width, registerButton.frame.origin.y + registerButton.frame.size.height + 10.0)];
     [scrollView setScrollEnabled:NO];
 }
-
 
 
 #pragma mark
 #pragma mark - Actions
 
 - (IBAction)cameraButtonPressed:(id)sender {
+    [self.view endEditing:YES];
+    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     [sheet addButtonWithTitle:NSLocalizedString(@"buttonOpenPhotoLibraryTitle", @"")];
     
@@ -370,9 +358,4 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
 }
 
 @end
-
-
-
-#pragma mark
-#pragma mark - Inline functions
 

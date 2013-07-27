@@ -7,8 +7,10 @@
 //
 
 #import "BLViewController.h"
+#import "BLScrollView.h"
 
 @interface ActivationViewController : BLViewController {
+    IBOutlet BLScrollView *scrollView;
     IBOutlet UILabel *headerLabel;
     IBOutlet UILabel *teaserLabel;
     IBOutlet UITextField *pinTextField;

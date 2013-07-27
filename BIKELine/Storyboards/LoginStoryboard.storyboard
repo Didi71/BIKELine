@@ -169,7 +169,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="eAi-VW-aN5" userLabel="Image View - Background"/>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-XF-mw7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-XF-mw7" customClass="BLScrollView">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="06a-am-Ucm" userLabel="Label - Teaser">
                                         <constraints>
@@ -426,63 +426,73 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="llF-7l-xtL" userLabel="Image View - Background"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZn-z1-Bb4" userLabel="Label - Teaser Name">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vom-vt-A7J" customClass="BLScrollView">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZn-z1-Bb4" userLabel="Label - Teaser Name">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="axb-XF-dRZ" userLabel="Label - Teaser Text">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="R96-GQ-bJd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="PIN" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="emptyButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="KeZ-WH-FiG">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="OAL-Yb-jeh"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCw-Bs-wlm">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="Aktivieren" backgroundImage="LoginButton.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="activateButtonPressed:" destination="YTf-yK-q5X" eventType="touchUpInside" id="uYO-Ab-APi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="PM6-ZG-6Xg"/>
+                                    <constraint firstItem="BCw-Bs-wlm" firstAttribute="centerX" secondItem="vom-vt-A7J" secondAttribute="centerX" type="default" id="1Sb-PV-3uW"/>
+                                    <constraint firstAttribute="bottom" secondItem="BCw-Bs-wlm" secondAttribute="bottom" constant="287" id="DBc-3e-WKN"/>
+                                    <constraint firstItem="axb-XF-dRZ" firstAttribute="top" secondItem="zZn-z1-Bb4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NaT-yL-5Mt"/>
+                                    <constraint firstItem="BCw-Bs-wlm" firstAttribute="top" secondItem="vom-vt-A7J" secondAttribute="top" constant="173" id="OqL-uJ-Ie6"/>
+                                    <constraint firstItem="axb-XF-dRZ" firstAttribute="top" secondItem="vom-vt-A7J" secondAttribute="top" constant="53" id="Qqk-2q-5N1"/>
+                                    <constraint firstItem="BCw-Bs-wlm" firstAttribute="top" secondItem="KeZ-WH-FiG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WRN-ai-aJ4"/>
+                                    <constraint firstItem="zZn-z1-Bb4" firstAttribute="leading" secondItem="vom-vt-A7J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bmA-m2-pB1"/>
+                                    <constraint firstAttribute="trailing" secondItem="BCw-Bs-wlm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bx2-Ev-Vy9"/>
+                                    <constraint firstAttribute="trailing" secondItem="axb-XF-dRZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hPw-RF-7xh"/>
+                                    <constraint firstAttribute="trailing" secondItem="zZn-z1-Bb4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jwc-oq-JbR"/>
+                                    <constraint firstItem="zZn-z1-Bb4" firstAttribute="top" secondItem="vom-vt-A7J" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lYj-LL-ZbP"/>
+                                    <constraint firstAttribute="trailing" secondItem="KeZ-WH-FiG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mfw-EQ-g41"/>
+                                    <constraint firstItem="KeZ-WH-FiG" firstAttribute="leading" secondItem="vom-vt-A7J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vay-Ep-adZ"/>
+                                    <constraint firstItem="axb-XF-dRZ" firstAttribute="leading" secondItem="vom-vt-A7J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xaB-vC-n8o"/>
+                                    <constraint firstItem="BCw-Bs-wlm" firstAttribute="leading" secondItem="vom-vt-A7J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xi3-3L-daw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="axb-XF-dRZ" userLabel="Label - Teaser Text">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="R96-GQ-bJd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="PIN" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="emptyButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="KeZ-WH-FiG">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="OAL-Yb-jeh"/>
-                                </constraints>
-                                <color key="textColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCw-Bs-wlm">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                                <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="Aktivieren" backgroundImage="LoginButton.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="activateButtonPressed:" destination="YTf-yK-q5X" eventType="touchUpInside" id="uYO-Ab-APi"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zZn-z1-Bb4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0Mq-Em-3Eu"/>
-                            <constraint firstItem="KeZ-WH-FiG" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" constant="121" id="1yn-B0-dRI"/>
-                            <constraint firstItem="BCw-Bs-wlm" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4z3-cu-kEN"/>
-                            <constraint firstAttribute="trailing" secondItem="BCw-Bs-wlm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8Rr-7I-kIO"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="trailing" secondItem="BNg-ea-9ei" secondAttribute="trailing" type="default" id="BvB-rw-2cV"/>
-                            <constraint firstItem="zZn-z1-Bb4" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FHb-Km-4mP"/>
-                            <constraint firstAttribute="trailing" secondItem="KeZ-WH-FiG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JNy-Ci-025"/>
-                            <constraint firstItem="axb-XF-dRZ" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OGD-PU-OHk"/>
-                            <constraint firstAttribute="trailing" secondItem="axb-XF-dRZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QMc-1n-QCF"/>
+                            <constraint firstItem="vom-vt-A7J" firstAttribute="bottom" secondItem="BNg-ea-9ei" secondAttribute="bottom" type="default" id="DTn-7Y-oB7"/>
+                            <constraint firstItem="vom-vt-A7J" firstAttribute="trailing" secondItem="BNg-ea-9ei" secondAttribute="trailing" type="default" id="Drj-dw-3Ei"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" type="default" id="Z2i-G8-4N5"/>
+                            <constraint firstItem="vom-vt-A7J" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" type="default" id="ZCn-cC-xnS"/>
+                            <constraint firstItem="vom-vt-A7J" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" type="default" id="bKE-mw-1dU"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="bottom" secondItem="BNg-ea-9ei" secondAttribute="bottom" type="default" id="f5c-uf-buF"/>
-                            <constraint firstItem="axb-XF-dRZ" firstAttribute="top" secondItem="zZn-z1-Bb4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r2S-yL-1MF"/>
-                            <constraint firstItem="zZn-z1-Bb4" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sFe-Wz-ste"/>
-                            <constraint firstItem="KeZ-WH-FiG" firstAttribute="leading" secondItem="BNg-ea-9ei" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sa1-UW-fPn"/>
                             <constraint firstItem="llF-7l-xtL" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" type="default" id="xjg-gd-B8Q"/>
-                            <constraint firstItem="BCw-Bs-wlm" firstAttribute="top" secondItem="BNg-ea-9ei" secondAttribute="top" constant="178" id="xq2-0Y-QXy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rKg-4a-aij"/>
@@ -491,6 +501,7 @@
                         <outlet property="activateButton" destination="BCw-Bs-wlm" id="J02-AQ-zpO"/>
                         <outlet property="headerLabel" destination="zZn-z1-Bb4" id="gZI-bq-4RA"/>
                         <outlet property="pinTextField" destination="KeZ-WH-FiG" id="XMB-79-SR2"/>
+                        <outlet property="scrollView" destination="vom-vt-A7J" id="FcU-XK-y7A"/>
                         <outlet property="teaserLabel" destination="axb-XF-dRZ" id="dbv-5g-cyT"/>
                         <segue destination="wg0-LO-i00" kind="push" identifier="ActivateToTeamSegue" id="WxJ-0V-G2H"/>
                     </connections>
@@ -508,7 +519,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="mut-ao-3JL" userLabel="Image View - Background"/>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50c-Po-LKV">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50c-Po-LKV" customClass="BLScrollView">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KKC-Mc-MAB" userLabel="Label - Teaser Text">
                                         <constraints>
@@ -654,8 +665,12 @@
                 <relationship kind="outlet" name="activateButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
                 <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="BLScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
         </class>
         <class className="BLViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
@@ -697,7 +712,7 @@
                 <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="postalCodeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
                 <relationship kind="outlet" name="sexFemaleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sexMaleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="streetTextField" candidateClass="UITextField"/>
@@ -712,7 +727,7 @@
                 <relationship kind="outlet" name="joinButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="organisationButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="provinceButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
                 <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="teamButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>

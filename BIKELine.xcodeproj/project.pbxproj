@@ -26,6 +26,7 @@
 		F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
 		F64B897017A3E4F800392CD7 /* LoginChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */; };
+		F64B897317A3EBC800392CD7 /* BLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B897217A3EBC800392CD7 /* BLScrollView.m */; };
 		F652FF9A179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */; };
 		F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9417A2FBBE00BA2261 /* cameraButton.png */; };
 		F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */; };
@@ -140,6 +141,8 @@
 		F61B05631799AA4C00A08BB7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		F64B896E17A3E4F800392CD7 /* LoginChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginChooserViewController.h; path = Classes/LoginChooserViewController.h; sourceTree = "<group>"; };
 		F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginChooserViewController.m; path = Classes/LoginChooserViewController.m; sourceTree = "<group>"; };
+		F64B897117A3EBC800392CD7 /* BLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLScrollView.h; path = Classes/BLScrollView.h; sourceTree = "<group>"; };
+		F64B897217A3EBC800392CD7 /* BLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLScrollView.m; path = Classes/BLScrollView.m; sourceTree = "<group>"; };
 		F652FF98179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetCheckPointsOperation.h; path = Classes/API/BBApiGetCheckPointsOperation.h; sourceTree = "<group>"; };
 		F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetCheckPointsOperation.m; path = Classes/API/BBApiGetCheckPointsOperation.m; sourceTree = "<group>"; };
 		F6646F9417A2FBBE00BA2261 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraButton.png; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				F61B05291799955500A08BB7 /* BLTabBarController.m */,
 				F66D86FE17A38D4500E1755C /* BLViewController.h */,
 				F66D86FF17A38D4500E1755C /* BLViewController.m */,
+				F64B897117A3EBC800392CD7 /* BLScrollView.h */,
+				F64B897217A3EBC800392CD7 /* BLScrollView.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -886,6 +891,7 @@
 				F66D871017A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m in Sources */,
 				F66D871317A3B30A00E1755C /* BBApiUploadAvatarOperation.m in Sources */,
 				F64B897017A3E4F800392CD7 /* LoginChooserViewController.m in Sources */,
+				F64B897317A3EBC800392CD7 /* BLScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
