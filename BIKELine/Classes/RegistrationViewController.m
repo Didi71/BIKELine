@@ -345,9 +345,9 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
-    bikerInfo.avatar = [BLUtils resizeImage:selectedImage toSize:CGSizeMake(200.0, 200.0) withCompression:0.75];
+    UIImage *resizedImage = bikerInfo.avatar = [BLUtils resizeImage:selectedImage toSize:CGSizeMake(240.0, 360.0) withCompression:0.85];
     
-    [avatarImageView setImage:selectedImage];
+    [avatarImageView setImage:resizedImage];
     [avatarImageView setHidden:NO];
     [cameraImageView setHidden:YES];
     [cameraLabel setHidden:YES];
