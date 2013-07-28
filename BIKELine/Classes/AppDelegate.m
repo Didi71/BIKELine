@@ -29,14 +29,18 @@
 #endif
 
     
-//    BikerMO *biker = BLStandardUserDefaults.biker;
-//    if (biker.userId && biker.eMail && biker.pin) {
-//        [self loadMainStoryboard];
-//    } else {
-//        [self loadLoginStoryboard];
-//    }
+// When we are in debug mode then reset biker to prevent auto-login
+#ifdef DEBUG
+    [BLStandardUserDefaults setBiker:nil];
+#endif
     
-    [self loadLoginStoryboard];
+    // Check if user is loggedin 
+    BikerMO *biker = BLStandardUserDefaults.biker;
+    if (biker.userId && biker.eMail && biker.pin) {
+        [self loadMainStoryboard];
+    } else {
+        [self loadLoginStoryboard];
+    }
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

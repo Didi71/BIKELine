@@ -22,7 +22,13 @@
 
 - (void)setBiker:(BikerMO *)biker {
 	[[NSUserDefaults standardUserDefaults] setObject:biker.dictionary forKey:@"biker"];
-	[[NSUserDefaults standardUserDefaults] synchronize]; 
+	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if (biker == nil) {
+        NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *filePath = [documentPath stringByAppendingPathComponent:@"Avatar.jpeg"];
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
 }
 
 @end
