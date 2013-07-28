@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F6EA787317996BC30063B0A5"
                BuildableName = "bikeline-ios.app"
-               BlueprintName = "BIKELine"
+               BlueprintName = "BIKELine (Live)"
                ReferencedContainer = "container:BIKELine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F6EA787317996BC30063B0A5"
             BuildableName = "bikeline-ios.app"
-            BlueprintName = "BIKELine"
+            BlueprintName = "BIKELine (Live)"
             ReferencedContainer = "container:BIKELine.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,7 +53,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F6EA787317996BC30063B0A5"
             BuildableName = "bikeline-ios.app"
-            BlueprintName = "BIKELine"
+            BlueprintName = "BIKELine (Live)"
             ReferencedContainer = "container:BIKELine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,7 +71,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F6EA787317996BC30063B0A5"
             BuildableName = "bikeline-ios.app"
-            BlueprintName = "BIKELine"
+            BlueprintName = "BIKELine (Live)"
             ReferencedContainer = "container:BIKELine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

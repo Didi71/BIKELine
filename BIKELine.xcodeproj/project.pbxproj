@@ -7,6 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6055EE017A566590001271E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA788317996BC30063B0A5 /* main.m */; };
+		F6055EE117A566590001271E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA788717996BC30063B0A5 /* AppDelegate.m */; };
+		F6055EE217A566590001271E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA789317996BC30063B0A5 /* LoginViewController.m */; };
+		F6055EE317A566590001271E /* BBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A31799776D0063B0A5 /* BBApi.m */; };
+		F6055EE417A566590001271E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EA78A9179980DA0063B0A5 /* Constants.m */; };
+		F6055EE517A566590001271E /* BLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05291799955500A08BB7 /* BLTabBarController.m */; };
+		F6055EE617A566590001271E /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B052C1799982A00A08BB7 /* RegistrationViewController.m */; };
+		F6055EE717A566590001271E /* ActivationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B052F1799984200A08BB7 /* ActivationViewController.m */; };
+		F6055EE817A566590001271E /* QRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05321799997200A08BB7 /* QRReaderViewController.m */; };
+		F6055EE917A566590001271E /* BLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C1179A6680006FA715 /* BLNavigationController.m */; };
+		F6055EEA17A566590001271E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028C7179A6889006FA715 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6055EEB17A566590001271E /* FactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028CA179A6920006FA715 /* FactsViewController.m */; };
+		F6055EEC17A566590001271E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028CD179A6937006FA715 /* MapViewController.m */; };
+		F6055EED17A566590001271E /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028D0179A694C006FA715 /* TeamViewController.m */; };
+		F6055EEE17A566590001271E /* NSUserDefaults+BIKELine.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */; };
+		F6055EEF17A566590001271E /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A80179A700B006B4B72 /* AccountService.m */; };
+		F6055EF017A566590001271E /* CheckinService.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A83179A7087006B4B72 /* CheckinService.m */; };
+		F6055EF117A566590001271E /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A86179A7138006B4B72 /* BLUtils.m */; };
+		F6055EF217A566590001271E /* BBApiAbstractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */; };
+		F6055EF317A566590001271E /* BBApiRegistrationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */; };
+		F6055EF417A566590001271E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D33179AA7950010D145 /* AFHTTPClient.m */; };
+		F6055EF517A566590001271E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D35179AA7950010D145 /* AFHTTPRequestOperation.m */; };
+		F6055EF617A566590001271E /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D37179AA7950010D145 /* AFImageRequestOperation.m */; };
+		F6055EF717A566590001271E /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D39179AA7950010D145 /* AFJSONRequestOperation.m */; };
+		F6055EF817A566590001271E /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D3B179AA7950010D145 /* AFNetworkActivityIndicatorManager.m */; };
+		F6055EF917A566590001271E /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D3E179AA7950010D145 /* AFPropertyListRequestOperation.m */; };
+		F6055EFA17A566590001271E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D40179AA7950010D145 /* AFURLConnectionOperation.m */; };
+		F6055EFB17A566590001271E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D42179AA7950010D145 /* AFXMLRequestOperation.m */; };
+		F6055EFC17A566590001271E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D44179AA7950010D145 /* UIImageView+AFNetworking.m */; };
+		F6055EFD17A566590001271E /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D47179AA7950010D145 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6055EFE17A566590001271E /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6055EFF17A566590001271E /* BBApiLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */; };
+		F6055F0017A566590001271E /* BBApiActivationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */; };
+		F6055F0117A566590001271E /* BBApiCheckinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */; };
+		F6055F0217A566590001271E /* BikerMO.m in Sources */ = {isa = PBXBuildFile; fileRef = F67CE7CC179C15EC00C018B6 /* BikerMO.m */; };
+		F6055F0317A566590001271E /* BBApiGetPricesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */; };
+		F6055F0417A566590001271E /* BBApiGetCheckPointsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */; };
+		F6055F0517A566590001271E /* BLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D86FF17A38D4500E1755C /* BLViewController.m */; };
+		F6055F0617A566590001271E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870317A38E4F00E1755C /* MBProgressHUD.m */; };
+		F6055F0717A566590001271E /* BBApiGetProvincesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */; };
+		F6055F0817A566590001271E /* BBApiGetOrganisationsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */; };
+		F6055F0917A566590001271E /* BBApiGetOrganisationBikersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */; };
+		F6055F0A17A566590001271E /* BBApiUploadAvatarOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */; };
+		F6055F0B17A566590001271E /* LoginChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */; };
+		F6055F0C17A566590001271E /* BLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B897217A3EBC800392CD7 /* BLScrollView.m */; };
+		F6055F0D17A566590001271E /* JoinTeamSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */; };
+		F6055F0F17A566590001271E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69028D7179A6CF4006FA715 /* MapKit.framework */; };
+		F6055F1017A566590001271E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
+		F6055F1117A566590001271E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
+		F6055F1217A566590001271E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055D1799AA3400A08BB7 /* QuartzCore.framework */; };
+		F6055F1317A566590001271E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055B1799AA2F00A08BB7 /* CoreMedia.framework */; };
+		F6055F1417A566590001271E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05591799AA2700A08BB7 /* AudioToolbox.framework */; };
+		F6055F1517A566590001271E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B2179985EB00B3B8B4 /* CoreData.framework */; };
+		F6055F1617A566590001271E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */; };
+		F6055F1717A566590001271E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787717996BC30063B0A5 /* UIKit.framework */; };
+		F6055F1817A566590001271E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787917996BC30063B0A5 /* Foundation.framework */; };
+		F6055F1917A566590001271E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787B17996BC30063B0A5 /* CoreGraphics.framework */; };
+		F6055F1A17A566590001271E /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
+		F6055F1B17A566590001271E /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
+		F6055F1C17A566590001271E /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A61799838200B3B8B4 /* libGoogleAnalytics_debug.a */; };
+		F6055F1D17A566590001271E /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */; };
+		F6055F1E17A566590001271E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B054E1799A9FD00A08BB7 /* libzbar.a */; };
+		F6055F2017A566590001271E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788917996BC30063B0A5 /* Default.png */; };
+		F6055F2117A566590001271E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788B17996BC30063B0A5 /* Default@2x.png */; };
+		F6055F2217A566590001271E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788D17996BC30063B0A5 /* Default-568h@2x.png */; };
+		F6055F2317A566590001271E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EA789F179971B80063B0A5 /* MainStoryboard.storyboard */; };
+		F6055F2417A566590001271E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61B05341799A6F100A08BB7 /* Localizable.strings */; };
+		F6055F2517A566590001271E /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = F61B05501799A9FD00A08BB7 /* zbar-back.png */; };
+		F6055F2617A566590001271E /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = F61B05511799A9FD00A08BB7 /* zbar-help.html */; };
+		F6055F2717A566590001271E /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = F61B05521799A9FD00A08BB7 /* zbar-helpicons.png */; };
+		F6055F2817A566590001271E /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = F61B05531799A9FD00A08BB7 /* zbar-samples.png */; };
+		F6055F2917A566590001271E /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */; };
+		F6055F2A17A566590001271E /* background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A517A2BFE70036D3C1 /* background-568h@2x.png */; };
+		F6055F2B17A566590001271E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A617A2BFE70036D3C1 /* background.png */; };
+		F6055F2C17A566590001271E /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A717A2BFE70036D3C1 /* background@2x.png */; };
+		F6055F2D17A566590001271E /* RegisterFormBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8AB17A2C0FC0036D3C1 /* RegisterFormBackground.png */; };
+		F6055F2E17A566590001271E /* RegisterFormBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8AC17A2C0FC0036D3C1 /* RegisterFormBackground@2x.png */; };
+		F6055F2F17A566590001271E /* emptyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B017A2C1070036D3C1 /* emptyButton.png */; };
+		F6055F3017A566590001271E /* emptyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B117A2C1070036D3C1 /* emptyButton@2x.png */; };
+		F6055F3117A566590001271E /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B217A2C1070036D3C1 /* LoginButton.png */; };
+		F6055F3217A566590001271E /* LoginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B317A2C1070036D3C1 /* LoginButton@2x.png */; };
+		F6055F3317A566590001271E /* RegisterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B417A2C1070036D3C1 /* RegisterButton.png */; };
+		F6055F3417A566590001271E /* RegisterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8B517A2C1070036D3C1 /* RegisterButton@2x.png */; };
+		F6055F3517A566590001271E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F60A07E217A2C44300976D61 /* logo.png */; };
+		F6055F3617A566590001271E /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F60A07E317A2C44300976D61 /* logo@2x.png */; };
+		F6055F3717A566590001271E /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9417A2FBBE00BA2261 /* cameraButton.png */; };
+		F6055F3817A566590001271E /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */; };
+		F6055F3917A566590001271E /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F66D870617A390F100E1755C /* Checkmark.png */; };
+		F6055F3A17A566590001271E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F64B897417A3F20000392CD7 /* Icon.png */; };
+		F6055F3B17A566590001271E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F64B897517A3F20000392CD7 /* Icon@2x.png */; };
+		F6055F3C17A566590001271E /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938D17A50CB5003FD895 /* backButton.png */; };
+		F6055F3D17A566590001271E /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938E17A50CB5003FD895 /* backButton@2x.png */; };
+		F6055F3E17A566590001271E /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = F637939117A50FD3003FD895 /* navbar.png */; };
+		F6055F3F17A566590001271E /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F637939217A50FD3003FD895 /* navbar@2x.png */; };
 		F60A07E417A2C44300976D61 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F60A07E217A2C44300976D61 /* logo.png */; };
 		F60A07E517A2C44300976D61 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F60A07E317A2C44300976D61 /* logo@2x.png */; };
 		F61B052A1799955500A08BB7 /* BLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B05291799955500A08BB7 /* BLTabBarController.m */; };
@@ -104,6 +198,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F6055F4417A566590001271E /* bikeline-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bikeline-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6055F4517A566590001271E /* BIKELine-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BIKELine-Test-Info.plist"; sourceTree = "<group>"; };
 		F60A07E217A2C44300976D61 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		F60A07E317A2C44300976D61 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		F61B05281799955500A08BB7 /* BLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLTabBarController.h; path = Classes/BLTabBarController.h; sourceTree = "<group>"; };
@@ -278,6 +374,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F6055F0E17A566590001271E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6055F0F17A566590001271E /* MapKit.framework in Frameworks */,
+				F6055F1017A566590001271E /* CoreVideo.framework in Frameworks */,
+				F6055F1117A566590001271E /* AVFoundation.framework in Frameworks */,
+				F6055F1217A566590001271E /* QuartzCore.framework in Frameworks */,
+				F6055F1317A566590001271E /* CoreMedia.framework in Frameworks */,
+				F6055F1417A566590001271E /* AudioToolbox.framework in Frameworks */,
+				F6055F1517A566590001271E /* CoreData.framework in Frameworks */,
+				F6055F1617A566590001271E /* SystemConfiguration.framework in Frameworks */,
+				F6055F1717A566590001271E /* UIKit.framework in Frameworks */,
+				F6055F1817A566590001271E /* Foundation.framework in Frameworks */,
+				F6055F1917A566590001271E /* CoreGraphics.framework in Frameworks */,
+				F6055F1A17A566590001271E /* libiconv.2.4.0.dylib in Frameworks */,
+				F6055F1B17A566590001271E /* libGoogleAnalytics.a in Frameworks */,
+				F6055F1C17A566590001271E /* libGoogleAnalytics_debug.a in Frameworks */,
+				F6055F1D17A566590001271E /* libCrittercism_v4_0_2.a in Frameworks */,
+				F6055F1E17A566590001271E /* libzbar.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6EA787117996BC30063B0A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				F6EA787417996BC30063B0A5 /* bikeline-ios.app */,
+				F6055F4417A566590001271E /* bikeline-ios-test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -698,6 +818,7 @@
 				F6EA789B17996C1C0063B0A5 /* Storyboards */,
 				F6EA789A17996C0F0063B0A5 /* Images */,
 				F6EA787F17996BC30063B0A5 /* BIKELine-Info.plist */,
+				F6055F4517A566590001271E /* BIKELine-Test-Info.plist */,
 				F61B05341799A6F100A08BB7 /* Localizable.strings */,
 				F6EA788317996BC30063B0A5 /* main.m */,
 				F6EA788517996BC30063B0A5 /* BIKELine-Prefix.pch */,
@@ -809,9 +930,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F6EA787317996BC30063B0A5 /* BIKELine */ = {
+		F6055EDE17A566590001271E /* BIKELine (Test) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6EA789717996BC30063B0A5 /* Build configuration list for PBXNativeTarget "BIKELine" */;
+			buildConfigurationList = F6055F4117A566590001271E /* Build configuration list for PBXNativeTarget "BIKELine (Test)" */;
+			buildPhases = (
+				F6055EDF17A566590001271E /* Sources */,
+				F6055F0E17A566590001271E /* Frameworks */,
+				F6055F1F17A566590001271E /* Resources */,
+				F6055F4017A566590001271E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BIKELine (Test)";
+			productName = BIKELine;
+			productReference = F6055F4417A566590001271E /* bikeline-ios-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6EA787317996BC30063B0A5 /* BIKELine (Live) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6EA789717996BC30063B0A5 /* Build configuration list for PBXNativeTarget "BIKELine (Live)" */;
 			buildPhases = (
 				F6EA787017996BC30063B0A5 /* Sources */,
 				F6EA787117996BC30063B0A5 /* Frameworks */,
@@ -822,7 +961,7 @@
 			);
 			dependencies = (
 			);
-			name = BIKELine;
+			name = "BIKELine (Live)";
 			productName = BIKELine;
 			productReference = F6EA787417996BC30063B0A5 /* bikeline-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -848,12 +987,52 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F6EA787317996BC30063B0A5 /* BIKELine */,
+				F6EA787317996BC30063B0A5 /* BIKELine (Live) */,
+				F6055EDE17A566590001271E /* BIKELine (Test) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F6055F1F17A566590001271E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6055F2017A566590001271E /* Default.png in Resources */,
+				F6055F2117A566590001271E /* Default@2x.png in Resources */,
+				F6055F2217A566590001271E /* Default-568h@2x.png in Resources */,
+				F6055F2317A566590001271E /* MainStoryboard.storyboard in Resources */,
+				F6055F2417A566590001271E /* Localizable.strings in Resources */,
+				F6055F2517A566590001271E /* zbar-back.png in Resources */,
+				F6055F2617A566590001271E /* zbar-help.html in Resources */,
+				F6055F2717A566590001271E /* zbar-helpicons.png in Resources */,
+				F6055F2817A566590001271E /* zbar-samples.png in Resources */,
+				F6055F2917A566590001271E /* LoginStoryboard.storyboard in Resources */,
+				F6055F2A17A566590001271E /* background-568h@2x.png in Resources */,
+				F6055F2B17A566590001271E /* background.png in Resources */,
+				F6055F2C17A566590001271E /* background@2x.png in Resources */,
+				F6055F2D17A566590001271E /* RegisterFormBackground.png in Resources */,
+				F6055F2E17A566590001271E /* RegisterFormBackground@2x.png in Resources */,
+				F6055F2F17A566590001271E /* emptyButton.png in Resources */,
+				F6055F3017A566590001271E /* emptyButton@2x.png in Resources */,
+				F6055F3117A566590001271E /* LoginButton.png in Resources */,
+				F6055F3217A566590001271E /* LoginButton@2x.png in Resources */,
+				F6055F3317A566590001271E /* RegisterButton.png in Resources */,
+				F6055F3417A566590001271E /* RegisterButton@2x.png in Resources */,
+				F6055F3517A566590001271E /* logo.png in Resources */,
+				F6055F3617A566590001271E /* logo@2x.png in Resources */,
+				F6055F3717A566590001271E /* cameraButton.png in Resources */,
+				F6055F3817A566590001271E /* cameraButton@2x.png in Resources */,
+				F6055F3917A566590001271E /* Checkmark.png in Resources */,
+				F6055F3A17A566590001271E /* Icon.png in Resources */,
+				F6055F3B17A566590001271E /* Icon@2x.png in Resources */,
+				F6055F3C17A566590001271E /* backButton.png in Resources */,
+				F6055F3D17A566590001271E /* backButton@2x.png in Resources */,
+				F6055F3E17A566590001271E /* navbar.png in Resources */,
+				F6055F3F17A566590001271E /* navbar@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6EA787217996BC30063B0A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -896,6 +1075,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F6055F4017A566590001271E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Automatical buildNr increase\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		F6EA789C17996CE60063B0A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -912,6 +1104,59 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F6055EDF17A566590001271E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6055EE017A566590001271E /* main.m in Sources */,
+				F6055EE117A566590001271E /* AppDelegate.m in Sources */,
+				F6055EE217A566590001271E /* LoginViewController.m in Sources */,
+				F6055EE317A566590001271E /* BBApi.m in Sources */,
+				F6055EE417A566590001271E /* Constants.m in Sources */,
+				F6055EE517A566590001271E /* BLTabBarController.m in Sources */,
+				F6055EE617A566590001271E /* RegistrationViewController.m in Sources */,
+				F6055EE717A566590001271E /* ActivationViewController.m in Sources */,
+				F6055EE817A566590001271E /* QRReaderViewController.m in Sources */,
+				F6055EE917A566590001271E /* BLNavigationController.m in Sources */,
+				F6055EEA17A566590001271E /* JSONKit.m in Sources */,
+				F6055EEB17A566590001271E /* FactsViewController.m in Sources */,
+				F6055EEC17A566590001271E /* MapViewController.m in Sources */,
+				F6055EED17A566590001271E /* TeamViewController.m in Sources */,
+				F6055EEE17A566590001271E /* NSUserDefaults+BIKELine.m in Sources */,
+				F6055EEF17A566590001271E /* AccountService.m in Sources */,
+				F6055EF017A566590001271E /* CheckinService.m in Sources */,
+				F6055EF117A566590001271E /* BLUtils.m in Sources */,
+				F6055EF217A566590001271E /* BBApiAbstractOperation.m in Sources */,
+				F6055EF317A566590001271E /* BBApiRegistrationOperation.m in Sources */,
+				F6055EF417A566590001271E /* AFHTTPClient.m in Sources */,
+				F6055EF517A566590001271E /* AFHTTPRequestOperation.m in Sources */,
+				F6055EF617A566590001271E /* AFImageRequestOperation.m in Sources */,
+				F6055EF717A566590001271E /* AFJSONRequestOperation.m in Sources */,
+				F6055EF817A566590001271E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				F6055EF917A566590001271E /* AFPropertyListRequestOperation.m in Sources */,
+				F6055EFA17A566590001271E /* AFURLConnectionOperation.m in Sources */,
+				F6055EFB17A566590001271E /* AFXMLRequestOperation.m in Sources */,
+				F6055EFC17A566590001271E /* UIImageView+AFNetworking.m in Sources */,
+				F6055EFD17A566590001271E /* Jastor.m in Sources */,
+				F6055EFE17A566590001271E /* JastorRuntimeHelper.m in Sources */,
+				F6055EFF17A566590001271E /* BBApiLoginOperation.m in Sources */,
+				F6055F0017A566590001271E /* BBApiActivationOperation.m in Sources */,
+				F6055F0117A566590001271E /* BBApiCheckinOperation.m in Sources */,
+				F6055F0217A566590001271E /* BikerMO.m in Sources */,
+				F6055F0317A566590001271E /* BBApiGetPricesOperation.m in Sources */,
+				F6055F0417A566590001271E /* BBApiGetCheckPointsOperation.m in Sources */,
+				F6055F0517A566590001271E /* BLViewController.m in Sources */,
+				F6055F0617A566590001271E /* MBProgressHUD.m in Sources */,
+				F6055F0717A566590001271E /* BBApiGetProvincesOperation.m in Sources */,
+				F6055F0817A566590001271E /* BBApiGetOrganisationsOperation.m in Sources */,
+				F6055F0917A566590001271E /* BBApiGetOrganisationBikersOperation.m in Sources */,
+				F6055F0A17A566590001271E /* BBApiUploadAvatarOperation.m in Sources */,
+				F6055F0B17A566590001271E /* LoginChooserViewController.m in Sources */,
+				F6055F0C17A566590001271E /* BLScrollView.m in Sources */,
+				F6055F0D17A566590001271E /* JoinTeamSelectTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6EA787017996BC30063B0A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -968,6 +1213,51 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F6055F4217A566590001271E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					TEST,
+				);
+				INFOPLIST_FILE = "BIKELine/BIKELine-Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BIKELine/Librarys/GoogleAnalytics\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/Crittercism\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/ZBar\"",
+				);
+				PRODUCT_NAME = "bikeline-ios-test";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F6055F4317A566590001271E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = TEST;
+				INFOPLIST_FILE = "BIKELine/BIKELine-Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/BIKELine/Librarys/GoogleAnalytics\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/Crittercism\"",
+					"\"$(SRCROOT)/BIKELine/Librarys/ZBar\"",
+				);
+				PRODUCT_NAME = "bikeline-ios-test";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		F6EA789517996BC30063B0A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1029,6 +1319,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					LIVE,
+				);
 				INFOPLIST_FILE = "BIKELine/BIKELine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1049,6 +1343,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BIKELine/BIKELine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = LIVE;
 				INFOPLIST_FILE = "BIKELine/BIKELine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1067,6 +1362,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F6055F4117A566590001271E /* Build configuration list for PBXNativeTarget "BIKELine (Test)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6055F4217A566590001271E /* Debug */,
+				F6055F4317A566590001271E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F6EA786F17996BC30063B0A5 /* Build configuration list for PBXProject "BIKELine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1076,7 +1380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6EA789717996BC30063B0A5 /* Build configuration list for PBXNativeTarget "BIKELine" */ = {
+		F6EA789717996BC30063B0A5 /* Build configuration list for PBXNativeTarget "BIKELine (Live)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6EA789817996BC30063B0A5 /* Debug */,

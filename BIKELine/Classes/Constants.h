@@ -9,8 +9,13 @@
 
 // Bikebird Server
 #define BIKEBIRD_DOMAIN @"http://www.bikebird.at"
-#define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoint/App-Scripts"
-#define BIKEBIRD_API_KEY @""
+#define BIKEBIRD_API_KEY @"motPFm2n8E3N5FdGIK4H"
+
+#ifdef LIVE
+    #define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoint/App-Scripts"
+#else
+    #define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoints/TestApp-Scripts"
+#endif
 
 
 // BIKEBIRD QR-Validation

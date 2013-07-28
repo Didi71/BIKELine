@@ -63,7 +63,8 @@ const int kMaxRequestRetry = 5;
 #pragma mark - Private methods
 
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:eMail, @"emailAddress", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: eMail, @"emailAddress",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiLoginOperation alloc] initWithPath:@"loginBiker.php" andParameters:parameters];
 }
 
@@ -74,14 +75,16 @@ const int kMaxRequestRetry = 5;
                                                                            biker.postalcode, @"postalCode",
                                                                            biker.city, @"city",
                                                                            biker.eMail, @"emailAddress",
-                                                                           ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"sex", nil];
+                                                                           ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"sex",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     
     return [[BBApiRegistrationOperation alloc] initWithPath:@"registerBiker.php" andParameters:parameters];
 }
 
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"id",
-                                                                           code, @"PIN", nil];
+                                                                           code, @"PIN",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiActivationOperation alloc] initWithPath:@"activateBiker.php" andParameters:parameters];
 }
 
@@ -89,18 +92,21 @@ const int kMaxRequestRetry = 5;
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
                                                                            pin, @"PIN",
                                                                            pointId, @"checkPointId",
-                                                                           teamId, @"teamBikerId", nil];
+                                                                           teamId, @"teamBikerId",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiCheckinOperation alloc] initWithPath:@"checkIn.php" andParameters:parameters];
 }
 
 - (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:userId, @"bikerId", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiGetPricesOperation alloc] initWithPath:@"getPrices.php" andParameters:parameters];
 }
 
 - (BBApiGetCheckPointsOperation *)getCheckPointsWithLatitude:(double)lat andLongitude:(double)lon {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithDouble:lat], @"latitude",
-                                                                           [NSNumber numberWithDouble:lon], @"longitude", nil];
+                                                                           [NSNumber numberWithDouble:lon], @"longitude",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiGetCheckPointsOperation alloc] initWithPath:@"getCheckPoints.php" andParameters:parameters];
 }
 
@@ -109,19 +115,22 @@ const int kMaxRequestRetry = 5;
 }
 
 - (BBApiGetOrganisationsOperation *)getOrganisationsForProvince:(NSString *)prov {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: prov, @"province", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: prov, @"province",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiGetOrganisationsOperation alloc] initWithPath:@"getOrgs.php" andParameters:parameters];
 }
 
 - (BBApiGetOrganisationBikersOperation *)getBikersInOrganisation:(NSNumber *)orgId {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: orgId, @"orgId", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: orgId, @"orgId",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiGetOrganisationBikersOperation alloc] initWithPath:@"getBikers.php" andParameters:parameters];
 }
 
 - (BBApiUploadAvatarOperation *)uploadAvatar:(NSData *)dataImg forBikerId:(NSNumber *)bikerId andPIN:(NSNumber *)pin {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: dataImg, @"image",
                                                                            bikerId, @"id",
-                                                                           pin, @"PIN", nil];
+                                                                           pin, @"PIN",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiUploadAvatarOperation alloc] initWithPath:@"uploadAvatar.php" andParameters:parameters];
 }
 
