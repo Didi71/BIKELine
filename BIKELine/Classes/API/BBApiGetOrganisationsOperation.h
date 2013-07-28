@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 
 @interface BBApiGetOrganisationsResponse : Jastor
-@property (nonatomic, retain) NSString *errorCode;
+@property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSArray *orgs;
 @end
 

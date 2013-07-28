@@ -40,7 +40,10 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="w6g-jI-bm7" customClass="BLNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Facts" id="npg-Q0-7J4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KTv-LZ-ATt">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="KTv-LZ-ATt">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -59,7 +62,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-os-BbJ" userLabel="Image View - Background"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-os-BbJ" userLabel="Image View - Background">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="Ad1-nR-vJQ"/>
+                                </constraints>
+                            </imageView>
                             <tableView hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cp5-D9-gff" userLabel="Table View - Checkins">
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -73,16 +80,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ORw-os-BbJ" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="2mQ-pc-6Wx"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="6nu-lf-TMA"/>
-                            <constraint firstItem="ORw-os-BbJ" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="BD2-vV-qxx"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="BfS-rs-OVU"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="Cno-KE-Uh3"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="CtH-T7-yhk"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="HFo-AQ-0f1"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="JGS-W7-oDe"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="Kqv-Sd-iSb"/>
+                            <constraint firstItem="ORw-os-BbJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" type="user" id="MLB-Ao-tWm"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="aUc-4T-Lhy"/>
+                            <constraint firstItem="ORw-os-BbJ" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" id="eRw-xK-bMF"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="o0d-oq-E6r"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="uxF-yx-oNU"/>
                         </constraints>
@@ -117,6 +124,7 @@
         <scene sceneID="Vqt-sK-DUZ">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="1n8-lU-yO3" customClass="BLTabBarController" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uv3-cn-ZDQ">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -141,7 +149,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-9k-vDu" userLabel="Image View - Background"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-9k-vDu" userLabel="Image View - Background">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="er4-pu-H36"/>
+                                </constraints>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Test" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ClZ-hC-nJw">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -154,12 +166,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerY" secondItem="Gre-9k-vDu" secondAttribute="centerY" type="default" id="GYo-IE-HJX"/>
+                            <constraint firstItem="Gre-9k-vDu" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" id="2hA-QZ-6Hs"/>
+                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerY" secondItem="Ngs-Zm-af0" secondAttribute="centerY" type="default" id="WSC-Mz-3M5"/>
                             <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerX" secondItem="Gre-9k-vDu" secondAttribute="centerX" type="default" id="dtx-AE-CBe"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" type="default" id="f0w-PF-VAd"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="trailing" secondItem="Ngs-Zm-af0" secondAttribute="trailing" type="default" id="fQI-2X-m5z"/>
-                            <constraint firstItem="Gre-9k-vDu" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" type="default" id="iff-uw-12q"/>
-                            <constraint firstItem="Gre-9k-vDu" firstAttribute="bottom" secondItem="Ngs-Zm-af0" secondAttribute="bottom" type="default" id="q3M-35-3EW"/>
+                            <constraint firstItem="Gre-9k-vDu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" type="user" id="wpe-3T-SKX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scan" id="AUW-AK-ogW"/>

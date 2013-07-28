@@ -10,6 +10,36 @@
 
 @implementation BLViewController
 
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Configure navigation buttons
+        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        fixedSpace.width = 5.0;
+        
+        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setFrame:CGRectMake(0, 0, 20.0, 44.0)];
+        [backButton setImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.navigationItem.leftBarButtonItems = @[fixedSpace, [[UIBarButtonItem alloc] initWithCustomView:backButton]];
+    }
+    return self;
+}
+
+
+#pragma mark
+#pragma mark - Actions
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma mark
+#pragma mark - Private methods
+
 - (void)showHUDWithProgressMessage:(NSString *)progress andSuccessMessage:(NSString *)success {
     if (!progressHUD) {
         progressHUD = [[MBProgressHUD alloc] initWithView:self.view];

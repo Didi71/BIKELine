@@ -29,6 +29,10 @@
 #pragma mark
 #pragma mark - View life cycle
 
+- (void)viewDidLoad {
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }

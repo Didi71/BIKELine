@@ -12,20 +12,13 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
+    
     if (self) {
-        
+        [self.navigationBar setBarStyle:UIBarStyleBlack];
+        [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
     }
+    
     return self;
 }
-
-
-#pragma mark
-#pragma mark - View life cycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
 
 @end

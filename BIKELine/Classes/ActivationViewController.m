@@ -16,7 +16,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        self.title = NSLocalizedString(@"activationViewTitle", @"");
     }
     return self;
 }

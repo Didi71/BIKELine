@@ -25,6 +25,11 @@
 		F61B05601799AA4000A08BB7 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
 		F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
+		F637938F17A50CB5003FD895 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938D17A50CB5003FD895 /* backButton.png */; };
+		F637939017A50CB5003FD895 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938E17A50CB5003FD895 /* backButton@2x.png */; };
+		F637939317A50FD3003FD895 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = F637939117A50FD3003FD895 /* navbar.png */; };
+		F637939417A50FD3003FD895 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F637939217A50FD3003FD895 /* navbar@2x.png */; };
+		F637939717A51AF8003FD895 /* JoinTeamSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */; };
 		F64B897017A3E4F800392CD7 /* LoginChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */; };
 		F64B897317A3EBC800392CD7 /* BLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F64B897217A3EBC800392CD7 /* BLScrollView.m */; };
 		F64B897617A3F20000392CD7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F64B897417A3F20000392CD7 /* Icon.png */; };
@@ -141,6 +146,12 @@
 		F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
 		F61B05611799AA4700A08BB7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B05631799AA4C00A08BB7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F637938D17A50CB5003FD895 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		F637938E17A50CB5003FD895 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
+		F637939117A50FD3003FD895 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = Images/Background/navbar.png; sourceTree = "<group>"; };
+		F637939217A50FD3003FD895 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar@2x.png"; path = "Images/Background/navbar@2x.png"; sourceTree = "<group>"; };
+		F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinTeamSelectTableViewController.h; path = Classes/JoinTeamSelectTableViewController.h; sourceTree = "<group>"; };
+		F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinTeamSelectTableViewController.m; path = Classes/JoinTeamSelectTableViewController.m; sourceTree = "<group>"; };
 		F64B896E17A3E4F800392CD7 /* LoginChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginChooserViewController.h; path = Classes/LoginChooserViewController.h; sourceTree = "<group>"; };
 		F64B896F17A3E4F800392CD7 /* LoginChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginChooserViewController.m; path = Classes/LoginChooserViewController.m; sourceTree = "<group>"; };
 		F64B897117A3EBC800392CD7 /* BLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLScrollView.h; path = Classes/BLScrollView.h; sourceTree = "<group>"; };
@@ -392,6 +403,61 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F655E54217A42ABB00351EA2 /* Login / Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */,
+				F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */,
+				F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */,
+				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
+				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
+				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
+			);
+			name = "Login / Registration";
+			sourceTree = "<group>";
+		};
+		F655E54317A42AC800351EA2 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				F66D870817A395CE00E1755C /* BBApiGetProvincesOperation.h */,
+				F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */,
+				F66D870B17A3965100E1755C /* BBApiGetOrganisationsOperation.h */,
+				F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */,
+				F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */,
+				F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
+		F655E54417A42AF200351EA2 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				F66D871117A3B30900E1755C /* BBApiUploadAvatarOperation.h */,
+				F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */,
+			);
+			name = Avatar;
+			sourceTree = "<group>";
+		};
+		F655E54517A42B1700351EA2 /* Checkpoints */ = {
+			isa = PBXGroup;
+			children = (
+				F6FFF1DA179B07BF002C547C /* BBApiCheckinOperation.h */,
+				F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */,
+				F652FF98179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.h */,
+				F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */,
+			);
+			name = Checkpoints;
+			sourceTree = "<group>";
+		};
+		F655E54617A42B3800351EA2 /* User Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				F667B553179EFB16009E97BC /* BBApiGetPricesOperation.h */,
+				F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */,
+			);
+			name = "User Statistics";
+			sourceTree = "<group>";
+		};
 		F66D870117A38E4F00E1755C /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,26 +519,11 @@
 			children = (
 				F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */,
 				F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */,
-				F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */,
-				F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */,
-				F6A21D2E179AA74F0010D145 /* BBApiRegistrationOperation.h */,
-				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
-				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
-				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
-				F6FFF1DA179B07BF002C547C /* BBApiCheckinOperation.h */,
-				F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */,
-				F667B553179EFB16009E97BC /* BBApiGetPricesOperation.h */,
-				F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */,
-				F652FF98179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.h */,
-				F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */,
-				F66D870817A395CE00E1755C /* BBApiGetProvincesOperation.h */,
-				F66D870917A395CE00E1755C /* BBApiGetProvincesOperation.m */,
-				F66D870B17A3965100E1755C /* BBApiGetOrganisationsOperation.h */,
-				F66D870C17A3965100E1755C /* BBApiGetOrganisationsOperation.m */,
-				F66D870E17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.h */,
-				F66D870F17A39D1700E1755C /* BBApiGetOrganisationBikersOperation.m */,
-				F66D871117A3B30900E1755C /* BBApiUploadAvatarOperation.h */,
-				F66D871217A3B30900E1755C /* BBApiUploadAvatarOperation.m */,
+				F655E54417A42AF200351EA2 /* Avatar */,
+				F655E54217A42ABB00351EA2 /* Login / Registration */,
+				F655E54317A42AC800351EA2 /* Team */,
+				F655E54517A42B1700351EA2 /* Checkpoints */,
+				F655E54617A42B3800351EA2 /* User Statistics */,
 			);
 			name = "API Classes";
 			sourceTree = "<group>";
@@ -558,6 +609,8 @@
 		F6E5F8A417A2BF910036D3C1 /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				F637939117A50FD3003FD895 /* navbar.png */,
+				F637939217A50FD3003FD895 /* navbar@2x.png */,
 				F6E5F8AB17A2C0FC0036D3C1 /* RegisterFormBackground.png */,
 				F6E5F8AC17A2C0FC0036D3C1 /* RegisterFormBackground@2x.png */,
 				F6E5F8A517A2BFE70036D3C1 /* background-568h@2x.png */,
@@ -570,6 +623,8 @@
 		F6E5F8AF17A2C1070036D3C1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				F637938D17A50CB5003FD895 /* backButton.png */,
+				F637938E17A50CB5003FD895 /* backButton@2x.png */,
 				F6646F9417A2FBBE00BA2261 /* cameraButton.png */,
 				F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */,
 				F6E5F8B017A2C1070036D3C1 /* emptyButton.png */,
@@ -696,6 +751,8 @@
 				F61B052F1799984200A08BB7 /* ActivationViewController.m */,
 				F69028CF179A694C006FA715 /* TeamViewController.h */,
 				F69028D0179A694C006FA715 /* TeamViewController.m */,
+				F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */,
+				F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */,
 			);
 			name = LoginViewControllers;
 			sourceTree = "<group>";
@@ -829,6 +886,10 @@
 				F66D870717A390F100E1755C /* Checkmark.png in Resources */,
 				F64B897617A3F20000392CD7 /* Icon.png in Resources */,
 				F64B897717A3F20000392CD7 /* Icon@2x.png in Resources */,
+				F637938F17A50CB5003FD895 /* backButton.png in Resources */,
+				F637939017A50CB5003FD895 /* backButton@2x.png in Resources */,
+				F637939317A50FD3003FD895 /* navbar.png in Resources */,
+				F637939417A50FD3003FD895 /* navbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +961,7 @@
 				F66D871317A3B30A00E1755C /* BBApiUploadAvatarOperation.m in Sources */,
 				F64B897017A3E4F800392CD7 /* LoginChooserViewController.m in Sources */,
 				F64B897317A3EBC800392CD7 /* BLScrollView.m in Sources */,
+				F637939717A51AF8003FD895 /* JoinTeamSelectTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.title = NSLocalizedString(@"loginViewTitle", @"");
+        
         bikerInfo = BLStandardUserDefaults.biker;
     }
     return self;
@@ -36,6 +38,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+#ifdef DEBUG
+    eMailTextField.text = @"oe8clr@me.com";
+#endif
 }
 
 - (void)dealloc {

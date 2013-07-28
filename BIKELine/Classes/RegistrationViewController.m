@@ -65,6 +65,8 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.title = NSLocalizedString(@"registerViewTitle", @"");
+        
         bikerInfo = BLStandardUserDefaults.biker;
     }
     return self;

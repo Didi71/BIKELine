@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 
 @interface BBApiGetProvincesResponse : Jastor
-@property (nonatomic, retain) NSString *errorCode;
+@property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSArray *provinces;
 @end
 
