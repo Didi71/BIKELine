@@ -264,7 +264,7 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            bikerInfo.userId = wop.response.userId;
+            bikerInfo.userId = wop.response.bikerId;
             bikerInfo.pin = wop.response.pin;
             
             [self hideHUD:NO];

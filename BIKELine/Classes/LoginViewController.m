@@ -139,8 +139,8 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            bikerInfo.userId = wop.response.userId;
-            bikerInfo.firstName = wop.response.firstName;
+            bikerInfo.userId = wop.response.bikerId;
+            bikerInfo.firstName = wop.response.bikerFirstName;
             bikerInfo.pin = wop.response.pin;
             
             [self hideHUD:NO];

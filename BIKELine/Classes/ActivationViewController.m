@@ -140,10 +140,10 @@
         }
         
         if (bikerInfo.lastName == nil) {
-            bikerInfo.lastName = wop.response.lastName;
-            bikerInfo.street = wop.response.street;
-            bikerInfo.postalcode = wop.response.postalCode;
-            bikerInfo.city = wop.response.city;
+            bikerInfo.lastName = wop.response.bikerLastName;
+            bikerInfo.street = wop.response.bikerStreet;
+            bikerInfo.postalcode = wop.response.bikerPostalCode;
+            bikerInfo.city = wop.response.bikerCity;
         }
         
         if (bikerInfo.avatar) {

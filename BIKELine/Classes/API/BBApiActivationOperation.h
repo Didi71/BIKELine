@@ -12,12 +12,13 @@
 
 @interface BBApiActivationResponse : Jastor
 @property (nonatomic, retain) NSNumber *errorCode;
-@property (nonatomic, retain) NSNumber *userId;
-@property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, retain) NSString *lastName;
-@property (nonatomic, retain) NSString *street;
-@property (nonatomic, retain) NSNumber *postalCode;
-@property (nonatomic, retain) NSString *city;
+@property (nonatomic, retain) NSNumber *bikerId;
+@property (nonatomic, retain) NSString *bikerFirstName;
+@property (nonatomic, retain) NSString *bikerLastName;
+@property (nonatomic, retain) NSString *bikerStreet;
+@property (nonatomic, retain) NSNumber *bikerPostalCode;
+@property (nonatomic, retain) NSString *bikerCity;
+@property (nonatomic, retain) NSString *bikerEmailAddress;
 @end
 
 @interface BBApiActivationOperation : BBApiAbstractOperation

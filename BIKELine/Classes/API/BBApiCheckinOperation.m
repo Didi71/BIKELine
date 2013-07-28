@@ -9,7 +9,7 @@
 #import "BBApiCheckinOperation.h"
 
 @implementation BBApiCheckinResponse
-@synthesize status;
+@synthesize errorCode, bikebirds, bikebirdsFirstCheckIn, bikebirdsFirstCheckPointCheckIn, bikebirdsOld, checkPointCity, checkPointName, date, price, rank;
 @end
 
 @implementation BBApiCheckinOperation

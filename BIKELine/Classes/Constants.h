@@ -14,7 +14,7 @@
 #ifdef LIVE
     #define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoint/App-Scripts"
 #else
-    #define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoints/TestApp-Scripts"
+    #define BIKEBIRD_API_BASE_URL @"http://www.bikebird.at/BIKElineCheckPoint/TestApp-Scripts"
 #endif
 
 

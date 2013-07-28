@@ -13,8 +13,8 @@
 @interface BBApiRegistrationResponse : Jastor
 @property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSNumber *pin;
-@property (nonatomic, retain) NSNumber *userId;
-@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSNumber *bikerId;
+@property (nonatomic, retain) NSString *bikerFirstName;
 @end
 
 @interface BBApiRegistrationOperation : BBApiAbstractOperation

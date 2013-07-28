@@ -9,7 +9,7 @@
 #import "BBApiGetCheckPointsOperation.h"
 
 @implementation BBApiGetCheckPointsResponse
-@synthesize status, checkPoints;
+@synthesize errorCode, checkPoints;
 
 + (Class)checkPoints_class {
     return [BBCheckPoint class];
@@ -18,7 +18,7 @@
 @end
 
 @implementation BBCheckPoint
-@synthesize eventId, eventName, eventEnd, eventStart, name, city, longitude, latitude, isHot;
+@synthesize checkPointId, city, eventEnd, eventName, eventStart, isHot, latitude, longitude, name;
 @end
 
 @implementation BBApiGetCheckPointsOperation

@@ -9,7 +9,7 @@
 #import "BBApiLoginOperation.h"
 
 @implementation BBApiLoginResponse
-@synthesize errorCode, pin, userId, firstName;
+@synthesize errorCode, bikerId, bikerFirstName, pin;
 @end
 
 @implementation BBApiLoginOperation
@@ -19,6 +19,5 @@
     
     // Because API delivers some wired JSON-Key's and we have to rename it
     response.pin = [[jsonResult objectFromJSONString] objectForKey:@"PIN"];
-    response.userId = [[jsonResult objectFromJSONString] objectForKey:@"id"];
 }
 @end
