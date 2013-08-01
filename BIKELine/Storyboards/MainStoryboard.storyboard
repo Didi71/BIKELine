@@ -26,7 +26,7 @@
                             <constraint firstItem="Ban-bD-yqz" firstAttribute="bottom" secondItem="dmL-Ve-JgU" secondAttribute="bottom" type="default" id="M6L-3o-Tvf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="wpP-pX-gbU"/>
+                    <tabBarItem key="tabBarItem" title="" id="wpP-pX-gbU"/>
                     <connections>
                         <outlet property="map" destination="Ban-bD-yqz" id="NAU-Zs-3dp"/>
                     </connections>
@@ -35,11 +35,11 @@
             </objects>
             <point key="canvasLocation" x="-985" y="585"/>
         </scene>
-        <!--Navigation Controller - Facts-->
+        <!--Navigation Controller-->
         <scene sceneID="vhh-V2-ILp">
             <objects>
                 <navigationController definesPresentationContext="YES" id="w6g-jI-bm7" customClass="BLNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Facts" id="npg-Q0-7J4"/>
+                    <tabBarItem key="tabBarItem" title="" id="npg-Q0-7J4"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="KTv-LZ-ATt">
@@ -132,9 +132,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="w6g-jI-bm7" kind="relationship" relationship="viewControllers" id="j22-Zg-wqW"/>
-                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="gOp-0y-46u"/>
                         <segue destination="Htc-ZO-4QD" kind="relationship" relationship="viewControllers" id="ySp-5I-Qkh"/>
+                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="gOp-0y-46u"/>
+                        <segue destination="w6g-jI-bm7" kind="relationship" relationship="viewControllers" id="j22-Zg-wqW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ann-RD-NJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,7 +174,7 @@
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" type="user" id="wpe-3T-SKX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" id="AUW-AK-ogW"/>
+                    <tabBarItem key="tabBarItem" title="" id="AUW-AK-ogW"/>
                     <connections>
                         <outlet property="resultTextView" destination="ClZ-hC-nJw" id="I4T-7O-PgD"/>
                     </connections>
@@ -197,7 +197,6 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="segmentControlChangedValue:"/>
                 <relationship kind="outlet" name="checkinsView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>

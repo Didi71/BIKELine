@@ -10,6 +10,7 @@
 //
 
 #import "QRReaderViewController.h"
+#import "BBApi.h"
 
 @implementation QRReaderViewController
 @synthesize imgPicker, resultTextView;
@@ -76,10 +77,24 @@
     if ([hiddenData hasPrefix:BIKEBIRD_QRCODE_VERIFICATION_PREFIX]) {
         resultTextView.text = hiddenData;
         
-        shouldShowQRReader = NO;
-        [picker dismissViewControllerAnimated:YES completion:^{
-            shouldShowQRReader = YES;
+        NSString *cleanedData = [hiddenData stringByReplacingOccurrencesOfString:BIKEBIRD_QRCODE_VERIFICATION_PREFIX withString:@""];
+        
+        BBApiCheckinOperation *op = [SharedAPI checkinAtPoin: [NSNumber numberWithDouble:[cleanedData doubleValue]]
+                                                  withUserId: BLStandardUserDefaults.biker.userId
+                                                      teamId: BLStandardUserDefaults.biker.teamId
+                                                      andPIN: BLStandardUserDefaults.biker.pin];
+        __weak BBApiCheckinOperation *wop = op;
+        
+        [op setCompletionBlock:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                shouldShowQRReader = NO;
+                [picker dismissViewControllerAnimated:YES completion:^{
+                    shouldShowQRReader = YES;
+                }];
+            });
         }];
+        
+        [SharedAPI.queue addOperation:op];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
                                                         message: @"QR Code not valid"

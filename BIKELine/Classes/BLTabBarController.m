@@ -10,22 +10,37 @@
 
 @implementation BLTabBarController
 
++ (void)load {
+    // Set appeareance to remove glow
+    [[UITabBar appearance] setSelectionIndicatorImage:[[UIImage alloc] init]];
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        [self tabBar:self.tabBar didSelectItem:[self.tabBar.items objectAtIndex:0]];
     }
     return self;
 }
 
 
 #pragma mark
-#pragma mark - View life cycle
+#pragma mark - Delegate
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (item && [self.tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
+        NSInteger index = [tabBar.items indexOfObject:item];
+        
+        if (index == 0) {
+            self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_maps_checked.png"];
+        } else if (index == 1) {
+            self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_checkin_pressed.png"];
+        } else if (index == 2) {
+            self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_facts_checked.png"];
+        } else {
+            self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_unchecked.png"];
+        }
+    }
 }
-
 
 @end

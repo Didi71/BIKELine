@@ -29,10 +29,10 @@
 #endif
 
     
-// When we are in debug mode then reset biker to prevent auto-login
-#ifdef DEBUG
-    [BLStandardUserDefaults setBiker:nil];
-#endif
+//// When we are in debug mode then reset biker to prevent auto-login
+//#ifdef DEBUG
+//    [BLStandardUserDefaults setBiker:nil];
+//#endif
     
     // Check if user is loggedin 
     BikerMO *biker = BLStandardUserDefaults.biker;
