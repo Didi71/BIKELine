@@ -25,13 +25,13 @@
 - (void)main {
 //    Reachability *curReach = [Reachability reachabilityWithHostName: @"app.mysms.com"];
 //    if ([curReach currentReachabilityStatus] == NotReachable) {
-//        NSLog(@"Network-ERROR: app.mysms.com not reachable");
+//        NDCLog(@"Network-ERROR: app.mysms.com not reachable");
 //        [self requestFinishedWithResult:@"{\"errorCode\":99}"];
 //        return;
 //    }
     
-    NSLog(@"URL = %@", [BIKEBIRD_API_BASE_URL stringByAppendingPathComponent:pathUrlString]);
-    NSLog(@"PARAMETERS = %@", parameters);    
+    NDCLog(@"URL = %@", [BIKEBIRD_API_BASE_URL stringByAppendingPathComponent:pathUrlString]);
+    NDCLog(@"PARAMETERS = %@", parameters);    
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
@@ -61,7 +61,7 @@
         NSError *parseError = nil;
         NSDictionary *responseDic = [data objectFromJSONDataWithParseOptions:JKParseOptionValidFlags error:&parseError];
         
-        NSLog(@"RESPONSE = %@", responseDic);
+        NDCLog(@"RESPONSE = %@", responseDic);
         
         if (parseError) {
             [self requestFinishedWithResult:[NSString stringWithFormat:@"{\"errorCode\":%d}", (11000 + abs(parseError.code))]];

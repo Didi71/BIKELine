@@ -8,6 +8,12 @@
     #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
+#ifdef DEBUG
+    #define NDCLog(fmt, ...) NSLog((@"%s (%d) \n\t" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+    #define NDCLog(fmt, ...)
+#endif
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
