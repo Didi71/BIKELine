@@ -74,7 +74,7 @@
                                     <outlet property="delegate" destination="3fK-DN-J0H" id="rfa-VX-Q3R"/>
                                 </connections>
                             </tableView>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-7k-8St" userLabel="View - Facts">
+                            <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-7k-8St" userLabel="View - Facts">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surename Lastname" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-ra-L5c" customClass="OHAttributedLabel">
                                         <constraints>
@@ -131,6 +131,98 @@
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="xiT-8X-en3"/>
                                 </constraints>
                             </view>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asy-7x-wtV" customClass="BLScrollView">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-0N-x3R" userLabel="Label - Teaser Text">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="136" id="trA-vR-xDf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grq-bh-hTs">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ZTW-Dt-glz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Province" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="teamProvinceButtonPressed:" destination="3fK-DN-J0H" eventType="touchUpInside" id="hK8-eO-Nq0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-qP-gzO">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Tsa-97-0yt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Organisation" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="teamOrganisationButtonPressed:" destination="3fK-DN-J0H" eventType="touchUpInside" id="v4f-MG-Fuy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-Qo-MoO">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Dve-PN-EZe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Team" backgroundImage="emptyButton.png">
+                                            <color key="titleColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="teamTeamButtonPressed:" destination="3fK-DN-J0H" eventType="touchUpInside" id="gWr-R4-ajL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1T-Pk-md5">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="Team beitreten" backgroundImage="RegisterButton.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinTeamButtonPressed:" destination="3fK-DN-J0H" eventType="touchUpInside" id="8qB-q5-K0D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r1T-Pk-md5" secondAttribute="bottom" constant="99" id="183-0f-trd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Grq-bh-hTs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3EM-kn-4pQ"/>
+                                    <constraint firstItem="SPi-0N-x3R" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="17" id="Cxo-R6-JXh"/>
+                                    <constraint firstItem="hTj-qP-gzO" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="208" id="Qup-Id-V4K"/>
+                                    <constraint firstItem="r1T-Pk-md5" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="312" id="S0d-5T-5r7"/>
+                                    <constraint firstItem="SPi-0N-x3R" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TT2-ra-yYv"/>
+                                    <constraint firstItem="NY2-Qo-MoO" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Trq-6d-SAZ"/>
+                                    <constraint firstItem="Grq-bh-hTs" firstAttribute="top" secondItem="SPi-0N-x3R" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="X0M-M6-RJ7"/>
+                                    <constraint firstItem="hTj-qP-gzO" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eca-WS-2FM"/>
+                                    <constraint firstItem="NY2-Qo-MoO" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="254" id="hVP-ch-s5E"/>
+                                    <constraint firstAttribute="trailing" secondItem="SPi-0N-x3R" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="riE-MJ-wFY"/>
+                                    <constraint firstItem="Grq-bh-hTs" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uKD-4P-Iop"/>
+                                    <constraint firstItem="r1T-Pk-md5" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yYx-up-wqM"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -142,8 +234,12 @@
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="JGS-W7-oDe"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="Kqv-Sd-iSb"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" type="user" id="MLB-Ao-tWm"/>
+                            <constraint firstItem="asy-7x-wtV" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="Rk5-Gs-8Zp"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="user" id="aUc-4T-Lhy"/>
+                            <constraint firstItem="asy-7x-wtV" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="bel-En-zTW"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" id="eRw-xK-bMF"/>
+                            <constraint firstItem="asy-7x-wtV" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="g8b-s7-52m"/>
+                            <constraint firstItem="asy-7x-wtV" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="lrL-oy-bOw"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="o0d-oq-E6r"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="uxF-yx-oNU"/>
                         </constraints>
@@ -177,6 +273,12 @@
                         <outlet property="rightCircleView" destination="l1j-hY-6mc" id="ozM-d0-Ml7"/>
                         <outlet property="segmentControl" destination="FSQ-70-QJ2" id="MiH-IO-BGK"/>
                         <outlet property="tableView" destination="Cp5-D9-gff" id="REs-ga-0St"/>
+                        <outlet property="teamSelectorView" destination="asy-7x-wtV" id="TZE-jW-5Or"/>
+                        <outlet property="teamTeaserLabel" destination="SPi-0N-x3R" id="fYf-Ls-Skm"/>
+                        <outlet property="teamViewJoinTeamButton" destination="r1T-Pk-md5" id="Pt6-Db-KhJ"/>
+                        <outlet property="teamViewOrganisationButton" destination="hTj-qP-gzO" id="QQs-7m-FRp"/>
+                        <outlet property="teamViewProvinceButton" destination="Grq-bh-hTs" id="R5S-zC-q5n"/>
+                        <outlet property="teamViewTeamButton" destination="NY2-Qo-MoO" id="TaR-W2-Rna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-PZ-Be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,11 +350,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RegisterButton.png" width="282" height="44"/>
         <image name="background-568h@2x.png" width="640" height="1136"/>
+        <image name="emptyButton.png" width="280" height="42"/>
     </resources>
     <classes>
         <class className="BLNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
+        </class>
+        <class className="BLScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
         </class>
         <class className="BLSegmentedControl" superclassName="UISegmentedControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLSegmentedControl.h"/>
@@ -263,7 +370,11 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="joinTeamButtonPressed:"/>
                 <relationship kind="action" name="segmentControlChangedValue:"/>
+                <relationship kind="action" name="teamOrganisationButtonPressed:"/>
+                <relationship kind="action" name="teamProvinceButtonPressed:"/>
+                <relationship kind="action" name="teamTeamButtonPressed:"/>
                 <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
@@ -273,7 +384,17 @@
                 <relationship kind="outlet" name="rightCircleView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="teamSelector" candidateClass="JoinTeamSelectTableViewController"/>
+                <relationship kind="outlet" name="teamSelectorView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="teamTeaserLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teamViewJoinTeamButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewOrganisationButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewProvinceButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewTeamButton" candidateClass="UIButton"/>
             </relationships>
+        </class>
+        <class className="JoinTeamSelectTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinTeamSelectTableViewController.h"/>
         </class>
         <class className="MBProgressHUD" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MBProgressHUD.h"/>

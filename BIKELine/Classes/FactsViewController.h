@@ -10,11 +10,20 @@
 #import <QuartzCore/QuartzCore.h>
 #import <OHAttributedLabel/OHAttributedLabel.h>
 #import "MBProgressHUD.h"
+#import "JoinTeamSelectTableViewController.h"
+#import "BBApi.h"
 
-@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JoinTeamSelectorDelegate> {
     IBOutlet UISegmentedControl *segmentControl;
     IBOutlet UIView *factsView;
     IBOutlet UITableView *tableView;
+    IBOutlet UIScrollView *teamSelectorView;
+    IBOutlet JoinTeamSelectTableViewController *teamSelector;
+    IBOutlet UILabel *teamTeaserLabel;
+    IBOutlet UIButton *teamViewProvinceButton;
+    IBOutlet UIButton *teamViewOrganisationButton;
+    IBOutlet UIButton *teamViewTeamButton;
+    IBOutlet UIButton *teamViewJoinTeamButton;
     IBOutlet MBProgressHUD *progressHud;
     
     // Elements in factsView
@@ -28,6 +37,11 @@
     NSMutableArray *result_checkins;
     NSMutableArray *result_prices;
     NSMutableArray *result_teamCheckIns;
+    
+    // Result data for team selector
+    NSString *result_team_province;
+    BBOrganisation *result_team_organisation;
+    BBOrganisationBiker *result_team_biker;
 }
 
 @end

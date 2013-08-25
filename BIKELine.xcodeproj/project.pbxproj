@@ -1000,8 +1000,6 @@
 				F61B052C1799982A00A08BB7 /* RegistrationViewController.m */,
 				F61B052E1799984200A08BB7 /* ActivationViewController.h */,
 				F61B052F1799984200A08BB7 /* ActivationViewController.m */,
-				F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */,
-				F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */,
 			);
 			name = LoginViewControllers;
 			sourceTree = "<group>";
@@ -1041,6 +1039,8 @@
 				F61B05321799997200A08BB7 /* QRReaderViewController.m */,
 				F69028C9179A6920006FA715 /* FactsViewController.h */,
 				F69028CA179A6920006FA715 /* FactsViewController.m */,
+				F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */,
+				F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */,
 			);
 			name = RootViewControllers;
 			sourceTree = "<group>";

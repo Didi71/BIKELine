@@ -7,7 +7,6 @@
 //
 
 #import "FactsViewController.h"
-#import "BBApi.h"
 #import "CustomTableViewCell.h"
 
 @implementation FactsViewController
@@ -41,6 +40,7 @@ const int kFactsViewSubViewTableTag = 2;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self segmentControlChangedValue:segmentControl];
     [self getFacts];
 }
 
@@ -53,6 +53,7 @@ const int kFactsViewSubViewTableTag = 2;
         case 0: {
             tableView.hidden = YES;
             factsView.hidden = NO;
+            teamSelectorView.hidden = YES;
             
             [self getFacts];
             [self _hideProgressHud];
@@ -63,6 +64,7 @@ const int kFactsViewSubViewTableTag = 2;
         case 1: {
             tableView.hidden = NO;
             factsView.hidden = YES;
+            teamSelectorView.hidden = YES;
             
             if (!result_checkins || [result_checkins count] == 0) {
                 [self getCheckins:YES];
@@ -75,22 +77,33 @@ const int kFactsViewSubViewTableTag = 2;
         }
             
         case 2: {
-            tableView.hidden = NO;
-            factsView.hidden = YES;
-            
-            if (!result_teamCheckIns || [result_teamCheckIns count] == 0) {
-                [self getTeamCheckins:YES];
-            } else {
-                [self getTeamCheckins:NO];
+            if (!BLStandardUserDefaults.biker.teamId) {
+                tableView.hidden = YES;
+                factsView.hidden = YES;
+                teamSelectorView.hidden = NO;
+                
+                [self setTitlesForJoinTeamView];
                 [tableView reloadData];
+            } else {
+                tableView.hidden = NO;
+                factsView.hidden = YES;
+                teamSelectorView.hidden = YES;
+                
+                if (!result_teamCheckIns || [result_teamCheckIns count] == 0) {
+                    [self getTeamCheckins:YES];
+                } else {
+                    [self getTeamCheckins:NO];
+                    [tableView reloadData];
+                }
             }
-            
+
             break;
         }
             
         case 3: {
             tableView.hidden = NO;
             factsView.hidden = YES;
+            teamSelectorView.hidden = YES;
             
             if (!result_prices || [result_prices count] == 0) {
                 [self getPrices:YES];
@@ -106,6 +119,106 @@ const int kFactsViewSubViewTableTag = 2;
             break;
         }
     }
+}
+
+- (IBAction)teamProvinceButtonPressed:(id)sender {
+    [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetProvincesLabel", @"")];
+    
+    BBApiGetProvincesOperation *op = [SharedAPI getProvinces];
+    __weak BBApiGetProvincesOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            
+            JoinTeamSelectTableViewController *selector = [[JoinTeamSelectTableViewController alloc] initWithElements: wop.response.provinces
+                                                                                                              andType: BLJoinTeamViewTypeProvince];
+            
+            selector.delegate = self;
+            
+            [self _hideProgressHud];
+            [self.navigationController pushViewController:selector animated:YES];
+        });
+    }];
+    
+    [SharedAPI.queue addOperation:op];
+}
+
+- (IBAction)teamOrganisationButtonPressed:(id)sender {
+    [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetOrganisationsLabel", @"")];
+    
+    BBApiGetOrganisationsOperation *op = [SharedAPI getOrganisationsForProvince:result_team_province];
+    __weak BBApiGetOrganisationsOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            
+            JoinTeamSelectTableViewController *selector = [[JoinTeamSelectTableViewController alloc] initWithElements: wop.response.orgs
+                                                                                                              andType: BLJoinTeamViewTypeOrganisation];
+            
+            selector.delegate = self;
+            
+            [self _hideProgressHud];
+            [self.navigationController pushViewController:selector animated:YES];
+        });
+    }];
+    
+    [SharedAPI.queue addOperation:op];
+}
+
+- (IBAction)teamTeamButtonPressed:(id)sender {
+    [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetTeamsLabel", @"")];
+    
+    BBApiGetOrganisationBikersOperation *op = [SharedAPI getBikersInOrganisation:result_team_organisation.organisationId];
+    __weak BBApiGetOrganisationBikersOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+            });
+            return;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            
+            JoinTeamSelectTableViewController *selector = [[JoinTeamSelectTableViewController alloc] initWithElements: wop.response.bikers
+                                                                                                              andType: BLJoinTeamViewTypeTeam];
+            
+            selector.delegate = self;
+            
+            [self _hideProgressHud];
+            [self.navigationController pushViewController:selector animated:YES];
+        });
+    }];
+    
+    [SharedAPI.queue addOperation:op];
+}
+
+- (IBAction)joinTeamButtonPressed:(id)sender {
+    BikerMO *biker = BLStandardUserDefaults.biker;
+    biker.teamId = result_team_biker.bikerId;
+    [BLStandardUserDefaults setBiker:biker];
+    [self segmentControlChangedValue:segmentControl];
 }
 
 
@@ -381,6 +494,57 @@ const int kFactsViewSubViewTableTag = 2;
     }];
     
     [SharedAPI.queue addOperation:op];
+}
+
+- (void)setTitlesForJoinTeamView {
+    [teamTeaserLabel setText:NSLocalizedString(@"factsViewJoinTeamTeaser", @"")];
+    
+    if (!result_team_province) {
+        [teamViewProvinceButton setTitle: NSLocalizedString(@"buttonProvinceTitle", @"")
+                                forState: UIControlStateNormal];
+    } else {
+        [teamViewProvinceButton setTitle: result_team_province
+                                forState: UIControlStateNormal];
+    }
+    
+    if (!result_team_organisation) {
+        [teamViewOrganisationButton setTitle: NSLocalizedString(@"buttonOrganisationTitle", @"")
+                                    forState: UIControlStateNormal];
+    } else {
+        [teamViewOrganisationButton setTitle: result_team_organisation.name
+                                    forState: UIControlStateNormal];
+    }
+    
+    if (!result_team_biker) {
+        [teamViewTeamButton setTitle: NSLocalizedString(@"buttonTeamTitle", @"")
+                            forState: UIControlStateNormal];
+    } else {
+        [teamViewTeamButton setTitle: [NSString stringWithFormat:@"%@ %@", result_team_biker.firstName, result_team_biker.lastName]
+                            forState: UIControlStateNormal];
+    }
+    
+    [teamViewJoinTeamButton setTitle: NSLocalizedString(@"buttonJoinTeamTitle", @"")
+                            forState: UIControlStateNormal];
+}
+
+
+#pragma mark
+#pragma mark - JoinTeamSelectTableViewController delegate
+
+- (void)joinTeamSelectTableView:(JoinTeamSelectTableViewController *)table selectElement:(id)element {
+    if (table.type == BLJoinTeamViewTypeProvince) {
+        result_team_province = (NSString *)element;
+        [teamViewOrganisationButton setUserInteractionEnabled:YES];
+    } else if (table.type == BLJoinTeamViewTypeOrganisation) {
+        result_team_organisation = (BBOrganisation *)element;
+        [teamViewTeamButton setUserInteractionEnabled:YES];
+    } else if (table.type == BLJoinTeamViewTypeTeam) {
+        result_team_biker = (BBOrganisationBiker *)element;
+        [teamViewJoinTeamButton setUserInteractionEnabled:YES];
+    }
+    
+    [self setTitlesForJoinTeamView];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -11,12 +11,22 @@
 
 @implementation JoinTeamSelectTableViewController
 @synthesize delegate = _delegate;
-@synthesize elements;
+@synthesize elements, type;
 
-
-- (id)init {
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
+
+
+- (id)initWithElements:(NSArray *)e andType:(NSInteger)i {
+    self = [self initWithStyle:UITableViewStylePlain];
+    if (self) {
+        self.title = NSLocalizedString(@"joinTeamViewTitle", @"");
+        
         // Configure navigation buttons
         UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         fixedSpace.width = 5.0;
@@ -27,6 +37,9 @@
         [backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         self.navigationItem.leftBarButtonItems = @[fixedSpace, [[UIBarButtonItem alloc] initWithCustomView:backButton]];
+        
+        elements = e;
+        type = i;
     }
     return self;
 }
@@ -41,6 +54,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+}
+
+
+#pragma mark
+#pragma mark - Actions
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -87,7 +108,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([_delegate respondsToSelector:@selector(joinTeamSelectTableView:selectElement:)]) {
-        [_delegate joinTeamSelectTableView:tableView selectElement:[elements objectAtIndex:indexPath.row]];
+        [_delegate joinTeamSelectTableView:self selectElement:[elements objectAtIndex:indexPath.row]];
     }
 }
 

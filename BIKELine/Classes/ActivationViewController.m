@@ -8,7 +8,7 @@
 
 #import "ActivationViewController.h"
 #import "BBApi.h"
-#import "TeamViewController.h"
+#import "AppDelegate.h"
 
 @implementation ActivationViewController
 @synthesize bikerInfo;
@@ -56,11 +56,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TeamViewController *nextView = [segue destinationViewController];
-    nextView.bikerInfo = bikerInfo;
 }
 
 
@@ -156,7 +151,7 @@
                     [BLStandardUserDefaults setBiker:bikerInfo];
                     
                     [self hideHUD:NO];
-                    [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
+                    [[AppDelegate appDelegate] loginUser];
                 });
             }];
             
@@ -166,7 +161,7 @@
                 [BLStandardUserDefaults setBiker:bikerInfo];
                 
                 [self hideHUD:NO];
-                [self performSegueWithIdentifier:@"ActivateToTeamSegue" sender:nil];
+                [[AppDelegate appDelegate] loginUser];
             });
         }
     }];
