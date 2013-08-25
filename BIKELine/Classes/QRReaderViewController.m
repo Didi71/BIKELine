@@ -51,10 +51,34 @@
 
 
 #pragma mark
+#pragma mark - Protected methods
+
+- (void)_showProgressHudWithMessage:(NSString *)message {
+    // Setup progress hud
+    if (!progressHud) {
+        progressHud = [[MBProgressHUD alloc] initWithView:self.view];
+        progressHud.mode = MBProgressHUDModeIndeterminate;
+        progressHud.removeFromSuperViewOnHide = YES;
+    }
+    
+    if (![progressHud.superview isEqual:self.view]) {
+        [self.view addSubview:progressHud];
+    }
+    
+    [progressHud setLabelText:message];
+    [progressHud show:YES];
+}
+
+- (void)_hideProgressHud {
+    [progressHud hide:YES];
+}
+
+
+#pragma mark
 #pragma mark - ZBarReaderController delegate
 
 - (void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry {
-    NSLog(@"the image picker failing to read");
+    NDCLog(@"the image picker failing to read");
 }
 
 
@@ -70,14 +94,20 @@
         hiddenData = [NSString stringWithString:symbol.data];
     }    
     
-    NSLog(@"BARCODE= %@", symbol.data);
-    NSLog(@"SYMBOL : %@", hiddenData);
+    NDCLog(@"BARCODE= %@", symbol.data);
+    NDCLog(@"SYMBOL : %@", hiddenData);
     
+    shouldShowQRReader = NO;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        shouldShowQRReader = YES;
+    }];
+    
+    [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
     
     if ([hiddenData hasPrefix:BIKEBIRD_QRCODE_VERIFICATION_PREFIX]) {
-        resultTextView.text = hiddenData;
-        
-        NSString *cleanedData = [hiddenData stringByReplacingOccurrencesOfString:BIKEBIRD_QRCODE_VERIFICATION_PREFIX withString:@""];
+
+        NSString *cleanedData = [hiddenData stringByReplacingOccurrencesOfString: BIKEBIRD_QRCODE_VERIFICATION_PREFIX
+                                                                      withString: @""];
         
         BBApiCheckinOperation *op = [SharedAPI checkinAtPoin: [NSNumber numberWithDouble:[cleanedData doubleValue]]
                                                   withUserId: BLStandardUserDefaults.biker.userId
@@ -86,22 +116,28 @@
         __weak BBApiCheckinOperation *wop = op;
         
         [op setCompletionBlock:^{
+            if ([wop.response.errorCode intValue] > 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self _hideProgressHud];
+                    [SharedAPI displayError:wop.response.errorCode];
+                });
+                return;
+            }
+            
             dispatch_async(dispatch_get_main_queue(), ^{
-                shouldShowQRReader = NO;
-                [picker dismissViewControllerAnimated:YES completion:^{
-                    shouldShowQRReader = YES;
-                }];
+                [self _hideProgressHud];
+                
+                BikerMO *biker = BLStandardUserDefaults.biker;
+                biker.bikeBirds = [NSNumber numberWithInt:([wop.response.bikebirdsOld intValue] + [wop.response.bikebirdsOld intValue])];
+                biker.rank = wop.response.rank;
+                
+                [BLStandardUserDefaults setBiker:biker];
             });
         }];
         
         [SharedAPI.queue addOperation:op];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
-                                                        message: @"QR Code not valid"
-                                                       delegate: nil
-                                              cancelButtonTitle: @"ok"
-                                              otherButtonTitles: nil];
-        [alert show];
+        [self _hideProgressHud];
     }
 }
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6A6050B2-37CB-40F6-9C28-561DAA9B5B80</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BIKELINE-Workspace</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D8C5419A-FD03-4C31-AA31-BA0887098918</key>
+		<string>https://github.com/LCApps/BIKELine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BIKELINE-Workspace.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D8C5419A-FD03-4C31-AA31-BA0887098918</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LCApps/BIKELine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D8C5419A-FD03-4C31-AA31-BA0887098918</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D8C5419A-FD03-4C31-AA31-BA0887098918</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BIKELine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

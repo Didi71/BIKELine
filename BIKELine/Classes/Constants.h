@@ -19,7 +19,7 @@
 
 
 // BIKEBIRD QR-Validation
-#define BIKEBIRD_QRCODE_VERIFICATION_PREFIX @"http://www.bikebird.at/BIKElineCheckPoint/index.php"
+#define BIKEBIRD_QRCODE_VERIFICATION_PREFIX @"http://www.bikebird.at/BIKElineCheckPoint/index.php?cp="
 
 
 // Crittercism

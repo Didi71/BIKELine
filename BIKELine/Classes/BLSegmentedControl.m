@@ -11,7 +11,6 @@
 @implementation BLSegmentedControl
 
 + (void)load {
-
     // Unselected background
     [[UISegmentedControl appearance] setBackgroundImage: [[UIImage imageNamed:@"segcontrol_unselected"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)]
                                                forState: UIControlStateNormal
@@ -39,6 +38,22 @@
                                  forLeftSegmentState: UIControlStateNormal
                                    rightSegmentState: UIControlStateSelected
                                           barMetrics: UIBarMetricsDefault];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setTitleTextAttributes: @{UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0],
+                                        UITextAttributeTextColor: [UIColor whiteColor],
+                                        UITextAttributeTextShadowColor: [UIColor clearColor]}
+                            forState: UIControlStateNormal];
+        
+        [self setTitleTextAttributes: @{UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0],
+                                        UITextAttributeTextColor: [UIColor whiteColor],
+                                        UITextAttributeTextShadowColor: [UIColor clearColor]}
+                            forState: UIControlStateSelected];
+    }
+    return self;
 }
 
 @end

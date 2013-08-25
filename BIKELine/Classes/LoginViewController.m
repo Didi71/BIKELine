@@ -138,11 +138,11 @@
             return;
         }
         
+        bikerInfo.userId = wop.response.bikerId;
+        bikerInfo.firstName = wop.response.bikerFirstName;
+        bikerInfo.pin = wop.response.pin;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            bikerInfo.userId = wop.response.bikerId;
-            bikerInfo.firstName = wop.response.bikerFirstName;
-            bikerInfo.pin = wop.response.pin;
-            
             [self hideHUD:NO];
             [self performSegueWithIdentifier:@"LoginToActivateSegue" sender:nil];
         });

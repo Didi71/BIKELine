@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
+#import "MBProgressHUD.h"
 
 @interface QRReaderViewController : UIViewController <UIImagePickerControllerDelegate, ZBarReaderDelegate> {
     BOOL shouldShowQRReader;
+    MBProgressHUD *progressHud;
 }
 
 @property (nonatomic, retain) IBOutlet UITextView *resultTextView;

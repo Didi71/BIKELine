@@ -370,11 +370,6 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="joinTeamButtonPressed:"/>
-                <relationship kind="action" name="segmentControlChangedValue:"/>
-                <relationship kind="action" name="teamOrganisationButtonPressed:"/>
-                <relationship kind="action" name="teamProvinceButtonPressed:"/>
-                <relationship kind="action" name="teamTeamButtonPressed:"/>
                 <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
