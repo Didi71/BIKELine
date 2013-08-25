@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString *checkPointName;
 @property (nonatomic, retain) NSString *checkPointCity;
 @property (nonatomic, retain) BBApiCheckinPrice *price;
+@property (nonatomic, retain) NSString *priceText;
 @end
 
 @interface BBApiCheckinOperation : BBApiAbstractOperation

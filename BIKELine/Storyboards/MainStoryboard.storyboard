@@ -319,30 +319,16 @@
                                     <constraint firstAttribute="height" constant="568" id="er4-pu-H36"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Test" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ClZ-hC-nJw">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="236" id="46q-Pd-v57"/>
-                                    <constraint firstAttribute="height" constant="63" id="Bpr-do-aGb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" id="2hA-QZ-6Hs"/>
-                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerY" secondItem="Ngs-Zm-af0" secondAttribute="centerY" type="default" id="WSC-Mz-3M5"/>
-                            <constraint firstItem="ClZ-hC-nJw" firstAttribute="centerX" secondItem="Gre-9k-vDu" secondAttribute="centerX" type="default" id="dtx-AE-CBe"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" type="default" id="f0w-PF-VAd"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="trailing" secondItem="Ngs-Zm-af0" secondAttribute="trailing" type="default" id="fQI-2X-m5z"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" type="user" id="wpe-3T-SKX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="AUW-AK-ogW"/>
-                    <connections>
-                        <outlet property="resultTextView" destination="ClZ-hC-nJw" id="I4T-7O-PgD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-0M-Byp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,6 +356,11 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="joinTeamButtonPressed:"/>
+                <relationship kind="action" name="segmentControlChangedValue:"/>
+                <relationship kind="action" name="teamOrganisationButtonPressed:"/>
+                <relationship kind="action" name="teamProvinceButtonPressed:"/>
+                <relationship kind="action" name="teamTeamButtonPressed:"/>
                 <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
@@ -412,10 +403,6 @@
         </class>
         <class className="QRReaderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QRReaderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="StartScan:"/>
-                <relationship kind="outlet" name="resultTextView" candidateClass="UITextView"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -7,6 +7,7 @@
 //
 
 #import "BLTabBarController.h"
+#import "QRReaderViewController.h"
 
 @implementation BLTabBarController
 
@@ -19,6 +20,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self tabBar:self.tabBar didSelectItem:[self.tabBar.items objectAtIndex:0]];
+        [self setDelegate:self];
     }
     return self;
 }
@@ -41,6 +43,16 @@
             self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar_unchecked.png"];
         }
     }
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([viewController isKindOfClass:[QRReaderViewController class]]) {
+        QRReaderViewController *reader = (QRReaderViewController *)viewController;
+        [reader showQRReader];
+    }
+    
+    return YES;
 }
 
 @end

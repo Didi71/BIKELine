@@ -13,12 +13,11 @@
 #import "BBApi.h"
 
 @implementation QRReaderViewController
-@synthesize imgPicker, resultTextView;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        shouldShowQRReader = YES;
+
     }
     return self;
 }
@@ -29,24 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    if (shouldShowQRReader) {
-        ZBarReaderViewController *reader = [[ZBarReaderViewController alloc] init];
-        reader.readerDelegate = self;
-        reader.readerView.torchMode = 0;
-        
-        ZBarImageScanner *scanner = reader.scanner;
-        
-        [scanner setSymbology: (ZBAR_I25 | ZBAR_QRCODE)
-                       config: ZBAR_CFG_ENABLE
-                           to: 0];
-        
-        [self presentViewController:reader animated:YES completion:nil];
-    }
 }
 
 
@@ -75,6 +56,24 @@
 
 
 #pragma mark
+#pragma mark - Private methods
+
+- (void)showQRReader {
+    ZBarReaderViewController *reader = [[ZBarReaderViewController alloc] init];
+    reader.readerDelegate = self;
+    reader.readerView.torchMode = 0;
+    
+    ZBarImageScanner *scanner = reader.scanner;
+    
+    [scanner setSymbology: (ZBAR_I25 | ZBAR_QRCODE)
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    
+    [self presentViewController:reader animated:YES completion:nil];
+}
+
+
+#pragma mark
 #pragma mark - ZBarReaderController delegate
 
 - (void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry {
@@ -97,10 +96,8 @@
     NDCLog(@"BARCODE= %@", symbol.data);
     NDCLog(@"SYMBOL : %@", hiddenData);
     
-    shouldShowQRReader = NO;
-    [picker dismissViewControllerAnimated:YES completion:^{
-        shouldShowQRReader = YES;
-    }];
+
+    [picker dismissViewControllerAnimated:YES completion:nil];
     
     [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
     
@@ -130,8 +127,17 @@
                 BikerMO *biker = BLStandardUserDefaults.biker;
                 biker.bikeBirds = [NSNumber numberWithInt:([wop.response.bikebirdsOld intValue] + [wop.response.bikebirdsOld intValue])];
                 biker.rank = wop.response.rank;
-                
                 [BLStandardUserDefaults setBiker:biker];
+                
+                // If priceText is available, then show this to user with alert message
+                if (wop.response.priceText) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
+                                                                    message: wop.response.priceText
+                                                                   delegate: nil
+                                                          cancelButtonTitle: NSLocalizedString(@"buttonOkTitle", @"")
+                                                          otherButtonTitles: nil];
+                    [alert show];
+                }
             });
         }];
         
@@ -142,10 +148,7 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    shouldShowQRReader = NO;
-    [picker dismissViewControllerAnimated:YES completion:^{
-        shouldShowQRReader = YES;
-    }];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 

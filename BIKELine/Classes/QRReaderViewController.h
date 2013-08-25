@@ -11,13 +11,9 @@
 #import "MBProgressHUD.h"
 
 @interface QRReaderViewController : UIViewController <UIImagePickerControllerDelegate, ZBarReaderDelegate> {
-    BOOL shouldShowQRReader;
     MBProgressHUD *progressHud;
 }
 
-@property (nonatomic, retain) IBOutlet UITextView *resultTextView;
-@property (nonatomic, retain) UIImagePickerController *imgPicker;
-
-- (IBAction)StartScan:(id)sender;
+- (void)showQRReader;
 
 @end

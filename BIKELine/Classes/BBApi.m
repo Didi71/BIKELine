@@ -86,11 +86,11 @@ const int kMaxRequestRetry = 5;
 }
 
 - (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: BIKEBIRD_API_KEY, @"APIKey",
+                                                                           userId, @"bikerId",
                                                                            pin, @"PIN",
                                                                            pointId, @"checkPointId",
-                                                                           teamId, @"teamId",
-                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
+                                                                           teamId, @"teamId", nil];
     return [[BBApiCheckinOperation alloc] initWithPath:@"checkIn.php" andParameters:parameters];
 }
 

@@ -17,7 +17,7 @@ const int kFactsViewSubViewTableTag = 2;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+
     }
     return self;
 }
@@ -231,7 +231,7 @@ const int kFactsViewSubViewTableTag = 2;
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
     if (segmentControl.selectedSegmentIndex == 1) {
-        return 1; //[result_checkins count];
+        return [result_checkins count];
     } else if (segmentControl.selectedSegmentIndex == 2) {
         return [result_teamCheckIns count];
     } else if (segmentControl.selectedSegmentIndex == 3) {

@@ -13,7 +13,7 @@
 @end
 
 @implementation BBApiCheckinResponse
-@synthesize errorCode, bikebirds, bikebirdsFirstCheckIn, bikebirdsFirstCheckPointCheckIn, bikebirdsOld, checkPointCity, checkPointName, date, price, rank;
+@synthesize errorCode, bikebirds, bikebirdsFirstCheckIn, bikebirdsFirstCheckPointCheckIn, bikebirdsOld, checkPointCity, checkPointName, date, price, priceText, rank;
 @end
 
 @implementation BBApiCheckinOperation
