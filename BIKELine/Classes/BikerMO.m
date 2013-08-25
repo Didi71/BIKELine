@@ -9,7 +9,7 @@
 #import "BikerMO.h"
 
 @implementation BikerMO
-@synthesize firstName, lastName, street, postalcode, city, sex;
+@synthesize firstName, lastName, sex;
 @synthesize eMail, pin, userId, teamId;
 
 
@@ -35,18 +35,6 @@
     
     if (lastName) {
         [dict setObject:lastName forKey:@"lastName"];
-    }
-    
-    if (street) {
-        [dict setObject:street forKey:@"street"];
-    }
-    
-    if (postalcode) {
-        [dict setObject:postalcode forKey:@"postalcode"];
-    }
-    
-    if (city) {
-        [dict setObject:city forKey:@"city"];
     }
     
     if (sex) {

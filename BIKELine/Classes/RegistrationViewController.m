@@ -80,9 +80,6 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     [cameraLabel setText:NSLocalizedString(@"registerViewProfilePictureText", @"")];
     [firstNameTextField setPlaceholder:NSLocalizedString(@"placeholderFirstNameTitle", @"")];
     [lastNameTextField setPlaceholder:NSLocalizedString(@"placeholderLastNameTitle", @"")];
-    [streetTextField setPlaceholder:NSLocalizedString(@"placeholderStreetTitle", @"")];
-    [postalCodeTextField setPlaceholder:NSLocalizedString(@"placeholderPostalCodeTitle", @"")];
-    [cityTextField setPlaceholder:NSLocalizedString(@"placeholderCityTitle", @"")];
     [eMailTextField setPlaceholder:NSLocalizedString(@"placeholderEMailTitle", @"")];
     [sexMaleButton setTitle:NSLocalizedString(@"buttonMaleTitle", @"") forState:UIControlStateNormal];
     [sexFemaleButton setTitle:NSLocalizedString(@"buttonFemaleTitle", @"") forState:UIControlStateNormal];
@@ -208,21 +205,6 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
         return;
     }
     
-    if (streetTextField.text.length == 0) {
-        [streetTextField becomeFirstResponder];
-        return;
-    }
-    
-    if (postalCodeTextField.text.length == 0) {
-        [postalCodeTextField becomeFirstResponder];
-        return;
-    }
-    
-    if (cityTextField.text.length == 0) {
-        [cityTextField becomeFirstResponder];
-        return;
-    }
-    
     if (eMailTextField.text.length == 0) {
         [eMailTextField becomeFirstResponder];
         return;
@@ -236,9 +218,6 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     // Set values to biker info
     bikerInfo.firstName = firstNameTextField.text;
     bikerInfo.lastName = lastNameTextField.text;
-    bikerInfo.street = streetTextField.text;
-    bikerInfo.postalcode = [NSNumber numberWithDouble:[postalCodeTextField.text doubleValue]];
-    bikerInfo.city = cityTextField.text;
     bikerInfo.eMail = eMailTextField.text;
     bikerInfo.sex = [NSNumber numberWithInt:(sexMaleButton.isSelected == YES ? kBikerSexMale : kBikerSexFemale)];
     
@@ -285,18 +264,6 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     }
     
     if ([textField isEqual:lastNameTextField]) {
-        [streetTextField becomeFirstResponder];
-    }
-    
-    if ([textField isEqual:streetTextField]) {
-        [postalCodeTextField becomeFirstResponder];
-    }
-    
-    if ([textField isEqual:postalCodeTextField]) {
-        [cityTextField becomeFirstResponder];
-    }
-    
-    if ([textField isEqual:cityTextField]) {
         [eMailTextField becomeFirstResponder];
     }
     

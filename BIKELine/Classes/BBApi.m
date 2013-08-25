@@ -71,9 +71,6 @@ const int kMaxRequestRetry = 5;
 - (BBApiRegistrationOperation *)registerBikerWithInfo:(BikerMO *)biker {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: biker.firstName, @"bikerFirstName",
                                                                            biker.lastName, @"bikerLastName",
-                                                                           biker.street, @"bikerStreet",
-                                                                           biker.postalcode, @"bikerPostalCode",
-                                                                           biker.city, @"bikerCity",
                                                                            biker.eMail, @"bikerEmailAddress",
                                                                            ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"bikerSex",
                                                                            BIKEBIRD_API_KEY, @"APIKey", nil];

@@ -14,12 +14,8 @@
 
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
-@property (nonatomic, retain) NSString *street;
-@property (nonatomic, retain) NSNumber *postalcode;
-@property (nonatomic, retain) NSString *city;
 @property (nonatomic, retain) NSNumber *sex;
 @property (nonatomic, retain) UIImage *avatar;
-
 @property (nonatomic, retain) NSNumber *userId;
 @property (nonatomic, retain) NSNumber *teamId;
 @property (nonatomic, retain) NSString *eMail;

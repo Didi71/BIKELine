@@ -15,4 +15,5 @@
     #import "Constants.h"
     #import "BLUtils.h"
     #import "NSUserDefaults+BIKELine.h"
+    #import "BikerMO.h"
 #endif
