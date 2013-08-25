@@ -27,7 +27,7 @@
     // Data Content
     NSMutableArray *result_checkins;
     NSMutableArray *result_prices;
-    NSMutableArray *result_teamRank;
+    NSMutableArray *result_teamCheckIns;
 }
 
 @end

@@ -91,7 +91,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bikebirds" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKS-YU-PbC" userLabel="Attributed Label - Left Label" customClass="OHAttributedLabel">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135" id="CEZ-fx-0D5"/>
-                                            <constraint firstAttribute="height" constant="135" id="cwD-CI-pah"/>
+                                            <constraint firstAttribute="height" constant="135" type="user" id="cwD-CI-pah"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,20 +112,23 @@
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="baseline" secondItem="bGO-7o-wui" secondAttribute="baseline" type="default" id="33B-pr-J7q"/>
-                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="centerY" secondItem="EGO-7k-8St" secondAttribute="centerY" type="default" id="4rT-HB-APM"/>
                                     <constraint firstItem="WSO-ra-L5c" firstAttribute="centerX" secondItem="EGO-7k-8St" secondAttribute="centerX" type="default" id="9EE-P4-d7p"/>
                                     <constraint firstItem="bGO-7o-wui" firstAttribute="leading" secondItem="l1j-hY-6mc" secondAttribute="leading" type="default" id="BWw-ei-ShS"/>
-                                    <constraint firstItem="bGO-7o-wui" firstAttribute="top" secondItem="l1j-hY-6mc" secondAttribute="top" type="default" id="FhQ-5M-qhA"/>
-                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="7ht-6U-TwX" secondAttribute="top" type="default" id="GJ2-2l-fdo"/>
+                                    <constraint firstItem="bGO-7o-wui" firstAttribute="top" secondItem="l1j-hY-6mc" secondAttribute="top" type="user" id="FhQ-5M-qhA"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="7ht-6U-TwX" secondAttribute="top" type="user" id="GJ2-2l-fdo"/>
                                     <constraint firstItem="WSO-ra-L5c" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="26" id="LWT-kU-t41"/>
+                                    <constraint firstItem="l1j-hY-6mc" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="TpL-VR-oyC"/>
                                     <constraint firstAttribute="trailing" secondItem="bGO-7o-wui" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="U0j-Zc-jbh"/>
-                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="bGO-7o-wui" secondAttribute="top" type="default" id="Voh-a3-kVi"/>
+                                    <constraint firstItem="bGO-7o-wui" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="VbF-2h-4IX"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="bGO-7o-wui" secondAttribute="top" type="user" id="Voh-a3-kVi"/>
+                                    <constraint firstItem="7ht-6U-TwX" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="W7A-97-caf"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="trailing" secondItem="7ht-6U-TwX" secondAttribute="trailing" type="default" id="WM4-Th-bWS"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WMA-6d-huP"/>
                                     <constraint firstItem="bGO-7o-wui" firstAttribute="bottom" secondItem="l1j-hY-6mc" secondAttribute="bottom" type="default" id="XiW-hV-EhB"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="bottom" secondItem="7ht-6U-TwX" secondAttribute="bottom" type="default" id="pFV-Xn-G4G"/>
                                     <constraint firstAttribute="trailing" secondItem="l1j-hY-6mc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="roj-hc-yhP"/>
                                     <constraint firstItem="7ht-6U-TwX" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xVi-wp-Cxe"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="xiT-8X-en3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -133,13 +136,13 @@
                         <constraints>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="6nu-lf-TMA"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="BfS-rs-OVU"/>
-                            <constraint firstItem="EGO-7k-8St" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="default" id="Cno-KE-Uh3"/>
+                            <constraint firstItem="EGO-7k-8St" firstAttribute="bottom" secondItem="2cw-bx-McS" secondAttribute="bottom" type="user" id="Cno-KE-Uh3"/>
                             <constraint firstItem="EGO-7k-8St" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="CtH-T7-yhk"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="HFo-AQ-0f1"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="JGS-W7-oDe"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="Kqv-Sd-iSb"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" type="user" id="MLB-Ao-tWm"/>
-                            <constraint firstItem="EGO-7k-8St" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="default" id="aUc-4T-Lhy"/>
+                            <constraint firstItem="EGO-7k-8St" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" type="user" id="aUc-4T-Lhy"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="top" secondItem="2cw-bx-McS" secondAttribute="top" constant="-64" id="eRw-xK-bMF"/>
                             <constraint firstItem="Cp5-D9-gff" firstAttribute="leading" secondItem="2cw-bx-McS" secondAttribute="leading" type="default" id="o0d-oq-E6r"/>
                             <constraint firstItem="ORw-os-BbJ" firstAttribute="trailing" secondItem="2cw-bx-McS" secondAttribute="trailing" type="default" id="uxF-yx-oNU"/>
@@ -279,6 +282,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="progressHud" candidateClass="MBProgressHUD"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

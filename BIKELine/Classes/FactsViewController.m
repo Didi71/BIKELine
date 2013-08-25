@@ -8,6 +8,7 @@
 
 #import "FactsViewController.h"
 #import "BBApi.h"
+#import "CustomTableViewCell.h"
 
 @implementation FactsViewController
 
@@ -37,10 +38,6 @@ const int kFactsViewSubViewTableTag = 2;
     
     [bikebirdsLabel setCenterVertically:YES];
     [rankLabel setCenterVertically:YES];
-    
-    
-    // Configure TableView
-    [tableView setRowHeight:60.0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,29 +53,52 @@ const int kFactsViewSubViewTableTag = 2;
         case 0: {
             tableView.hidden = YES;
             factsView.hidden = NO;
+            
             [self getFacts];
             [self _hideProgressHud];
+            
             break;
         }
         
         case 1: {
             tableView.hidden = NO;
             factsView.hidden = YES;
-            [self getCheckins];
+            
+            if (!result_checkins || [result_checkins count] == 0) {
+                [self getCheckins:YES];
+            } else {
+                [self getCheckins:NO];
+                [tableView reloadData];
+            }
+            
             break;
         }
             
         case 2: {
             tableView.hidden = NO;
             factsView.hidden = YES;
-            [self getTeam];
+            
+            if (!result_teamCheckIns || [result_teamCheckIns count] == 0) {
+                [self getTeamCheckins:YES];
+            } else {
+                [self getTeamCheckins:NO];
+                [tableView reloadData];
+            }
+            
             break;
         }
             
         case 3: {
             tableView.hidden = NO;
             factsView.hidden = YES;
-            [self getPrices];
+            
+            if (!result_prices || [result_prices count] == 0) {
+                [self getPrices:YES];
+            } else {
+                [self getPrices:NO];
+                [tableView reloadData];
+            }
+            
             break;
         }
            
@@ -97,39 +117,81 @@ const int kFactsViewSubViewTableTag = 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-    switch (segmentControl.selectedSegmentIndex) {   
-        case 1: {
-            return [result_checkins count];
-        }
-            
-        case 2: {
-            return [result_teamRank count];
-        }
-            
-        case 3: {
-            return [result_prices count];
-        }
-            
-        default: {
-            return 0;
-        }
+    if (segmentControl.selectedSegmentIndex == 1) {
+        return 1; //[result_checkins count];
+    } else if (segmentControl.selectedSegmentIndex == 2) {
+        return [result_teamCheckIns count];
+    } else if (segmentControl.selectedSegmentIndex == 3) {
+        return [result_prices count];
+    } else {
+        return 0;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tv heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (segmentControl.selectedSegmentIndex == 1 || segmentControl.selectedSegmentIndex == 2) {
+        return 68.0;
+    } else if (segmentControl.selectedSegmentIndex == 3) {
+        return 86.0;
+    } else {
+        return tv.rowHeight;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSString *cellId = segmentControl.selectedSegmentIndex == 3 ? @"BLTableViewCellStylePrice" : @"BLTableViewCellStyleCheckin";
+    CustomTableViewCell *cell = (CustomTableViewCell *)[tv dequeueReusableCellWithIdentifier:cellId];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        if (segmentControl.selectedSegmentIndex == 1 || segmentControl.selectedSegmentIndex == 2) {
+            cell = [[CustomTableViewCell alloc] initWithBLStyle:BLTableViewCellStyleCheckin reuseIdentifier:cellId];
+        } else if (segmentControl.selectedSegmentIndex == 3) {
+            cell = [[CustomTableViewCell alloc] initWithBLStyle:BLTableViewCellStylePrice reuseIdentifier:cellId];
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     if (segmentControl.selectedSegmentIndex == 1) {
-
+        BBCheckIn *checkIn = [result_checkins objectAtIndex:indexPath.row];
+        
+        cell.headerLabel.text = checkIn.checkPointName;
+        cell.headerLabel.textColor = [UIColor whiteColor];
+        cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
+        
+        NSString *dateString = [NSDate dateWithTimeIntervalSince1970:[checkIn.date doubleValue]];
+        cell.bottomLabel.text = [NSString stringWithFormat:@"%@ %@, %@", NSLocalizedString(@"factsViewInLabel", @""), checkIn.checkPointCity, dateString];
+        cell.bottomLabel.textColor = [UIColor whiteColor];
+        cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
+        
+        cell.leftLabel.text = [NSString stringWithFormat:@"%@", checkIn.bikebirds];
+        cell.leftLabel.textColor = [UIColor whiteColor];
+        cell.leftLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:28.0];
     } else if (segmentControl.selectedSegmentIndex == 2) {
         
-    } else if (segmentControl.selectedSegmentIndex == 3) {
         
+        cell.headerLabel.text = @"balalsdasd";
+        cell.headerLabel.textColor = [UIColor whiteColor];
+        cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
+        
+        cell.bottomLabel.text = @"muhahaha";
+        cell.bottomLabel.textColor = [UIColor whiteColor];
+        cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
+        
+        cell.leftLabel.text = @"2";
+        cell.leftLabel.textColor = [UIColor whiteColor];
+        cell.leftLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:28.0];
+    } else if (segmentControl.selectedSegmentIndex == 3) {
+        BBPrice *price = [result_prices objectAtIndex:indexPath.row];
+        
+        cell.headerLabel.text = price.description;
+        cell.headerLabel.textColor = [UIColor whiteColor];
+        cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
+        
+        NSString *dateString = [NSDate dateWithTimeIntervalSince1970:[price.timeWon doubleValue]];
+        cell.bottomLabel.text = [NSString stringWithFormat:@"%@\n%@ %@, %@", price.sponsorName, NSLocalizedString(@"factsViewInLabel", @""), price.sponsorCity, dateString];
+        cell.bottomLabel.textColor = [UIColor whiteColor];
+        cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
     }
     
     return cell;
@@ -204,16 +266,121 @@ const int kFactsViewSubViewTableTag = 2;
     rankLabel.attributedText = attrStr3;
 }
 
-- (void)getCheckins {
-    [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadCheckinsLabel", @"")];
+- (void)getCheckins:(BOOL)showHud {
+    if (showHud) {
+        [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadCheckinsLabel", @"")];
+    }
+    
+    BBApiGetCheckinsOperation *op = [SharedAPI getCheckInsWithBikerId: BLStandardUserDefaults.biker.userId
+                                                               andPin: BLStandardUserDefaults.biker.pin];
+    __weak BBApiGetCheckinsOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+                [tableView reloadData];
+            });
+            return;
+        }
+        
+        if (!result_checkins) {
+            result_checkins = [[NSMutableArray alloc] initWithArray:wop.response.checkIns];
+        } else {
+            [result_checkins removeAllObjects];
+            [result_checkins addObjectsFromArray:wop.response.checkIns];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            [tableView reloadData];
+        });
+        
+        
+        // Check if local bikebirds are not equal than server bikebirds
+        NSInteger i = 0;
+        for (BBCheckIn *checkIn in wop.response.checkIns) {
+            i = i + [checkIn.bikebirds intValue];
+        }
+        
+        if (i != [BLStandardUserDefaults.biker.bikeBirds intValue]) {
+            BikerMO *biker = BLStandardUserDefaults.biker;
+            biker.bikeBirds = [NSNumber numberWithInt:i];
+            [BLStandardUserDefaults setBiker:biker];
+        }
+    }];
+    
+    [SharedAPI.queue addOperation:op];
 }
 
-- (void)getTeam {
-    [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadTeamLabel", @"")];
+- (void)getTeamCheckins:(BOOL)showHud {
+    if (showHud) {
+        [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadTeamLabel", @"")];
+    }
+    
+    BBApiGetTeamCheckinsOperation *op = [SharedAPI getTeamCheckInsWithTeamId: BLStandardUserDefaults.biker.teamId
+                                                                      andPin: BLStandardUserDefaults.biker.pin];
+    __weak BBApiGetTeamCheckinsOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+                [tableView reloadData];
+            });
+            return;
+        }
+        
+        if (!result_teamCheckIns) {
+            result_teamCheckIns = [[NSMutableArray alloc] initWithArray:wop.response.teamCheckIns];
+        } else {
+            [result_teamCheckIns removeAllObjects];
+            [result_teamCheckIns addObjectsFromArray:wop.response.teamCheckIns];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            [tableView reloadData];
+        });
+    }];
+    
+    [SharedAPI.queue addOperation:op];
 }
 
-- (void)getPrices {
-    [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadPricesLabel", @"")];
+- (void)getPrices:(BOOL)showHud {
+    if (showHud) {
+        [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadPricesLabel", @"")];
+    }
+    
+    BBApiGetPricesOperation *op = [SharedAPI getPricesForUserId:BLStandardUserDefaults.biker.userId];
+    __weak BBApiGetPricesOperation *wop = op;
+    
+    [op setCompletionBlock:^{
+        if ([wop.response.errorCode integerValue] > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SharedAPI displayError:wop.response.errorCode];
+                [self _hideProgressHud];
+                [tableView reloadData];
+            });
+            return;
+        }
+        
+        if (!result_prices) {
+            result_prices = [[NSMutableArray alloc] initWithArray:wop.response.prices];
+        } else {
+            [result_prices removeAllObjects];
+            [result_prices addObjectsFromArray:wop.response.prices];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _hideProgressHud];
+            [tableView reloadData];
+        });
+    }];
+    
+    [SharedAPI.queue addOperation:op];
 }
 
 

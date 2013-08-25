@@ -174,6 +174,12 @@
 		F667C29F17C9F19F0044F1CE /* CheckpointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C29D17C9F19F0044F1CE /* CheckpointAnnotation.m */; };
 		F667C2A117C9F35E0044F1CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F667C2A017C9F35E0044F1CE /* CoreLocation.framework */; };
 		F667C2A217C9F36B0044F1CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F667C2A017C9F35E0044F1CE /* CoreLocation.framework */; };
+		F667C2A817CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2A717CA0FBF0044F1CE /* CustomTableViewCell.m */; };
+		F667C2A917CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2A717CA0FBF0044F1CE /* CustomTableViewCell.m */; };
+		F667C2AC17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2AB17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m */; };
+		F667C2AD17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2AB17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m */; };
+		F667C2B017CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2AF17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m */; };
+		F667C2B117CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C2AF17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m */; };
 		F66D870017A38D4500E1755C /* BLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D86FF17A38D4500E1755C /* BLViewController.m */; };
 		F66D870417A38E4F00E1755C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F66D870317A38E4F00E1755C /* MBProgressHUD.m */; };
 		F66D870717A390F100E1755C /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F66D870617A390F100E1755C /* Checkmark.png */; };
@@ -323,6 +329,12 @@
 		F667C29C17C9F19F0044F1CE /* CheckpointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckpointAnnotation.h; path = Classes/CheckpointAnnotation.h; sourceTree = "<group>"; };
 		F667C29D17C9F19F0044F1CE /* CheckpointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckpointAnnotation.m; path = Classes/CheckpointAnnotation.m; sourceTree = "<group>"; };
 		F667C2A017C9F35E0044F1CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F667C2A617CA0FBF0044F1CE /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = Classes/CustomTableViewCell.h; sourceTree = "<group>"; };
+		F667C2A717CA0FBF0044F1CE /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = Classes/CustomTableViewCell.m; sourceTree = "<group>"; };
+		F667C2AA17CA1CB90044F1CE /* BBApiGetCheckinsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetCheckinsOperation.h; path = Classes/API/BBApiGetCheckinsOperation.h; sourceTree = "<group>"; };
+		F667C2AB17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetCheckinsOperation.m; path = Classes/API/BBApiGetCheckinsOperation.m; sourceTree = "<group>"; };
+		F667C2AE17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetTeamCheckinsOperation.h; path = Classes/API/BBApiGetTeamCheckinsOperation.h; sourceTree = "<group>"; };
+		F667C2AF17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetTeamCheckinsOperation.m; path = Classes/API/BBApiGetTeamCheckinsOperation.m; sourceTree = "<group>"; };
 		F66D86FE17A38D4500E1755C /* BLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLViewController.h; path = Classes/BLViewController.h; sourceTree = "<group>"; };
 		F66D86FF17A38D4500E1755C /* BLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLViewController.m; path = Classes/BLViewController.m; sourceTree = "<group>"; };
 		F66D870217A38E4F00E1755C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -511,8 +523,9 @@
 		F61B0526179994F300A08BB7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				F667C29B17C9F1780044F1CE /* MapAnnotations */,
+				F667C2A417CA00720044F1CE /* Cells */,
 				F61B05271799950200A08BB7 /* Controllers */,
+				F667C29B17C9F1780044F1CE /* MapAnnotations */,
 				F67CE7C7179C15B800C018B6 /* Modells */,
 			);
 			name = Other;
@@ -651,6 +664,10 @@
 			children = (
 				F667B553179EFB16009E97BC /* BBApiGetPricesOperation.h */,
 				F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */,
+				F667C2AA17CA1CB90044F1CE /* BBApiGetCheckinsOperation.h */,
+				F667C2AB17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m */,
+				F667C2AE17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.h */,
+				F667C2AF17CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m */,
 			);
 			name = "User Statistics";
 			sourceTree = "<group>";
@@ -680,6 +697,22 @@
 				F667C29D17C9F19F0044F1CE /* CheckpointAnnotation.m */,
 			);
 			name = MapAnnotations;
+			sourceTree = "<group>";
+		};
+		F667C2A417CA00720044F1CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F667C2A617CA0FBF0044F1CE /* CustomTableViewCell.h */,
+				F667C2A717CA0FBF0044F1CE /* CustomTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		F667C2A517CA00900044F1CE /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Nibs;
 			sourceTree = "<group>";
 		};
 		F66D870117A38E4F00E1755C /* MBProgressHUD */ = {
@@ -909,6 +942,7 @@
 		F6EA787E17996BC30063B0A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F667C2A517CA00900044F1CE /* Nibs */,
 				F6EA789B17996C1C0063B0A5 /* Storyboards */,
 				F6EA789A17996C0F0063B0A5 /* Images */,
 				F6EA787F17996BC30063B0A5 /* BIKELine-Info.plist */,
@@ -1284,6 +1318,9 @@
 				F6055F0D17A566590001271E /* JoinTeamSelectTableViewController.m in Sources */,
 				F667C25917C9C71F0044F1CE /* BLSegmentedControl.m in Sources */,
 				F667C29F17C9F19F0044F1CE /* CheckpointAnnotation.m in Sources */,
+				F667C2A917CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */,
+				F667C2AD17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */,
+				F667C2B117CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1373,9 @@
 				F637939717A51AF8003FD895 /* JoinTeamSelectTableViewController.m in Sources */,
 				F667C25817C9C71F0044F1CE /* BLSegmentedControl.m in Sources */,
 				F667C29E17C9F19F0044F1CE /* CheckpointAnnotation.m in Sources */,
+				F667C2A817CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */,
+				F667C2AC17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */,
+				F667C2B017CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

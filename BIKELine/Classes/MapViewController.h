@@ -14,7 +14,7 @@
     IBOutlet MKMapView *map;
     IBOutlet MBProgressHUD *progressHud;
     
-    __block NSMutableArray *response_checkpoints;
+    __block NSMutableArray *result_checkpoints;
     
     NSTimer *updateCheckpointsTimer;
 }

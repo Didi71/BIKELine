@@ -9,7 +9,7 @@
 #import "BBApiGetPricesOperation.h"
 
 @implementation BBApiGetPricesResponse
-@synthesize status, prices, error;
+@synthesize prices, errorCode;
 
 + (Class)prices_class {
     return [BBPrice class];
@@ -18,7 +18,7 @@
 @end
 
 @implementation BBPrice
-@synthesize timeWon, description, name, city;
+@synthesize timeWon, description, eventName, sponsorCity, sponsorName;
 @end
 
 @implementation BBApiGetPricesOperation

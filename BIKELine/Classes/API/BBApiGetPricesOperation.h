@@ -11,16 +11,16 @@
 #import "JSONKit.h"
 
 @interface BBApiGetPricesResponse : Jastor
-@property (nonatomic, retain) NSString *status;
-@property (nonatomic, retain) NSString *error;
+@property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSArray *prices;
 @end
 
 @interface BBPrice : Jastor
 @property (nonatomic, retain) NSNumber *timeWon;
-@property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *description;
-@property (nonatomic, retain) NSString *city;
+@property (nonatomic, retain) NSString *sponsorName;
+@property (nonatomic, retain) NSString *sponsorCity;
+@property (nonatomic, retain) NSString *eventName;
 @end
 
 @interface BBApiGetPricesOperation : BBApiAbstractOperation

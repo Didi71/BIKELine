@@ -93,11 +93,11 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
             return;
         }
         
-        if (!response_checkpoints) {
-            response_checkpoints = [[NSMutableArray alloc] initWithArray:wop.response.checkPoints];
+        if (!result_checkpoints) {
+            result_checkpoints = [[NSMutableArray alloc] initWithArray:wop.response.checkPoints];
         } else {
-            [response_checkpoints removeAllObjects];
-            [response_checkpoints addObjectsFromArray:wop.response.checkPoints];
+            [result_checkpoints removeAllObjects];
+            [result_checkpoints addObjectsFromArray:wop.response.checkPoints];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -110,7 +110,7 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
 }
 
 - (void)loadCheckpointsToMap {
-    if (![NSThread isMainThread] || response_checkpoints == nil || [response_checkpoints count] == 0) {
+    if (![NSThread isMainThread] || result_checkpoints == nil || [result_checkpoints count] == 0) {
         return;
     }
     
@@ -125,7 +125,7 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
     [map removeAnnotations:toBeRemovedAnnotations];
     
     // Add new annotations
-    for (BBCheckPoint *checkpoint in response_checkpoints) {
+    for (BBCheckPoint *checkpoint in result_checkpoints) {
         CheckpointAnnotation *annotiation = [[CheckpointAnnotation alloc] initWithCoordinate:CLLocationCoordinate2DMake([checkpoint.latitude doubleValue], [checkpoint.longitude doubleValue])];
         annotiation.title = checkpoint.name;
         annotiation.subtitle = checkpoint.eventName;

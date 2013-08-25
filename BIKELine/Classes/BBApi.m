@@ -107,6 +107,20 @@ const int kMaxRequestRetry = 5;
     return [[BBApiGetCheckPointsOperation alloc] initWithPath:@"getCheckPoints.php" andParameters:parameters];
 }
 
+- (BBApiGetCheckinsOperation *)getCheckInsWithBikerId:(NSNumber *)bikerId andPin:(NSNumber *)pin {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: bikerId, @"bikerId",
+                                                                           pin, @"PIN",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
+    return [[BBApiGetCheckinsOperation alloc] initWithPath:@"getCheckIns.php" andParameters:parameters];
+}
+
+- (BBApiGetTeamCheckinsOperation *)getTeamCheckInsWithTeamId:(NSNumber *)teamId andPin:(NSNumber *)pin {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: teamId, @"teamId",
+                                                                           pin, @"PIN",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
+    return [[BBApiGetTeamCheckinsOperation alloc] initWithPath:@"getTeamCheckIns.php" andParameters:parameters];
+}
+
 - (BBApiGetProvincesOperation *)getProvinces {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: BIKEBIRD_API_KEY, @"APIKey", nil];
     return [[BBApiGetProvincesOperation alloc] initWithPath:@"getProvinces.php" andParameters:parameters];
