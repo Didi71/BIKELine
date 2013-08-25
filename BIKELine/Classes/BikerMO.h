@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSNumber *teamId;
 @property (nonatomic, retain) NSString *eMail;
 @property (nonatomic, retain) NSNumber *pin;
+@property (nonatomic, retain) NSNumber *bikeBirds;
+@property (nonatomic, retain) NSNumber *rank;
 
 
 typedef enum {

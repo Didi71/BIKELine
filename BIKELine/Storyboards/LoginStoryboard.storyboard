@@ -642,6 +642,7 @@
         <class className="ActivationViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="activateButtonPressed:"/>
                 <relationship kind="outlet" name="activateButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
@@ -657,9 +658,6 @@
         </class>
         <class className="BLViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:"/>
-            </relationships>
         </class>
         <class className="LoginChooserViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginChooserViewController.h"/>
@@ -671,7 +669,6 @@
         <class className="LoginViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="loginButtonPressed:"/>
                 <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
@@ -684,36 +681,18 @@
         <class className="RegistrationViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cameraButtonPressed:"/>
-                <relationship kind="action" name="registrationButtonPressed:"/>
-                <relationship kind="action" name="sexButtonPressed:"/>
                 <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cameraImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cameraLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="formularImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="postalCodeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
                 <relationship kind="outlet" name="sexFemaleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sexMaleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="streetTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TeamViewController" superclassName="BLViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TeamViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="joinButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="organisationButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="provinceButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
-                <relationship kind="outlet" name="skipButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="teamButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

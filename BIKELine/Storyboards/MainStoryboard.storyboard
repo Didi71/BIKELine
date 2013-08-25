@@ -75,7 +75,58 @@
                                 </connections>
                             </tableView>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-7k-8St" userLabel="View - Facts">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surename Lastname" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-ra-L5c" customClass="OHAttributedLabel">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="3gg-yB-HtA"/>
+                                            <constraint firstAttribute="width" constant="300" id="w68-K3-a9O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.30000000000000016" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-6U-TwX" userLabel="View - Circle Left">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bikebirds" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKS-YU-PbC" userLabel="Attributed Label - Left Label" customClass="OHAttributedLabel">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="CEZ-fx-0D5"/>
+                                            <constraint firstAttribute="height" constant="135" id="cwD-CI-pah"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.30000000000000016" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1j-hY-6mc" userLabel="View - Circle Right">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGO-7o-wui" userLabel="Attributed Label - Right Label" customClass="OHAttributedLabel">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="RMm-rT-O9p"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="baseline" secondItem="bGO-7o-wui" secondAttribute="baseline" type="default" id="33B-pr-J7q"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="centerY" secondItem="EGO-7k-8St" secondAttribute="centerY" type="default" id="4rT-HB-APM"/>
+                                    <constraint firstItem="WSO-ra-L5c" firstAttribute="centerX" secondItem="EGO-7k-8St" secondAttribute="centerX" type="default" id="9EE-P4-d7p"/>
+                                    <constraint firstItem="bGO-7o-wui" firstAttribute="leading" secondItem="l1j-hY-6mc" secondAttribute="leading" type="default" id="BWw-ei-ShS"/>
+                                    <constraint firstItem="bGO-7o-wui" firstAttribute="top" secondItem="l1j-hY-6mc" secondAttribute="top" type="default" id="FhQ-5M-qhA"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="7ht-6U-TwX" secondAttribute="top" type="default" id="GJ2-2l-fdo"/>
+                                    <constraint firstItem="WSO-ra-L5c" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="26" id="LWT-kU-t41"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGO-7o-wui" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="U0j-Zc-jbh"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="bGO-7o-wui" secondAttribute="top" type="default" id="Voh-a3-kVi"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="trailing" secondItem="7ht-6U-TwX" secondAttribute="trailing" type="default" id="WM4-Th-bWS"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WMA-6d-huP"/>
+                                    <constraint firstItem="bGO-7o-wui" firstAttribute="bottom" secondItem="l1j-hY-6mc" secondAttribute="bottom" type="default" id="XiW-hV-EhB"/>
+                                    <constraint firstItem="IKS-YU-PbC" firstAttribute="bottom" secondItem="7ht-6U-TwX" secondAttribute="bottom" type="default" id="pFV-Xn-G4G"/>
+                                    <constraint firstAttribute="trailing" secondItem="l1j-hY-6mc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="roj-hc-yhP"/>
+                                    <constraint firstItem="7ht-6U-TwX" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xVi-wp-Cxe"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -96,14 +147,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="vsg-aH-Erf">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="FSQ-70-QJ2">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="FSQ-70-QJ2" customClass="BLSegmentedControl">
                             <rect key="frame" x="22" y="7" width="275" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Facts"/>
+                                <segment title="Facts">
+                                    <size key="contentOffset" width="7" height="0.0"/>
+                                </segment>
                                 <segment title="Checkins"/>
                                 <segment title="Team"/>
-                                <segment title="Preise"/>
+                                <segment title="Preise">
+                                    <size key="contentOffset" width="-7" height="0.0"/>
+                                </segment>
                             </segments>
                             <connections>
                                 <action selector="segmentControlChangedValue:" destination="3fK-DN-J0H" eventType="valueChanged" id="bp3-SG-Ha4"/>
@@ -111,9 +166,14 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="checkinsView" destination="Cp5-D9-gff" id="OHb-EQ-Wxy"/>
+                        <outlet property="bikebirdsLabel" destination="IKS-YU-PbC" id="idi-Sl-7MM"/>
+                        <outlet property="bikerNameLabel" destination="WSO-ra-L5c" id="iPK-na-qYn"/>
                         <outlet property="factsView" destination="EGO-7k-8St" id="dy9-UW-5ck"/>
+                        <outlet property="leftCircleView" destination="7ht-6U-TwX" id="m0f-ki-6RG"/>
+                        <outlet property="rankLabel" destination="bGO-7o-wui" id="Wr7-jx-sSQ"/>
+                        <outlet property="rightCircleView" destination="l1j-hY-6mc" id="ozM-d0-Ml7"/>
                         <outlet property="segmentControl" destination="FSQ-70-QJ2" id="MiH-IO-BGK"/>
+                        <outlet property="tableView" destination="Cp5-D9-gff" id="REs-ga-0St"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-PZ-Be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,16 +251,29 @@
         <class className="BLNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
         </class>
+        <class className="BLSegmentedControl" superclassName="UISegmentedControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLSegmentedControl.h"/>
+        </class>
         <class className="BLTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLTabBarController.h"/>
         </class>
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="checkinsView" candidateClass="UITableView"/>
+                <relationship kind="action" name="segmentControlChangedValue:"/>
+                <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="leftCircleView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="progressHud" candidateClass="MBProgressHUD"/>
+                <relationship kind="outlet" name="rankLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="rightCircleView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="MBProgressHUD" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MBProgressHUD.h"/>
         </class>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
@@ -210,6 +283,12 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OHAttributedLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OHAttributedLabel.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
         </class>
         <class className="QRReaderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QRReaderViewController.h"/>

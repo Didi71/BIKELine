@@ -9,8 +9,8 @@
 #import "BikerMO.h"
 
 @implementation BikerMO
-@synthesize firstName, lastName, sex;
-@synthesize eMail, pin, userId, teamId;
+@synthesize firstName, lastName, sex, eMail, pin, userId, teamId;
+@synthesize bikeBirds, rank;
 
 
 - (id)initWithDictionary:(NSDictionary *)dict {
@@ -55,6 +55,14 @@
     
     if (teamId) {
         [dict setObject:teamId forKey:@"teamId"];
+    }
+    
+    if (bikeBirds) {
+        [dict setObject:bikeBirds forKey:@"bikeBirds"];
+    }
+    
+    if (rank) {
+        [dict setObject:rank forKey:@"rank"];
     }
     
     return dict;

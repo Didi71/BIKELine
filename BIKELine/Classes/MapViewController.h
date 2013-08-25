@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MBProgressHUD.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate> {
     IBOutlet MKMapView *map;
+    IBOutlet MBProgressHUD *progressHud;
+    
+    __block NSMutableArray *response_checkpoints;
+    
+    NSTimer *updateCheckpointsTimer;
 }
 
 @end

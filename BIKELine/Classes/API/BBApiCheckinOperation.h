@@ -10,6 +10,14 @@
 #import "BBApiAbstractOperation.h"
 #import "JSONKit.h"
 
+@interface BBApiCheckinPrice : Jastor
+@property (nonatomic, retain) NSNumber *timeWon;
+@property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSString *sponsorName;
+@property (nonatomic, retain) NSString *sponsorCity;
+@property (nonatomic, retain) NSString *eventName;
+@end
+
 @interface BBApiCheckinResponse : Jastor
 @property (nonatomic, retain) NSNumber *errorCode;
 @property (nonatomic, retain) NSNumber *bikebirdsFirstCheckIn;
@@ -20,7 +28,7 @@
 @property (nonatomic, retain) NSNumber *rank;
 @property (nonatomic, retain) NSString *checkPointName;
 @property (nonatomic, retain) NSString *checkPointCity;
-@property (nonatomic, retain) NSString *price;
+@property (nonatomic, retain) BBApiCheckinPrice *price;
 @end
 
 @interface BBApiCheckinOperation : BBApiAbstractOperation

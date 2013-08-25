@@ -141,9 +141,6 @@
         
         if (bikerInfo.lastName == nil) {
             bikerInfo.lastName = wop.response.bikerLastName;
-            bikerInfo.street = wop.response.bikerStreet;
-            bikerInfo.postalcode = wop.response.bikerPostalCode;
-            bikerInfo.city = wop.response.bikerCity;
         }
         
         if (bikerInfo.avatar) {

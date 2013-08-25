@@ -8,6 +8,10 @@
 
 #import "BBApiCheckinOperation.h"
 
+@implementation BBApiCheckinPrice
+@synthesize timeWon, description, eventName, sponsorCity, sponsorName;
+@end
+
 @implementation BBApiCheckinResponse
 @synthesize errorCode, bikebirds, bikebirdsFirstCheckIn, bikebirdsFirstCheckPointCheckIn, bikebirdsOld, checkPointCity, checkPointName, date, price, rank;
 @end
