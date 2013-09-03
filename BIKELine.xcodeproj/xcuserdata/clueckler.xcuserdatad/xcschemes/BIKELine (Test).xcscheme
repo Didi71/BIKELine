@@ -86,5 +86,14 @@
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Upload dsym to crittercism&#10;APP_ID=&quot;51e94ce7c463c21148000007&quot;&#10;API_KEY=&quot;0td1nvjg6pv9nghqsxlobxifcbcpkzas&quot;&#10;source ${SRCROOT}/BIKELine/Librarys/Crittercism/dsym_upload.sh">
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
    </ArchiveAction>
 </Scheme>
