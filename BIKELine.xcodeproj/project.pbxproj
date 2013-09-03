@@ -63,7 +63,6 @@
 		F6055F1917A566590001271E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EA787B17996BC30063B0A5 /* CoreGraphics.framework */; };
 		F6055F1A17A566590001271E /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
 		F6055F1B17A566590001271E /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
-		F6055F1D17A566590001271E /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */; };
 		F6055F1E17A566590001271E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B054E1799A9FD00A08BB7 /* libzbar.a */; };
 		F6055F2017A566590001271E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788917996BC30063B0A5 /* Default.png */; };
 		F6055F2117A566590001271E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6EA788B17996BC30063B0A5 /* Default@2x.png */; };
@@ -210,9 +209,12 @@
 		F6A21D54179AA7950010D145 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A86179A7138006B4B72 /* BLUtils.m */; };
 		F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
-		F6D000AF179984A500B3B8B4 /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */; };
 		F6D000B1179985E100B3B8B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */; };
 		F6D000B3179985EB00B3B8B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B2179985EB00B3B8B4 /* CoreData.framework */; };
+		F6DE6B1B17D618EC00065F99 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = F6DE6B1917D618EC00065F99 /* dsym_upload.sh */; };
+		F6DE6B1C17D618EC00065F99 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = F6DE6B1917D618EC00065F99 /* dsym_upload.sh */; };
+		F6DE6B1D17D618EC00065F99 /* libCrittercism_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DE6B1A17D618EC00065F99 /* libCrittercism_v4_0_6.a */; };
+		F6DE6B1E17D618EC00065F99 /* libCrittercism_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6DE6B1A17D618EC00065F99 /* libCrittercism_v4_0_6.a */; };
 		F6E5F8A817A2BFE70036D3C1 /* background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A517A2BFE70036D3C1 /* background-568h@2x.png */; };
 		F6E5F8A917A2BFE70036D3C1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A617A2BFE70036D3C1 /* background.png */; };
 		F6E5F8AA17A2BFE70036D3C1 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E5F8A717A2BFE70036D3C1 /* background@2x.png */; };
@@ -397,12 +399,13 @@
 		F6D000A31799838200B3B8B4 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
 		F6D000A41799838200B3B8B4 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		F6D000AA179984A500B3B8B4 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		F6D000AB179984A500B3B8B4 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		F6D000AC179984A500B3B8B4 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_2.a; sourceTree = "<group>"; };
 		F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F6D000B2179985EB00B3B8B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F6DE6B1617D618EC00065F99 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		F6DE6B1717D618EC00065F99 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		F6DE6B1817D618EC00065F99 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		F6DE6B1917D618EC00065F99 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		F6DE6B1A17D618EC00065F99 /* libCrittercism_v4_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_6.a; sourceTree = "<group>"; };
 		F6E5F8A517A2BFE70036D3C1 /* background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-568h@2x.png"; path = "Images/Background/background-568h@2x.png"; sourceTree = "<group>"; };
 		F6E5F8A617A2BFE70036D3C1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/Background/background.png; sourceTree = "<group>"; };
 		F6E5F8A717A2BFE70036D3C1 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Images/Background/background@2x.png"; sourceTree = "<group>"; };
@@ -462,8 +465,8 @@
 				F667C29417C9CF9B0044F1CE /* libOHAttributedLabel.a in Frameworks */,
 				F6055F1A17A566590001271E /* libiconv.2.4.0.dylib in Frameworks */,
 				F6055F1B17A566590001271E /* libGoogleAnalytics.a in Frameworks */,
-				F6055F1D17A566590001271E /* libCrittercism_v4_0_2.a in Frameworks */,
 				F6055F1E17A566590001271E /* libzbar.a in Frameworks */,
+				F6DE6B1E17D618EC00065F99 /* libCrittercism_v4_0_6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,8 +490,8 @@
 				F6EA787C17996BC30063B0A5 /* CoreGraphics.framework in Frameworks */,
 				F61B05601799AA4000A08BB7 /* libiconv.2.4.0.dylib in Frameworks */,
 				F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */,
-				F6D000AF179984A500B3B8B4 /* libCrittercism_v4_0_2.a in Frameworks */,
 				F61B05541799A9FD00A08BB7 /* libzbar.a in Frameworks */,
+				F6DE6B1D17D618EC00065F99 /* libCrittercism_v4_0_6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,10 +833,11 @@
 		F6D000A9179984A500B3B8B4 /* Crittercism */ = {
 			isa = PBXGroup;
 			children = (
-				F6D000AA179984A500B3B8B4 /* Crittercism.h */,
-				F6D000AB179984A500B3B8B4 /* CrittercismDelegate.h */,
-				F6D000AC179984A500B3B8B4 /* dsym_upload.sh */,
-				F6D000AD179984A500B3B8B4 /* libCrittercism_v4_0_2.a */,
+				F6DE6B1617D618EC00065F99 /* CRFilter.h */,
+				F6DE6B1717D618EC00065F99 /* Crittercism.h */,
+				F6DE6B1817D618EC00065F99 /* CrittercismDelegate.h */,
+				F6DE6B1917D618EC00065F99 /* dsym_upload.sh */,
+				F6DE6B1A17D618EC00065F99 /* libCrittercism_v4_0_6.a */,
 			);
 			name = Crittercism;
 			path = Librarys/Crittercism;
@@ -1177,6 +1181,7 @@
 				F667C27417C9C8AB0044F1CE /* segcontrol_selected@2x.png in Resources */,
 				F667C27617C9C8AB0044F1CE /* segcontrol_unselected.png in Resources */,
 				F667C27817C9C8AB0044F1CE /* segcontrol_unselected@2x.png in Resources */,
+				F6DE6B1C17D618EC00065F99 /* dsym_upload.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1234,6 +1239,7 @@
 				F667C27317C9C8AB0044F1CE /* segcontrol_selected@2x.png in Resources */,
 				F667C27517C9C8AB0044F1CE /* segcontrol_unselected.png in Resources */,
 				F667C27717C9C8AB0044F1CE /* segcontrol_unselected@2x.png in Resources */,
+				F6DE6B1B17D618EC00065F99 /* dsym_upload.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
