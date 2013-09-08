@@ -26,4 +26,12 @@
 	return [UIImage imageWithData:UIImageJPEGRepresentation(scaledImage, compression)];
 }
 
++ (NSDate *)convertFromApiDate:(NSNumber *)apiDate {
+    if ([apiDate stringValue].length >= 10) {
+        return [NSDate dateWithTimeIntervalSince1970:[[[apiDate stringValue] substringToIndex:10] intValue]];
+    } else {
+        return nil;
+    }
+}
+
 @end

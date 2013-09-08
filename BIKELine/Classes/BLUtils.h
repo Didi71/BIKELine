@@ -13,5 +13,6 @@
 @interface BLUtils : NSObject
 
 + (UIImage *)resizeImage:(UIImage *)originalImg toSize:(CGSize)newSize withCompression:(float)compression;
++ (NSDate *)convertFromApiDate:(NSNumber *)apiDate;
 
 @end

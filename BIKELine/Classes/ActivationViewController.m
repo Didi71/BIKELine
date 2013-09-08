@@ -138,6 +138,10 @@
             bikerInfo.lastName = wop.response.bikerLastName;
         }
         
+        if (bikerInfo.city == nil) {
+            bikerInfo.city = wop.response.bikerCity;
+        }
+        
         if (bikerInfo.avatar) {
             [self showHUDWithProgressMessage: NSLocalizedString(@"progressUploadAvatarText", @"")
                            andSuccessMessage: nil];

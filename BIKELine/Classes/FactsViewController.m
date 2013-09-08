@@ -272,7 +272,11 @@ const int kFactsViewSubViewTableTag = 2;
         cell.headerLabel.textColor = [UIColor whiteColor];
         cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
         
-        NSString *dateString = [NSDate dateWithTimeIntervalSince1970:[checkIn.date doubleValue]];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        [dateFormatter setLocale:[NSLocale currentLocale]];
+        NSString *dateString = [dateFormatter stringFromDate:[BLUtils convertFromApiDate:checkIn.date]];
+        
         cell.bottomLabel.text = [NSString stringWithFormat:@"%@ %@, %@", NSLocalizedString(@"factsViewInLabel", @""), checkIn.checkPointCity, dateString];
         cell.bottomLabel.textColor = [UIColor whiteColor];
         cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
@@ -287,13 +291,18 @@ const int kFactsViewSubViewTableTag = 2;
         cell.headerLabel.textColor = [UIColor whiteColor];
         cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
         
-        NSDate *lastCheckin = [NSDate dateWithTimeIntervalSince1970:[teamCheckin.lastCheckInDate doubleValue]];
+        NSDate *lastCheckin = [BLUtils convertFromApiDate:teamCheckin.lastCheckInDate];
         
         if (abs([lastCheckin timeIntervalSinceNow]) > 86400) {
             int dayCount = [lastCheckin timeIntervalSinceNow] / 86400;
             cell.bottomLabel.text = [NSString stringWithFormat:NSLocalizedString(@"factsViewLastCheckinAtLabel", @""), dayCount];
         } else {
-            cell.bottomLabel.text = [NSString stringWithFormat:NSLocalizedString(@"factsViewLastCheckinTodayOnLabel", @""), lastCheckin];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+            [dateFormatter setLocale:[NSLocale currentLocale]];
+            NSString *dateString = [dateFormatter stringFromDate:lastCheckin];
+            
+            cell.bottomLabel.text = [NSString stringWithFormat:NSLocalizedString(@"factsViewLastCheckinTodayOnLabel", @""), dateString];
         }
         
         cell.bottomLabel.textColor = [UIColor whiteColor];
@@ -362,7 +371,7 @@ const int kFactsViewSubViewTableTag = 2;
     
     // Configure Labels
     NSString *nameString = [NSString stringWithFormat:@"%@ %@", biker.firstName, biker.lastName];
-    NSString *addressString = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"factsViewFromLabel", @""), @"City"];
+    NSString *addressString = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"factsViewFromLabel", @""), biker.city];
     NSMutableAttributedString *attrStr1 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", nameString, addressString]];
     [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0] range:[attrStr1.string rangeOfString:nameString]];
     [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:14.0] range:[attrStr1.string rangeOfString:addressString]];

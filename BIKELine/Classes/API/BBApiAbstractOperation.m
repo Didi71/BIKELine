@@ -82,7 +82,7 @@
     NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:params];
     
     // Configure Request
-    [request setTimeoutInterval:30.0];
+    [request setTimeoutInterval:15.0];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
     [request setValue:@"15" forHTTPHeaderField:@"Keep-Alive"];
     [request setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];

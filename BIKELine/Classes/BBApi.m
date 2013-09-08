@@ -160,7 +160,7 @@ const int kMaxRequestRetry = 5;
         return;
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: NSLocalizedString(@"errorAlertViewTitle", @"")
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
                                                     message: [self getErrorMessageForCode:errorCode]
                                                    delegate: nil
                                           cancelButtonTitle: NSLocalizedString(@"buttonOkTitle", @"")
