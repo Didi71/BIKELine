@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ket-IL-jBo">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -187,6 +186,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-XF-mw7" customClass="BLScrollView">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="06a-am-Ucm" userLabel="Label - Teaser">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="pwm-Rb-ztF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -194,9 +196,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="RegisterFormBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="cSP-bb-tEq" userLabel="Image View - Formular Background"/>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cameraButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-nS-qaI" userLabel="Image View - Camera Image"/>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Profilbild" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzl-4a-ZZ6" userLabel="Label - Camera Label">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="6PJ-FZ-t8Y"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <color key="textColor" white="0.60471270161290325" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -249,7 +248,6 @@
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="eMail" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOA-A5-LeL">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="269" id="MQ1-bz-oEo"/>
                                             <constraint firstAttribute="height" constant="30" type="user" id="PG0-AW-IZn"/>
                                         </constraints>
                                         <color key="textColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -257,6 +255,17 @@
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="ygj-oK-rhi" id="xe2-id-RGs"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="city" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9P2-bd-o9Q">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" type="user" id="HN4-fe-zf7"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ygj-oK-rhi" id="GWy-iK-DV0"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKy-P6-ftc">
@@ -319,34 +328,38 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Nzl-4a-ZZ6" firstAttribute="centerX" secondItem="Wcl-nS-qaI" secondAttribute="centerX" type="default" id="2Ms-d1-eZh"/>
-                                    <constraint firstItem="5RP-pi-l8o" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="263" id="3cL-8a-BEl"/>
+                                    <constraint firstItem="BKw-Ua-ch8" firstAttribute="bottom" secondItem="FKy-P6-ftc" secondAttribute="bottom" type="default" id="4v2-VO-38f"/>
+                                    <constraint firstItem="lOA-A5-LeL" firstAttribute="trailing" secondItem="9P2-bd-o9Q" secondAttribute="trailing" type="default" id="6J1-R2-xOO"/>
                                     <constraint firstAttribute="trailing" secondItem="cSP-bb-tEq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7E7-ET-CCF"/>
                                     <constraint firstItem="n03-uX-nmT" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="91" id="7Gw-Dc-CtP"/>
-                                    <constraint firstAttribute="bottom" secondItem="5RP-pi-l8o" secondAttribute="bottom" constant="197" id="A3G-sD-qPz"/>
                                     <constraint firstItem="5RP-pi-l8o" firstAttribute="centerX" secondItem="lOA-A5-LeL" secondAttribute="centerX" type="default" id="AvM-Wv-xBP"/>
                                     <constraint firstItem="06a-am-Ucm" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="20" symbolic="YES" type="default" id="BOT-EO-gdj"/>
                                     <constraint firstItem="omB-hA-43x" firstAttribute="trailing" secondItem="igG-tu-xyv" secondAttribute="trailing" type="default" id="EqU-A8-eWc"/>
-                                    <constraint firstItem="FKy-P6-ftc" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="217" id="JfK-s4-T4b"/>
+                                    <constraint firstAttribute="bottom" secondItem="5RP-pi-l8o" secondAttribute="bottom" constant="155" id="FmE-sv-IqQ"/>
                                     <constraint firstItem="Nzl-4a-ZZ6" firstAttribute="top" secondItem="Wcl-nS-qaI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Meb-bT-CDA"/>
-                                    <constraint firstItem="BKw-Ua-ch8" firstAttribute="bottom" secondItem="FKy-P6-ftc" secondAttribute="bottom" type="default" id="N0U-dR-bsK"/>
-                                    <constraint firstItem="lOA-A5-LeL" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="176" id="Nva-RB-Urh"/>
+                                    <constraint firstItem="9P2-bd-o9Q" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="27" id="OIP-gq-AQI"/>
                                     <constraint firstItem="cSP-bb-tEq" firstAttribute="top" secondItem="06a-am-Ucm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QRW-Is-wyJ"/>
                                     <constraint firstItem="cSP-bb-tEq" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SnV-32-LWB"/>
-                                    <constraint firstItem="lOA-A5-LeL" firstAttribute="leading" secondItem="Nzl-4a-ZZ6" secondAttribute="leading" type="default" id="Wp8-QD-L6E"/>
+                                    <constraint firstItem="9P2-bd-o9Q" firstAttribute="top" secondItem="MCD-pG-cZg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UDV-Uk-78n"/>
+                                    <constraint firstItem="FKy-P6-ftc" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="259" id="WaB-li-D1t"/>
                                     <constraint firstItem="BKw-Ua-ch8" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="164" id="YGa-uW-SVr"/>
+                                    <constraint firstItem="lOA-A5-LeL" firstAttribute="leading" secondItem="9P2-bd-o9Q" secondAttribute="leading" type="default" id="ZMU-4x-uiZ"/>
                                     <constraint firstAttribute="trailing" secondItem="06a-am-Ucm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZUD-ZI-Fpt"/>
-                                    <constraint firstItem="BKw-Ua-ch8" firstAttribute="top" secondItem="FKy-P6-ftc" secondAttribute="top" type="default" id="aBf-AO-sbG"/>
                                     <constraint firstItem="FKy-P6-ftc" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="25" id="aBl-Hk-lD9"/>
+                                    <constraint firstItem="9P2-bd-o9Q" firstAttribute="trailing" secondItem="omB-hA-43x" secondAttribute="trailing" type="default" id="dIZ-28-o3R"/>
                                     <constraint firstItem="Wcl-nS-qaI" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="101" id="fIx-s4-SV5"/>
                                     <constraint firstItem="06a-am-Ucm" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lL7-Io-Rb2"/>
+                                    <constraint firstItem="lOA-A5-LeL" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="219" id="mbn-t1-POo"/>
+                                    <constraint firstItem="9P2-bd-o9Q" firstAttribute="leading" secondItem="Nzl-4a-ZZ6" secondAttribute="leading" type="default" id="nm9-Tz-UaD"/>
                                     <constraint firstItem="omB-hA-43x" firstAttribute="leading" secondItem="igG-tu-xyv" secondAttribute="leading" type="default" id="odn-PE-vqg"/>
-                                    <constraint firstItem="omB-hA-43x" firstAttribute="trailing" secondItem="lOA-A5-LeL" secondAttribute="trailing" type="default" id="pSO-tG-DCc"/>
+                                    <constraint firstItem="5RP-pi-l8o" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="305" id="oeC-td-8Xb"/>
                                     <constraint firstItem="MCD-pG-cZg" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="86" id="qSm-FN-YNa"/>
                                     <constraint firstItem="omB-hA-43x" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="134" id="qrq-D5-43N"/>
                                     <constraint firstItem="MCD-pG-cZg" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="21" id="t3t-Ai-dNY"/>
-                                    <constraint firstItem="cSP-bb-tEq" firstAttribute="top" secondItem="YZl-XF-mw7" secondAttribute="top" constant="85" id="thS-eT-T4L"/>
+                                    <constraint firstItem="n03-uX-nmT" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="26" id="uGk-eV-kSx"/>
                                     <constraint firstItem="5RP-pi-l8o" firstAttribute="leading" secondItem="YZl-XF-mw7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="vPo-YT-GQS"/>
                                     <constraint firstItem="n03-uX-nmT" firstAttribute="top" secondItem="igG-tu-xyv" secondAttribute="top" type="default" id="vxG-5c-PEv"/>
+                                    <constraint firstItem="BKw-Ua-ch8" firstAttribute="top" secondItem="FKy-P6-ftc" secondAttribute="top" type="default" id="yH4-4P-9xQ"/>
                                     <constraint firstItem="n03-uX-nmT" firstAttribute="centerX" secondItem="Wcl-nS-qaI" secondAttribute="centerX" type="default" id="zuY-DT-di4"/>
                                 </constraints>
                             </scrollView>
@@ -369,6 +382,7 @@
                         <outlet property="cameraButton" destination="n03-uX-nmT" id="Sjh-28-CJR"/>
                         <outlet property="cameraImageView" destination="Wcl-nS-qaI" id="0WG-Bh-elj"/>
                         <outlet property="cameraLabel" destination="Nzl-4a-ZZ6" id="N88-ud-oLi"/>
+                        <outlet property="cityTextField" destination="9P2-bd-o9Q" id="UeK-UF-wco"/>
                         <outlet property="eMailTextField" destination="lOA-A5-LeL" id="UbI-gl-5TE"/>
                         <outlet property="firstNameTextField" destination="igG-tu-xyv" id="reE-Ne-Kd8"/>
                         <outlet property="formularImageView" destination="cSP-bb-tEq" id="tma-jd-AN3"/>
@@ -484,7 +498,7 @@
     <resources>
         <image name="LoginButton.png" width="282" height="44"/>
         <image name="RegisterButton.png" width="282" height="44"/>
-        <image name="RegisterFormBackground.png" width="280" height="167"/>
+        <image name="RegisterFormBackground.png" width="280" height="209"/>
         <image name="background-568h@2x.png" width="640" height="1136"/>
         <image name="cameraButton.png" width="50" height="38"/>
         <image name="emptyButton.png" width="280" height="42"/>
@@ -533,12 +547,11 @@
         <class className="RegistrationViewController" superclassName="BLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cameraButtonPressed:"/>
-                <relationship kind="action" name="sexButtonPressed:"/>
                 <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cameraImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cameraLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="formularImageView" candidateClass="UIImageView"/>

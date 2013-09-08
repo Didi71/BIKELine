@@ -28,7 +28,11 @@ const int kMaxRequestRetry = 5;
 	} else if ((self = sharedInstance = [super init])) {
         queue = [[NSOperationQueue alloc] init];
         [queue setMaxConcurrentOperationCount:1];
-        queueCheckTimer = [NSTimer scheduledTimerWithTimeInterval:kQueueCheckTimeIntervall target:self selector:@selector(cleanUpQueue) userInfo:nil repeats:YES];
+        queueCheckTimer = [NSTimer scheduledTimerWithTimeInterval: kQueueCheckTimeIntervall
+                                                           target: self
+                                                         selector: @selector(cleanUpQueue)
+                                                         userInfo: nil
+                                                          repeats: YES];
 	}
 	return sharedInstance;
 }
@@ -72,6 +76,7 @@ const int kMaxRequestRetry = 5;
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: biker.firstName, @"bikerFirstName",
                                                                            biker.lastName, @"bikerLastName",
                                                                            biker.eMail, @"bikerEmailAddress",
+                                                                           biker.city, @"bikerCity",
                                                                            ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"bikerSex",
                                                                            BIKEBIRD_API_KEY, @"APIKey", nil];
     

@@ -381,6 +381,9 @@
         </class>
         <class className="JoinTeamSelectTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinTeamSelectTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+            </relationships>
         </class>
         <class className="MBProgressHUD" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MBProgressHUD.h"/>
