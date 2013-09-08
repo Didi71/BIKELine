@@ -4,12 +4,31 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4Kk-fk-XR5">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="yQi-An-GVY" customClass="BLNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="LPC-1F-Sdy"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="nys-sO-IiS">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Htc-ZO-4QD" kind="relationship" relationship="rootViewController" id="s9w-CV-zzk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5e-ET-cPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-985" y="-833"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="vb1-ha-Xmp">
             <objects>
                 <viewController title="Karte" id="Htc-ZO-4QD" userLabel="Map View Controller" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dmL-Ve-JgU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-bD-yqz">
@@ -27,13 +46,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="wpP-pX-gbU"/>
+                    <navigationItem key="navigationItem" id="fyz-w2-LMd"/>
                     <connections>
                         <outlet property="map" destination="Ban-bD-yqz" id="NAU-Zs-3dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXL-s9-Msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="585"/>
+            <point key="canvasLocation" x="-478" y="-833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vhh-V2-ILp">
@@ -52,7 +72,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02B-eI-hpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-985" y="-839"/>
+            <point key="canvasLocation" x="-985" y="579"/>
         </scene>
         <!--Facts View Controller-->
         <scene sceneID="Oy3-R7-LaG">
@@ -283,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do8-PZ-Be2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-478" y="-839"/>
+            <point key="canvasLocation" x="-478" y="579"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vqt-sK-DUZ">
@@ -297,9 +317,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Htc-ZO-4QD" kind="relationship" relationship="viewControllers" id="ySp-5I-Qkh"/>
-                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="gOp-0y-46u"/>
-                        <segue destination="w6g-jI-bm7" kind="relationship" relationship="viewControllers" id="j22-Zg-wqW"/>
+                        <segue destination="yQi-An-GVY" kind="relationship" relationship="viewControllers" id="vDa-uq-d0m"/>
+                        <segue destination="9ph-38-7kO" kind="relationship" relationship="viewControllers" id="XlH-GZ-HNM"/>
+                        <segue destination="w6g-jI-bm7" kind="relationship" relationship="viewControllers" id="4Y6-RY-FRn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ann-RD-NJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,9 +329,9 @@
         <!--Reader View Controller-->
         <scene sceneID="rkF-8h-SIX">
             <objects>
-                <viewController title="QRReader" id="9ph-38-7kO" userLabel="Reader View Controller" customClass="QRReaderViewController" sceneMemberID="viewController">
+                <viewController title="QRReader" hidesBottomBarWhenPushed="YES" id="9ph-38-7kO" userLabel="Reader View Controller" customClass="QRReaderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ngs-Zm-af0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-9k-vDu" userLabel="Image View - Background">
@@ -319,16 +339,126 @@
                                     <constraint firstAttribute="height" constant="568" id="er4-pu-H36"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Checkpoint Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-Qr-zpr">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mqy-fu-vJk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Checkpoint City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nka-oT-Qor">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgR-JT-Jfv" userLabel="View - Circle Left">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" type="user" id="IJh-jZ-8Q5"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bikebirds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AA-7a-8Na" customClass="OHAttributedLabel">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Hx5-jS-PHr"/>
+                                    <constraint firstAttribute="height" constant="135" type="user" id="mYX-8U-kIw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2he-3v-Ftu" userLabel="View - Circle Center">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="+5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-sI-quH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Knu-fj-0bN"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="WWA-QT-ReK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVM-cM-OgI" userLabel="View - Circle Right">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" type="user" id="8qj-lv-hvK"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpB-bG-DH8" customClass="OHAttributedLabel">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="P29-tV-aAa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-o4-OMH">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Weiter" backgroundImage="LoginButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.25129158270000002" alpha="0.25" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="9ph-38-7kO" eventType="touchUpInside" id="nMq-pM-TIg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PgR-JT-Jfv" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="184" type="user" id="1Ex-FX-mdu"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" id="2hA-QZ-6Hs"/>
+                            <constraint firstItem="sVM-cM-OgI" firstAttribute="top" secondItem="2he-3v-Ftu" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="40r-ux-1wh"/>
+                            <constraint firstItem="5AA-7a-8Na" firstAttribute="trailing" secondItem="PgR-JT-Jfv" secondAttribute="trailing" type="default" id="5O4-Co-i3l"/>
+                            <constraint firstAttribute="trailing" secondItem="sVM-cM-OgI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6U8-Oy-Sdf"/>
+                            <constraint firstItem="5AA-7a-8Na" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="184" type="user" id="6mV-x2-Dfg"/>
+                            <constraint firstAttribute="trailing" secondItem="nka-oT-Qor" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8R3-Ze-eSm"/>
+                            <constraint firstItem="rpB-bG-DH8" firstAttribute="top" secondItem="pa1-sI-quH" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="9bE-Ny-dbo"/>
+                            <constraint firstItem="PgR-JT-Jfv" firstAttribute="top" secondItem="2he-3v-Ftu" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Bd4-yc-RTn"/>
+                            <constraint firstItem="PgR-JT-Jfv" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IPm-3Q-Chn"/>
+                            <constraint firstItem="pa1-sI-quH" firstAttribute="trailing" secondItem="2he-3v-Ftu" secondAttribute="trailing" type="default" id="MXf-Ht-BzM"/>
+                            <constraint firstItem="rpB-bG-DH8" firstAttribute="leading" secondItem="sVM-cM-OgI" secondAttribute="leading" type="default" id="P5V-Ak-Z8t"/>
+                            <constraint firstAttribute="bottom" secondItem="GaE-o4-OMH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="UMg-gI-kb2"/>
+                            <constraint firstItem="rpB-bG-DH8" firstAttribute="top" secondItem="2he-3v-Ftu" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="WbK-er-Rtt"/>
+                            <constraint firstItem="rpB-bG-DH8" firstAttribute="bottom" secondItem="sVM-cM-OgI" secondAttribute="bottom" type="default" id="byd-Iu-IrW"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" type="default" id="f0w-PF-VAd"/>
+                            <constraint firstItem="fdU-Qr-zpr" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f2g-RG-1Ai"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="trailing" secondItem="Ngs-Zm-af0" secondAttribute="trailing" type="default" id="fQI-2X-m5z"/>
+                            <constraint firstItem="pa1-sI-quH" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="136" type="user" id="fQq-9o-UjW"/>
+                            <constraint firstItem="nka-oT-Qor" firstAttribute="top" secondItem="fdU-Qr-zpr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hx9-l8-F3N"/>
+                            <constraint firstItem="2he-3v-Ftu" firstAttribute="centerX" secondItem="nka-oT-Qor" secondAttribute="centerX" type="default" id="lWh-W5-jwR"/>
+                            <constraint firstItem="sVM-cM-OgI" firstAttribute="bottom" secondItem="PgR-JT-Jfv" secondAttribute="bottom" type="user" id="mK5-Rn-eJI"/>
+                            <constraint firstAttribute="trailing" secondItem="fdU-Qr-zpr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-8G-VQA"/>
+                            <constraint firstItem="nka-oT-Qor" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qo5-Y9-HbI"/>
+                            <constraint firstAttribute="trailing" secondItem="rpB-bG-DH8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rlR-Im-Av2"/>
+                            <constraint firstItem="pa1-sI-quH" firstAttribute="top" secondItem="2he-3v-Ftu" secondAttribute="top" type="default" id="sEa-cd-02U"/>
+                            <constraint firstItem="GaE-o4-OMH" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="swX-2q-1wc"/>
+                            <constraint firstItem="pa1-sI-quH" firstAttribute="leading" secondItem="2he-3v-Ftu" secondAttribute="leading" type="default" id="wQB-w9-lFN"/>
                             <constraint firstItem="Gre-9k-vDu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="-20" type="user" id="wpe-3T-SKX"/>
+                            <constraint firstItem="5AA-7a-8Na" firstAttribute="leading" secondItem="Ngs-Zm-af0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x3u-1d-PLQ"/>
+                            <constraint firstItem="fdU-Qr-zpr" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="40" id="xRW-4I-4UB"/>
+                            <constraint firstAttribute="trailing" secondItem="GaE-o4-OMH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zly-h6-geC"/>
+                            <constraint firstItem="rpB-bG-DH8" firstAttribute="top" secondItem="Ngs-Zm-af0" secondAttribute="top" constant="184" type="user" id="zpn-mK-ltm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="AUW-AK-ogW"/>
+                    <navigationItem key="navigationItem" id="5Qb-5l-AO8"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bikebirdCity" destination="nka-oT-Qor" id="L30-Of-CHM"/>
+                        <outlet property="bikebirdName" destination="fdU-Qr-zpr" id="9de-3y-qNc"/>
+                        <outlet property="bikebirds" destination="PgR-JT-Jfv" id="utp-Dm-63O"/>
+                        <outlet property="bikebirdsLabel" destination="5AA-7a-8Na" id="ZjU-os-YPO"/>
+                        <outlet property="nextButton" destination="GaE-o4-OMH" id="TDk-td-OWk"/>
+                        <outlet property="rank" destination="sVM-cM-OgI" id="jGs-VH-G4x"/>
+                        <outlet property="rankLabel" destination="rpB-bG-DH8" id="htb-UW-2Gj"/>
+                        <outlet property="wonBikebirds" destination="2he-3v-Ftu" id="Scb-bu-sXE"/>
+                        <outlet property="wonBikebirdsLabel" destination="pa1-sI-quH" id="yvS-V6-X6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fO-0M-Byp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,6 +466,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoginButton.png" width="282" height="44"/>
         <image name="RegisterButton.png" width="282" height="44"/>
         <image name="background-568h@2x.png" width="640" height="1136"/>
         <image name="emptyButton.png" width="280" height="42"/>
@@ -356,11 +487,6 @@
         <class className="FactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="joinTeamButtonPressed:"/>
-                <relationship kind="action" name="segmentControlChangedValue:"/>
-                <relationship kind="action" name="teamOrganisationButtonPressed:"/>
-                <relationship kind="action" name="teamProvinceButtonPressed:"/>
-                <relationship kind="action" name="teamTeamButtonPressed:"/>
                 <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
@@ -381,9 +507,6 @@
         </class>
         <class className="JoinTeamSelectTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinTeamSelectTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:"/>
-            </relationships>
         </class>
         <class className="MBProgressHUD" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MBProgressHUD.h"/>
@@ -406,6 +529,18 @@
         </class>
         <class className="QRReaderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QRReaderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextButtonPressed:"/>
+                <relationship kind="outlet" name="bikebirdCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bikebirdName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bikebirds" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rank" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rankLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="wonBikebirds" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wonBikebirdsLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

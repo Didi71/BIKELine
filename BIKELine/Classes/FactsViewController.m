@@ -281,17 +281,25 @@ const int kFactsViewSubViewTableTag = 2;
         cell.leftLabel.textColor = [UIColor whiteColor];
         cell.leftLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:28.0];
     } else if (segmentControl.selectedSegmentIndex == 2) {
+        BBTeamCheckIn *teamCheckin = [result_teamCheckIns objectAtIndex:indexPath.row];
         
-        
-        cell.headerLabel.text = @"balalsdasd";
+        cell.headerLabel.text = [NSString stringWithFormat:@"%@ %@", teamCheckin.firstName, teamCheckin.lastName];
         cell.headerLabel.textColor = [UIColor whiteColor];
         cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
         
-        cell.bottomLabel.text = @"muhahaha";
+        NSDate *lastCheckin = [NSDate dateWithTimeIntervalSince1970:[teamCheckin.lastCheckInDate doubleValue]];
+        
+        if (abs([lastCheckin timeIntervalSinceNow]) > 86400) {
+            int dayCount = [lastCheckin timeIntervalSinceNow] / 86400;
+            cell.bottomLabel.text = [NSString stringWithFormat:NSLocalizedString(@"factsViewLastCheckinAtLabel", @""), dayCount];
+        } else {
+            cell.bottomLabel.text = [NSString stringWithFormat:NSLocalizedString(@"factsViewLastCheckinTodayOnLabel", @""), lastCheckin];
+        }
+        
         cell.bottomLabel.textColor = [UIColor whiteColor];
         cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
         
-        cell.leftLabel.text = @"2";
+        cell.leftLabel.text = [teamCheckin.bikebirds stringValue];
         cell.leftLabel.textColor = [UIColor whiteColor];
         cell.leftLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:28.0];
     } else if (segmentControl.selectedSegmentIndex == 3) {
@@ -370,7 +378,7 @@ const int kFactsViewSubViewTableTag = 2;
     [attrStr2 setParagraphStyle:paragraphStyle2];
     bikebirdsLabel.attributedText = attrStr2;
     
-    NSString *rankString = biker.rank == nil ? @"#0" : [NSString stringWithFormat:@"#%@", biker.rank];
+    NSString *rankString = biker.rank == nil ? @"0" : [biker.rank stringValue];
     NSMutableAttributedString *attrStr3 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
     [attrStr3 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr3.string rangeOfString:rankString]];
     [attrStr3 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr3.string rangeOfString:NSLocalizedString(@"factsViewBikerRankLabel", @"")]];

@@ -27,6 +27,15 @@
 
 
 #pragma mark
+#pragma mark - Overridden methods
+
+- (void)setSelectedIndex:(NSUInteger)selectedIndex {
+    [super setSelectedIndex:selectedIndex];
+    [self tabBar:self.tabBar didSelectItem:[self.tabBar.items objectAtIndex:selectedIndex]];
+}
+
+
+#pragma mark
 #pragma mark - Delegate
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
@@ -49,6 +58,7 @@
     
     if ([viewController isKindOfClass:[QRReaderViewController class]]) {
         QRReaderViewController *reader = (QRReaderViewController *)viewController;
+        reader.lastSelectedIndex = [NSNumber numberWithInt:tabBarController.selectedIndex];
         [reader showQRReader];
     }
     

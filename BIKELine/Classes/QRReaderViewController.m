@@ -13,6 +13,7 @@
 #import "BBApi.h"
 
 @implementation QRReaderViewController
+@synthesize lastSelectedIndex;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -28,6 +29,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [bikebirds.layer setCornerRadius:67.5];
+    [bikebirds.layer setMasksToBounds:YES];
+    [rank.layer setCornerRadius:67.5];
+    [rank.layer setMasksToBounds:YES];
+    [wonBikebirds.layer setCornerRadius:20.0];
+    [wonBikebirds.layer setMasksToBounds:YES];
+}
+
+
+#pragma mark
+#pragma mark - IBActions
+
+- (IBAction)nextButtonPressed:(id)sender {    
+    if (lastSelectedIndex) {
+        [self.tabBarController setSelectedIndex:[lastSelectedIndex intValue]];
+    } else {
+        [self.tabBarController setSelectedIndex:0];
+    }
 }
 
 
@@ -69,7 +89,34 @@
                    config: ZBAR_CFG_ENABLE
                        to: 0];
     
-    [self presentViewController:reader animated:YES completion:nil];
+    [self presentViewController:reader animated:NO completion:nil];
+}
+
+- (void)configureCheckinView:(BBApiCheckinResponse *)response {
+    
+    bikebirdName.text = response.checkPointName;
+    bikebirdCity.text = response.checkPointCity;
+    
+    OHParagraphStyle *paragraphStyle = [OHParagraphStyle defaultParagraphStyle];
+    paragraphStyle.textAlignment = kCTCenterTextAlignment;
+    paragraphStyle.lineBreakMode = kCTLineBreakByWordWrapping;
+    paragraphStyle.lineSpacing = 6.0;
+    
+    NSString *bikeBirds = response.bikebirds == nil ? @"0" : [response.bikebirds stringValue];
+    NSMutableAttributedString *attrStr1 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", bikeBirds, NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
+    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr1.string rangeOfString:bikeBirds]];
+    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr1.string rangeOfString:NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
+    [attrStr1 setTextColor:[UIColor whiteColor]];
+    [attrStr1 setParagraphStyle:paragraphStyle];
+    bikebirdsLabel.attributedText = attrStr1;
+    
+    NSString *rankString = response.rank == nil ? @"0" : [response.rank stringValue];
+    NSMutableAttributedString *attrStr2 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
+    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr2.string rangeOfString:rankString]];
+    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr2.string rangeOfString:NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
+    [attrStr2 setTextColor:[UIColor whiteColor]];
+    [attrStr2 setParagraphStyle:paragraphStyle];
+    rankLabel.attributedText = attrStr2;
 }
 
 
@@ -93,13 +140,12 @@
         hiddenData = [NSString stringWithString:symbol.data];
     }    
     
-    NDCLog(@"BARCODE= %@", symbol.data);
-    NDCLog(@"SYMBOL : %@", hiddenData);
+    NDCLog(@"BARCODE = %@", symbol.data);
+    NDCLog(@"SYMBOL  = %@", hiddenData);
     
-
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
+    });
     
     if ([hiddenData hasPrefix:BIKEBIRD_QRCODE_VERIFICATION_PREFIX]) {
 
@@ -123,6 +169,8 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self _hideProgressHud];
+                [self configureCheckinView:wop.response];
+                [picker dismissViewControllerAnimated:YES completion:nil];
                 
                 BikerMO *biker = BLStandardUserDefaults.biker;
                 biker.bikeBirds = [NSNumber numberWithInt:([wop.response.bikebirdsOld intValue] + [wop.response.bikebirdsOld intValue])];
@@ -148,6 +196,10 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    if (lastSelectedIndex) {
+        [self.tabBarController setSelectedIndex:[lastSelectedIndex intValue]];
+    }
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -17,7 +17,7 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        
+        self.title = NSLocalizedString(@"mapViewTitle", @"");
     }
     return self;
 }
