@@ -207,6 +207,10 @@
 		F6A21D52179AA7950010D145 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D44179AA7950010D145 /* UIImageView+AFNetworking.m */; };
 		F6A21D53179AA7950010D145 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D47179AA7950010D145 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F6A21D54179AA7950010D145 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6ADBEDD17DFAFC500A5B9A6 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = F6ADBEDB17DFAFC500A5B9A6 /* info.png */; };
+		F6ADBEDE17DFAFC500A5B9A6 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = F6ADBEDB17DFAFC500A5B9A6 /* info.png */; };
+		F6ADBEDF17DFAFC500A5B9A6 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6ADBEDC17DFAFC500A5B9A6 /* info@2x.png */; };
+		F6ADBEE017DFAFC500A5B9A6 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6ADBEDC17DFAFC500A5B9A6 /* info@2x.png */; };
 		F6AF3A87179A7138006B4B72 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AF3A86179A7138006B4B72 /* BLUtils.m */; };
 		F6D000A71799838200B3B8B4 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000A51799838200B3B8B4 /* libGoogleAnalytics.a */; };
 		F6D000B1179985E100B3B8B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D000B0179985E100B3B8B4 /* SystemConfiguration.framework */; };
@@ -392,6 +396,8 @@
 		F6A21D47179AA7950010D145 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
 		F6A21D48179AA7950010D145 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
 		F6A21D49179AA7950010D145 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
+		F6ADBEDB17DFAFC500A5B9A6 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		F6ADBEDC17DFAFC500A5B9A6 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		F6AF3A85179A7138006B4B72 /* BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLUtils.h; path = Classes/BLUtils.h; sourceTree = "<group>"; };
 		F6AF3A86179A7138006B4B72 /* BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLUtils.m; path = Classes/BLUtils.m; sourceTree = "<group>"; };
 		F6D000A01799838200B3B8B4 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -879,6 +885,8 @@
 				F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */,
 				F6E5F8B017A2C1070036D3C1 /* emptyButton.png */,
 				F6E5F8B117A2C1070036D3C1 /* emptyButton@2x.png */,
+				F6ADBEDB17DFAFC500A5B9A6 /* info.png */,
+				F6ADBEDC17DFAFC500A5B9A6 /* info@2x.png */,
 				F6E5F8B217A2C1070036D3C1 /* LoginButton.png */,
 				F6E5F8B317A2C1070036D3C1 /* LoginButton@2x.png */,
 				F6E5F8B417A2C1070036D3C1 /* RegisterButton.png */,
@@ -1184,6 +1192,8 @@
 				F667C27817C9C8AB0044F1CE /* segcontrol_unselected@2x.png in Resources */,
 				F6DE6B1C17D618EC00065F99 /* dsym_upload.sh in Resources */,
 				F69BD44F17DCC77200B3E4E2 /* Localizable.strings in Resources */,
+				F6ADBEDE17DFAFC500A5B9A6 /* info.png in Resources */,
+				F6ADBEE017DFAFC500A5B9A6 /* info@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1242,6 +1252,8 @@
 				F667C27717C9C8AB0044F1CE /* segcontrol_unselected@2x.png in Resources */,
 				F6DE6B1B17D618EC00065F99 /* dsym_upload.sh in Resources */,
 				F69BD44E17DCC77200B3E4E2 /* Localizable.strings in Resources */,
+				F6ADBEDD17DFAFC500A5B9A6 /* info.png in Resources */,
+				F6ADBEDF17DFAFC500A5B9A6 /* info@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

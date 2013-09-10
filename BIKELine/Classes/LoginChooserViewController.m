@@ -13,7 +13,13 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-
+        UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [infoButton setFrame:CGRectMake(0, 0, 30.0, 30.0)];
+        [infoButton setShowsTouchWhenHighlighted:YES];
+        [infoButton setImage:[UIImage imageNamed:@"info.png"] forState:UIControlStateNormal];
+        [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:infoButton]];
     }
     return self;
 }
@@ -28,18 +34,11 @@
 
 
 #pragma mark
-#pragma mark - View life cycle
+#pragma mark - IBActions
 
-- (void)viewDidLoad {
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+- (IBAction)infoButtonPressed:(id)sender {
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
 
 @end

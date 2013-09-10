@@ -10,7 +10,7 @@
             <objects>
                 <viewController title="Root" id="2" customClass="LoginChooserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="jTy-ie-iFF" userLabel="Image View - Background">
@@ -67,15 +67,15 @@
                             <constraint firstAttribute="trailing" secondItem="g9F-b6-twg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xg5-WK-whL"/>
                             <constraint firstItem="80G-FP-NcX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YwT-To-IgA"/>
                             <constraint firstItem="Sbu-A3-FvA" firstAttribute="centerX" secondItem="80G-FP-NcX" secondAttribute="centerX" type="default" id="c2i-pe-d1j"/>
+                            <constraint firstItem="Sbu-A3-FvA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="40" id="eMN-r1-Aby"/>
                             <constraint firstItem="g9F-b6-twg" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hKp-vV-wcc"/>
                             <constraint firstItem="jTy-ie-iFF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-20" type="user" id="lvT-BS-g87"/>
                             <constraint firstItem="Ccu-6a-umK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="r2P-vF-H1F"/>
-                            <constraint firstItem="Sbu-A3-FvA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="84" id="tkS-Gg-qiz"/>
                             <constraint firstAttribute="trailing" secondItem="80G-FP-NcX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w2l-RA-kAO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IAQ-AG-D5V"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
                         <outlet property="loginButton" destination="80G-FP-NcX" id="HaE-AG-uFr"/>
                         <outlet property="orLabel" destination="Ccu-6a-umK" id="Z4m-XI-cCj"/>
@@ -516,70 +516,6 @@
         <image name="emptyButton.png" width="280" height="42"/>
         <image name="logo.png" width="200" height="126"/>
     </resources>
-    <classes>
-        <class className="ActivationViewController" superclassName="BLViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activateButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
-                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BLNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
-        </class>
-        <class className="BLScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
-        </class>
-        <class className="BLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
-        </class>
-        <class className="LoginChooserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginChooserViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="orLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="BLViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loginButtonPressed:"/>
-                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RegistrationViewController" superclassName="BLViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cameraButtonPressed:"/>
-                <relationship kind="action" name="registrationButtonPressed:"/>
-                <relationship kind="action" name="sexButtonPressed:"/>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cameraImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cameraLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="formularImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
-                <relationship kind="outlet" name="sexFemaleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sexMaleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
