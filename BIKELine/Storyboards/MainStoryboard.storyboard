@@ -87,19 +87,11 @@
                                     <constraint firstAttribute="height" constant="568" id="Ad1-nR-vJQ"/>
                                 </constraints>
                             </imageView>
-                            <tableView hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cp5-D9-gff" userLabel="Table View - Checkins">
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="3fK-DN-J0H" id="n1w-hD-zH5"/>
-                                    <outlet property="delegate" destination="3fK-DN-J0H" id="rfa-VX-Q3R"/>
-                                </connections>
-                            </tableView>
                             <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-7k-8St" userLabel="View - Facts">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surename Lastname" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-ra-L5c" customClass="OHAttributedLabel">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="3gg-yB-HtA"/>
-                                            <constraint firstAttribute="width" constant="300" id="w68-K3-a9O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,6 +120,22 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-6Q-RZC" userLabel="Button - SettingsButton">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="KxY-9Q-7Rz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="settings.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="settingsButtonPressed:" destination="3fK-DN-J0H" eventType="touchUpInside" id="hRS-0u-r0X"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -145,12 +153,22 @@
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="trailing" secondItem="7ht-6U-TwX" secondAttribute="trailing" type="default" id="WM4-Th-bWS"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WMA-6d-huP"/>
                                     <constraint firstItem="bGO-7o-wui" firstAttribute="bottom" secondItem="l1j-hY-6mc" secondAttribute="bottom" type="default" id="XiW-hV-EhB"/>
+                                    <constraint firstAttribute="bottom" secondItem="vsv-6Q-RZC" secondAttribute="bottom" constant="10" id="ahw-nB-1fQ"/>
+                                    <constraint firstItem="vsv-6Q-RZC" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="290" id="dwl-Az-gOL"/>
+                                    <constraint firstItem="vsv-6Q-RZC" firstAttribute="trailing" secondItem="WSO-ra-L5c" secondAttribute="trailing" type="default" id="own-0D-ECu"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="bottom" secondItem="7ht-6U-TwX" secondAttribute="bottom" type="default" id="pFV-Xn-G4G"/>
                                     <constraint firstAttribute="trailing" secondItem="l1j-hY-6mc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="roj-hc-yhP"/>
                                     <constraint firstItem="7ht-6U-TwX" firstAttribute="leading" secondItem="EGO-7k-8St" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xVi-wp-Cxe"/>
                                     <constraint firstItem="IKS-YU-PbC" firstAttribute="top" secondItem="EGO-7k-8St" secondAttribute="top" constant="160" type="user" id="xiT-8X-en3"/>
                                 </constraints>
                             </view>
+                            <tableView hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cp5-D9-gff" userLabel="Table View - Checkins">
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3fK-DN-J0H" id="n1w-hD-zH5"/>
+                                    <outlet property="delegate" destination="3fK-DN-J0H" id="rfa-VX-Q3R"/>
+                                </connections>
+                            </tableView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asy-7x-wtV" customClass="BLScrollView">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-0N-x3R" userLabel="Label - Teaser Text">
@@ -228,9 +246,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="r1T-Pk-md5" secondAttribute="bottom" constant="99" id="183-0f-trd"/>
                                     <constraint firstAttribute="trailing" secondItem="Grq-bh-hTs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3EM-kn-4pQ"/>
                                     <constraint firstItem="SPi-0N-x3R" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="17" id="Cxo-R6-JXh"/>
+                                    <constraint firstAttribute="bottom" secondItem="r1T-Pk-md5" secondAttribute="bottom" constant="99" id="DbZ-vP-Sil"/>
                                     <constraint firstItem="hTj-qP-gzO" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="208" id="Qup-Id-V4K"/>
                                     <constraint firstItem="r1T-Pk-md5" firstAttribute="top" secondItem="asy-7x-wtV" secondAttribute="top" constant="312" id="S0d-5T-5r7"/>
                                     <constraint firstItem="SPi-0N-x3R" firstAttribute="leading" secondItem="asy-7x-wtV" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TT2-ra-yYv"/>
@@ -292,6 +310,7 @@
                         <outlet property="rankLabel" destination="bGO-7o-wui" id="Wr7-jx-sSQ"/>
                         <outlet property="rightCircleView" destination="l1j-hY-6mc" id="ozM-d0-Ml7"/>
                         <outlet property="segmentControl" destination="FSQ-70-QJ2" id="MiH-IO-BGK"/>
+                        <outlet property="settingsButton" destination="vsv-6Q-RZC" id="rgI-GY-mQh"/>
                         <outlet property="tableView" destination="Cp5-D9-gff" id="REs-ga-0St"/>
                         <outlet property="teamSelectorView" destination="asy-7x-wtV" id="TZE-jW-5Or"/>
                         <outlet property="teamTeaserLabel" destination="SPi-0N-x3R" id="fYf-Ls-Skm"/>
@@ -470,6 +489,7 @@
         <image name="RegisterButton.png" width="282" height="44"/>
         <image name="background-568h@2x.png" width="640" height="1136"/>
         <image name="emptyButton.png" width="280" height="42"/>
+        <image name="settings.png" width="20" height="20"/>
     </resources>
     <classes>
         <class className="BLNavigationController" superclassName="UINavigationController">
@@ -495,6 +515,7 @@
                 <relationship kind="outlet" name="rankLabel" candidateClass="OHAttributedLabel"/>
                 <relationship kind="outlet" name="rightCircleView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="teamSelector" candidateClass="JoinTeamSelectTableViewController"/>
                 <relationship kind="outlet" name="teamSelectorView" candidateClass="UIScrollView"/>

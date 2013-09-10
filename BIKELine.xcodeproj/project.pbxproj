@@ -192,6 +192,10 @@
 		F69028D3179A698A006FA715 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69028D2179A698A006FA715 /* LoginStoryboard.storyboard */; };
 		F69028D8179A6CF4006FA715 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69028D7179A6CF4006FA715 /* MapKit.framework */; };
 		F69028DB179A6E0C006FA715 /* NSUserDefaults+BIKELine.m in Sources */ = {isa = PBXBuildFile; fileRef = F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */; };
+		F690C5FB17DFB29300ED3E48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C5F917DFB29300ED3E48 /* settings.png */; };
+		F690C5FC17DFB29300ED3E48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C5F917DFB29300ED3E48 /* settings.png */; };
+		F690C5FD17DFB29300ED3E48 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C5FA17DFB29300ED3E48 /* settings@2x.png */; };
+		F690C5FE17DFB29300ED3E48 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C5FA17DFB29300ED3E48 /* settings@2x.png */; };
 		F69BD44E17DCC77200B3E4E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F69BD44C17DCC77200B3E4E2 /* Localizable.strings */; };
 		F69BD44F17DCC77200B3E4E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F69BD44C17DCC77200B3E4E2 /* Localizable.strings */; };
 		F6A21D2D179AA6EE0010D145 /* BBApiAbstractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */; };
@@ -367,6 +371,8 @@
 		F69028D7179A6CF4006FA715 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F69028D9179A6E0C006FA715 /* NSUserDefaults+BIKELine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+BIKELine.h"; path = "Classes/NSUserDefaults+BIKELine.h"; sourceTree = "<group>"; };
 		F69028DA179A6E0C006FA715 /* NSUserDefaults+BIKELine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+BIKELine.m"; path = "Classes/NSUserDefaults+BIKELine.m"; sourceTree = "<group>"; };
+		F690C5F917DFB29300ED3E48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		F690C5FA17DFB29300ED3E48 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		F69BD44D17DCC77200B3E4E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F69BD45017DCD16400B3E4E2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiAbstractOperation.h; path = Classes/API/BBApiAbstractOperation.h; sourceTree = "<group>"; };
@@ -891,6 +897,8 @@
 				F6E5F8B317A2C1070036D3C1 /* LoginButton@2x.png */,
 				F6E5F8B417A2C1070036D3C1 /* RegisterButton.png */,
 				F6E5F8B517A2C1070036D3C1 /* RegisterButton@2x.png */,
+				F690C5F917DFB29300ED3E48 /* settings.png */,
+				F690C5FA17DFB29300ED3E48 /* settings@2x.png */,
 			);
 			name = Buttons;
 			path = Images/Buttons;
@@ -1194,6 +1202,8 @@
 				F69BD44F17DCC77200B3E4E2 /* Localizable.strings in Resources */,
 				F6ADBEDE17DFAFC500A5B9A6 /* info.png in Resources */,
 				F6ADBEE017DFAFC500A5B9A6 /* info@2x.png in Resources */,
+				F690C5FC17DFB29300ED3E48 /* settings.png in Resources */,
+				F690C5FE17DFB29300ED3E48 /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,6 +1264,8 @@
 				F69BD44E17DCC77200B3E4E2 /* Localizable.strings in Resources */,
 				F6ADBEDD17DFAFC500A5B9A6 /* info.png in Resources */,
 				F6ADBEDF17DFAFC500A5B9A6 /* info@2x.png in Resources */,
+				F690C5FB17DFB29300ED3E48 /* settings.png in Resources */,
+				F690C5FD17DFB29300ED3E48 /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

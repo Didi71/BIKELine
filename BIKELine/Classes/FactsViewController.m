@@ -8,6 +8,7 @@
 
 #import "FactsViewController.h"
 #import "CustomTableViewCell.h"
+#import "AppDelegate.h"
 
 @implementation FactsViewController
 
@@ -219,6 +220,22 @@ const int kFactsViewSubViewTableTag = 2;
     biker.teamId = result_team_biker.bikerId;
     [BLStandardUserDefaults setBiker:biker];
     [self segmentControlChangedValue:segmentControl];
+}
+
+- (IBAction)settingsButtonPressed:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle: nil
+                                                       delegate: self
+                                              cancelButtonTitle: nil
+                                         destructiveButtonTitle: nil
+                                              otherButtonTitles: nil];
+
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonEditProfileTitle", @"")];
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonShowInfoTitle", @"")];
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonEditTeamTitle", @"")];
+    sheet.destructiveButtonIndex = [sheet addButtonWithTitle:NSLocalizedString(@"buttonLogoutTitle", @"")];
+    sheet.cancelButtonIndex = [sheet addButtonWithTitle:NSLocalizedString(@"buttonCancelTitle", @"")];
+    
+    [sheet showInView:self.tabBarController.tabBar];
 }
 
 
@@ -564,5 +581,24 @@ const int kFactsViewSubViewTableTag = 2;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+#pragma mark
+#pragma mark - UIActionSheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (actionSheet.cancelButtonIndex == buttonIndex) {
+        return;
+    }
+    
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditProfileTitle", @"")]) {
+        
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonShowInfoTitle", @"")]) {
+        
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditTeamTitle", @"")]) {
+        
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonLogoutTitle", @"")]) {
+        [[AppDelegate appDelegate] logoutUser];
+    }
+}
 
 @end

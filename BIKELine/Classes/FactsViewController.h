@@ -13,7 +13,7 @@
 #import "JoinTeamSelectTableViewController.h"
 #import "BBApi.h"
 
-@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JoinTeamSelectorDelegate> {
+@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JoinTeamSelectorDelegate, UIActionSheetDelegate> {
     IBOutlet UISegmentedControl *segmentControl;
     IBOutlet UIView *factsView;
     IBOutlet UITableView *tableView;
@@ -32,6 +32,7 @@
     IBOutlet OHAttributedLabel *bikerNameLabel;
     IBOutlet OHAttributedLabel *bikebirdsLabel;
     IBOutlet OHAttributedLabel *rankLabel;
+    IBOutlet UIButton *settingsButton;
     
     // Data Content
     NSMutableArray *result_checkins;
