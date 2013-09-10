@@ -516,13 +516,78 @@
         <image name="emptyButton.png" width="280" height="42"/>
         <image name="logo.png" width="200" height="126"/>
     </resources>
+    <classes>
+        <class className="ActivationViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BLNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
+        </class>
+        <class className="BLScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
+        </class>
+        <class className="BLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
+        </class>
+        <class className="LoginChooserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginChooserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="infoButtonPressed:"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="orLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
+                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RegistrationViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cameraButtonPressed:"/>
+                <relationship kind="action" name="registrationButtonPressed:"/>
+                <relationship kind="action" name="sexButtonPressed:"/>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cameraImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cameraLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="formularImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
+                <relationship kind="outlet" name="sexFemaleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sexMaleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6gN-Oz-2m0"/>
         <segue reference="7X3-ac-YGE"/>
+        <segue reference="Kgp-K9-HbV"/>
     </inferredMetricsTieBreakers>
 </document>

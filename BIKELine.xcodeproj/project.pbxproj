@@ -128,6 +128,8 @@
 		F61B05601799AA4000A08BB7 /* libiconv.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */; };
 		F61B05621799AA4700A08BB7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05611799AA4700A08BB7 /* AVFoundation.framework */; };
 		F61B05641799AA4C00A08BB7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B05631799AA4C00A08BB7 /* CoreVideo.framework */; };
+		F62D289A17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D289917DFC1D2009C69F3 /* NewStatsViewController.m */; };
+		F62D289B17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F62D289917DFC1D2009C69F3 /* NewStatsViewController.m */; };
 		F637938F17A50CB5003FD895 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938D17A50CB5003FD895 /* backButton.png */; };
 		F637939017A50CB5003FD895 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F637938E17A50CB5003FD895 /* backButton@2x.png */; };
 		F637939317A50FD3003FD895 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = F637939117A50FD3003FD895 /* navbar.png */; };
@@ -200,6 +202,8 @@
 		F690C60217DFB68200ED3E48 /* preis-illustration.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C5FF17DFB68200ED3E48 /* preis-illustration.png */; };
 		F690C60317DFB68200ED3E48 /* preis-illustration@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C60017DFB68200ED3E48 /* preis-illustration@2x.png */; };
 		F690C60417DFB68200ED3E48 /* preis-illustration@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F690C60017DFB68200ED3E48 /* preis-illustration@2x.png */; };
+		F690C60917DFB6D200ED3E48 /* WonPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F690C60717DFB6D200ED3E48 /* WonPriceViewController.m */; };
+		F690C60A17DFB6D200ED3E48 /* WonPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F690C60717DFB6D200ED3E48 /* WonPriceViewController.m */; };
 		F69BD44E17DCC77200B3E4E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F69BD44C17DCC77200B3E4E2 /* Localizable.strings */; };
 		F69BD44F17DCC77200B3E4E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F69BD44C17DCC77200B3E4E2 /* Localizable.strings */; };
 		F6A21D2D179AA6EE0010D145 /* BBApiAbstractOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D2C179AA6EE0010D145 /* BBApiAbstractOperation.m */; };
@@ -307,6 +311,8 @@
 		F61B055F1799AA4000A08BB7 /* libiconv.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.4.0.dylib; path = usr/lib/libiconv.2.4.0.dylib; sourceTree = SDKROOT; };
 		F61B05611799AA4700A08BB7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F61B05631799AA4C00A08BB7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		F62D289817DFC1D2009C69F3 /* NewStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewStatsViewController.h; path = Classes/NewStatsViewController.h; sourceTree = "<group>"; };
+		F62D289917DFC1D2009C69F3 /* NewStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewStatsViewController.m; path = Classes/NewStatsViewController.m; sourceTree = "<group>"; };
 		F637938D17A50CB5003FD895 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		F637938E17A50CB5003FD895 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		F637939117A50FD3003FD895 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbar.png; path = Images/Background/navbar.png; sourceTree = "<group>"; };
@@ -379,6 +385,8 @@
 		F690C5FA17DFB29300ED3E48 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		F690C5FF17DFB68200ED3E48 /* preis-illustration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preis-illustration.png"; sourceTree = "<group>"; };
 		F690C60017DFB68200ED3E48 /* preis-illustration@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preis-illustration@2x.png"; sourceTree = "<group>"; };
+		F690C60617DFB6D200ED3E48 /* WonPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WonPriceViewController.h; path = Classes/WonPriceViewController.h; sourceTree = "<group>"; };
+		F690C60717DFB6D200ED3E48 /* WonPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WonPriceViewController.m; path = Classes/WonPriceViewController.m; sourceTree = "<group>"; };
 		F69BD44D17DCC77200B3E4E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F69BD45017DCD16400B3E4E2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6A21D2B179AA6EE0010D145 /* BBApiAbstractOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiAbstractOperation.h; path = Classes/API/BBApiAbstractOperation.h; sourceTree = "<group>"; };
@@ -1066,6 +1074,10 @@
 				F69028CD179A6937006FA715 /* MapViewController.m */,
 				F61B05311799997200A08BB7 /* QRReaderViewController.h */,
 				F61B05321799997200A08BB7 /* QRReaderViewController.m */,
+				F690C60617DFB6D200ED3E48 /* WonPriceViewController.h */,
+				F690C60717DFB6D200ED3E48 /* WonPriceViewController.m */,
+				F62D289817DFC1D2009C69F3 /* NewStatsViewController.h */,
+				F62D289917DFC1D2009C69F3 /* NewStatsViewController.m */,
 				F69028C9179A6920006FA715 /* FactsViewController.h */,
 				F69028CA179A6920006FA715 /* FactsViewController.m */,
 				F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */,
@@ -1365,6 +1377,8 @@
 				F667C2A917CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */,
 				F667C2AD17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */,
 				F667C2B117CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */,
+				F690C60A17DFB6D200ED3E48 /* WonPriceViewController.m in Sources */,
+				F62D289B17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1420,6 +1434,8 @@
 				F667C2A817CA0FBF0044F1CE /* CustomTableViewCell.m in Sources */,
 				F667C2AC17CA1CB90044F1CE /* BBApiGetCheckinsOperation.m in Sources */,
 				F667C2B017CA22B30044F1CE /* BBApiGetTeamCheckinsOperation.m in Sources */,
+				F690C60917DFB6D200ED3E48 /* WonPriceViewController.m in Sources */,
+				F62D289A17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

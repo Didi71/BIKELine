@@ -11,6 +11,8 @@
 
 #import "QRReaderViewController.h"
 #import "BBApi.h"
+#import "WonPriceViewController.h"
+#import "NewStatsViewController.h"
 
 @implementation QRReaderViewController
 @synthesize lastSelectedIndex;
@@ -29,24 +31,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [bikebirds.layer setCornerRadius:67.5];
-    [bikebirds.layer setMasksToBounds:YES];
-    [rank.layer setCornerRadius:67.5];
-    [rank.layer setMasksToBounds:YES];
-    [wonBikebirds.layer setCornerRadius:20.0];
-    [wonBikebirds.layer setMasksToBounds:YES];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
-
-#pragma mark
-#pragma mark - IBActions
-
-- (IBAction)nextButtonPressed:(id)sender {    
-    if (lastSelectedIndex) {
-        [self.tabBarController setSelectedIndex:[lastSelectedIndex intValue]];
-    } else {
-        [self.tabBarController setSelectedIndex:0];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#warning TODO - Werte werden nicht korrekt übergeben
+    if ([[segue destinationViewController] isKindOfClass:[WonPriceViewController class]]) {
+        WonPriceViewController *wonPriceView = [segue destinationViewController];
+        wonPriceView.checkinResponse = responsePuffer;
+    } else if ([[segue destinationViewController] isKindOfClass:[NewStatsViewController class]]) {
+        NewStatsViewController *newStatsView = [segue destinationViewController];
+        newStatsView.checkinResponse = responsePuffer;
     }
 }
 
@@ -105,33 +100,6 @@
     }];
 }
 
-- (void)configureCheckinView:(BBApiCheckinResponse *)response {
-    
-    bikebirdName.text = response.checkPointName;
-    bikebirdCity.text = response.checkPointCity;
-    
-    OHParagraphStyle *paragraphStyle = [OHParagraphStyle defaultParagraphStyle];
-    paragraphStyle.textAlignment = kCTCenterTextAlignment;
-    paragraphStyle.lineBreakMode = kCTLineBreakByWordWrapping;
-    paragraphStyle.lineSpacing = 6.0;
-    
-    NSString *bikeBirds = response.bikebirds == nil ? @"0" : [response.bikebirds stringValue];
-    NSMutableAttributedString *attrStr1 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", bikeBirds, NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
-    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr1.string rangeOfString:bikeBirds]];
-    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr1.string rangeOfString:NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
-    [attrStr1 setTextColor:[UIColor whiteColor]];
-    [attrStr1 setParagraphStyle:paragraphStyle];
-    bikebirdsLabel.attributedText = attrStr1;
-    
-    NSString *rankString = response.rank == nil ? @"0" : [response.rank stringValue];
-    NSMutableAttributedString *attrStr2 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
-    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr2.string rangeOfString:rankString]];
-    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr2.string rangeOfString:NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
-    [attrStr2 setTextColor:[UIColor whiteColor]];
-    [attrStr2 setParagraphStyle:paragraphStyle];
-    rankLabel.attributedText = attrStr2;
-}
-
 
 #pragma mark
 #pragma mark - ZBarReaderController delegate
@@ -182,23 +150,22 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self _hideProgressHud];
-                [self configureCheckinView:wop.response];
-                [picker dismissViewControllerAnimated:YES completion:nil];
                 
                 BikerMO *biker = BLStandardUserDefaults.biker;
                 biker.bikeBirds = [NSNumber numberWithInt:([wop.response.bikebirdsOld intValue] + [wop.response.bikebirdsOld intValue])];
                 biker.rank = wop.response.rank;
                 [BLStandardUserDefaults setBiker:biker];
                 
+                responsePuffer = wop.response;
+                
                 // If priceText is available, then show this to user with alert message
                 if (wop.response.priceText) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
-                                                                    message: wop.response.priceText
-                                                                   delegate: nil
-                                                          cancelButtonTitle: NSLocalizedString(@"buttonOkTitle", @"")
-                                                          otherButtonTitles: nil];
-                    [alert show];
+                    [self performSegueWithIdentifier:@"QRReaderToWonPriceSegue" sender:nil];
+                } else {
+                    [self performSegueWithIdentifier:@"QRReaderToNewStatsSegue" sender:nil];
                 }
+                
+                [picker dismissViewControllerAnimated:YES completion:nil];
             });
         }];
         

@@ -7,24 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
-#import <OHAttributedLabel/OHAttributedLabel.h>
 #import "ZBarSDK.h"
 #import "MBProgressHUD.h"
+#import "BBApiCheckinOperation.h"
 
 @interface QRReaderViewController : UIViewController <UIImagePickerControllerDelegate, ZBarReaderDelegate> {
-    
-    IBOutlet UILabel *bikebirdName;
-    IBOutlet UILabel *bikebirdCity;
-    IBOutlet UIView *bikebirds;
-    IBOutlet OHAttributedLabel *bikebirdsLabel;
-    IBOutlet UIView *rank;
-    IBOutlet OHAttributedLabel *rankLabel;
-    IBOutlet UIView *wonBikebirds;
-    IBOutlet UILabel *wonBikebirdsLabel;
-    IBOutlet UIButton *nextButton;
-    
     MBProgressHUD *progressHud;
+    __block BBApiCheckinResponse *responsePuffer;
 }
 
 @property (nonatomic, retain) NSNumber *lastSelectedIndex;

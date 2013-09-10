@@ -8,6 +8,7 @@
 
 #import "BLTabBarController.h"
 #import "QRReaderViewController.h"
+#import "BLNavigationController.h"
 
 @implementation BLTabBarController
 
@@ -56,10 +57,14 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     
-    if ([viewController isKindOfClass:[QRReaderViewController class]]) {
-        QRReaderViewController *reader = (QRReaderViewController *)viewController;
-        reader.lastSelectedIndex = [NSNumber numberWithInt:tabBarController.selectedIndex];
-        [reader showQRReader];
+    if ([viewController isKindOfClass:[BLNavigationController class]]) {
+        BLNavigationController *nav = (BLNavigationController *)viewController;
+        
+        if ([[nav.viewControllers objectAtIndex:0] isKindOfClass:[QRReaderViewController class]]) {
+            QRReaderViewController *reader = (QRReaderViewController *)[nav.viewControllers objectAtIndex:0];
+            reader.lastSelectedIndex = [NSNumber numberWithInt:tabBarController.selectedIndex];
+            [reader showQRReader];
+        }
     }
     
     return YES;
