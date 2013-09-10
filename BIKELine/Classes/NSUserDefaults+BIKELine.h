@@ -14,5 +14,6 @@
 @interface NSUserDefaults (BIKELine)
 
 @property (nonatomic, retain) BikerMO *biker;
+@property (nonatomic, assign) BOOL qrReaderWasAlreadyInUse;
 
 @end

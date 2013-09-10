@@ -31,4 +31,13 @@
     }
 }
 
+- (BOOL)qrReaderWasAlreadyInUse {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"qrReaderWasAlreadyInUse"];
+}
+
+- (void)setQrReaderWasAlreadyInUse:(BOOL)qrReaderWasAlreadyInUse {
+    [[NSUserDefaults standardUserDefaults] setBool:qrReaderWasAlreadyInUse forKey:@"qrReaderWasAlreadyInUse"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

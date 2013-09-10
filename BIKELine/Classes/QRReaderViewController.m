@@ -89,7 +89,21 @@
                    config: ZBAR_CFG_ENABLE
                        to: 0];
     
-    [self presentViewController:reader animated:NO completion:nil];
+    [self presentViewController: reader
+                       animated: NO
+                     completion: ^(void)completion{
+                         
+                         if (!BLStandardUserDefaults.qrReaderWasAlreadyInUse) {
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
+                                                                             message: NSLocalizedString(@"qrScannerFirstTimeUseTeaser", @"")
+                                                                            delegate: nil
+                                                                   cancelButtonTitle: NSLocalizedString(@"buttonOkTitle", @"")
+                                                                   otherButtonTitles: nil];
+                             [alert show];
+                             
+                             [BLStandardUserDefaults setQrReaderWasAlreadyInUse:YES];
+                         }
+    }];
 }
 
 - (void)configureCheckinView:(BBApiCheckinResponse *)response {
