@@ -18,11 +18,19 @@
                                     <constraint firstAttribute="height" constant="568" type="user" id="wWD-xw-Ho5"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="oder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccu-6a-umK" userLabel="Label - Teaser Name">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="w6P-tz-JV3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sbu-A3-FvA" userLabel="Image View - Logo"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80G-FP-NcX">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="Anmelden" backgroundImage="LoginButton.png">
+                                <state key="normal" title="Bereits Registriert?" backgroundImage="LoginButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.25129158266129031" alpha="0.25" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,22 +59,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jTy-ie-iFF" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="55d-vY-C7K"/>
+                            <constraint firstAttribute="trailing" secondItem="Ccu-6a-umK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9Gb-FE-Taw"/>
                             <constraint firstAttribute="bottom" secondItem="g9F-b6-twg" secondAttribute="bottom" constant="37" id="E7I-T1-4Zp"/>
+                            <constraint firstAttribute="bottom" secondItem="80G-FP-NcX" secondAttribute="bottom" constant="128" id="Rny-UK-7zS"/>
                             <constraint firstItem="jTy-ie-iFF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Ssc-tb-vA9"/>
+                            <constraint firstAttribute="bottom" secondItem="Ccu-6a-umK" secondAttribute="bottom" constant="92" id="VTG-aD-fxv"/>
                             <constraint firstAttribute="trailing" secondItem="g9F-b6-twg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xg5-WK-whL"/>
                             <constraint firstItem="80G-FP-NcX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YwT-To-IgA"/>
                             <constraint firstItem="Sbu-A3-FvA" firstAttribute="centerX" secondItem="80G-FP-NcX" secondAttribute="centerX" type="default" id="c2i-pe-d1j"/>
                             <constraint firstItem="g9F-b6-twg" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hKp-vV-wcc"/>
                             <constraint firstItem="jTy-ie-iFF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="-20" type="user" id="lvT-BS-g87"/>
+                            <constraint firstItem="Ccu-6a-umK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="r2P-vF-H1F"/>
                             <constraint firstItem="Sbu-A3-FvA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="84" id="tkS-Gg-qiz"/>
                             <constraint firstAttribute="trailing" secondItem="80G-FP-NcX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w2l-RA-kAO"/>
-                            <constraint firstItem="g9F-b6-twg" firstAttribute="top" secondItem="80G-FP-NcX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ynO-BL-sUF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IAQ-AG-D5V"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="loginButton" destination="80G-FP-NcX" id="HaE-AG-uFr"/>
+                        <outlet property="orLabel" destination="Ccu-6a-umK" id="Z4m-XI-cCj"/>
                         <outlet property="registerButton" destination="g9F-b6-twg" id="hV9-TI-2aZ"/>
                     </connections>
                 </viewController>
@@ -110,7 +122,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5ht-Qf-zv0">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5ht-Qf-zv0">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="QeT-yL-bL4"/>
                                 </constraints>
@@ -433,7 +445,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.74763734879999999" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCw-Bs-wlm">
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
@@ -504,6 +516,70 @@
         <image name="emptyButton.png" width="280" height="42"/>
         <image name="logo.png" width="200" height="126"/>
     </resources>
+    <classes>
+        <class className="ActivationViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pinTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BLNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
+        </class>
+        <class className="BLScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
+        </class>
+        <class className="BLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewController.h"/>
+        </class>
+        <class className="LoginChooserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginChooserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="orLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginButtonPressed:"/>
+                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RegistrationViewController" superclassName="BLViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cameraButtonPressed:"/>
+                <relationship kind="action" name="registrationButtonPressed:"/>
+                <relationship kind="action" name="sexButtonPressed:"/>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cameraButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cameraImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cameraLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="eMailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="formularImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="BLScrollView"/>
+                <relationship kind="outlet" name="sexFemaleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sexMaleButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teaserLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -511,6 +587,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="6gN-Oz-2m0"/>
-        <segue reference="uG8-bQ-BfI"/>
+        <segue reference="7X3-ac-YGE"/>
     </inferredMetricsTieBreakers>
 </document>

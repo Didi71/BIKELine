@@ -21,7 +21,8 @@
 - (void)loadView {
     [super loadView];
     
-    [loginButton setTitle:NSLocalizedString(@"buttonLoginTitle", @"") forState:UIControlStateNormal];
+    [loginButton setTitle:NSLocalizedString(@"buttonAlreadyRegisterdTitle", @"") forState:UIControlStateNormal];
+    [orLabel setText:NSLocalizedString(@"loginChooserOrLabel", @"")];
     [registerButton setTitle:NSLocalizedString(@"buttonRegisterTitle", @"") forState:UIControlStateNormal];
 }
 

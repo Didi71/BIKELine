@@ -10,6 +10,7 @@
 
 @interface LoginChooserViewController : UIViewController {
     IBOutlet UIButton *loginButton;
+    IBOutlet UILabel *orLabel;
     IBOutlet UIButton *registerButton;
 }
 
