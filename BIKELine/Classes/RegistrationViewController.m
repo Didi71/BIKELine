@@ -165,10 +165,11 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     [self.view endEditing:YES];
     
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-    [sheet addButtonWithTitle:NSLocalizedString(@"buttonOpenPhotoLibraryTitle", @"")];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         [sheet addButtonWithTitle:NSLocalizedString(@"buttonTakeNewPhotoButtonTitle", @"")];
+    } else {
+        [sheet addButtonWithTitle:NSLocalizedString(@"buttonOpenPhotoLibraryTitle", @"")];
     }
     
     if (avatarImageView.image != nil) {
