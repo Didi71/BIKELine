@@ -390,24 +390,30 @@ const int kFactsViewSubViewTableTag = 2;
     NSString *nameString = [NSString stringWithFormat:@"%@ %@", biker.firstName, biker.lastName];
     NSString *addressString = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"factsViewFromLabel", @""), biker.city];
     NSMutableAttributedString *attrStr1 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", nameString, addressString]];
-    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0] range:[attrStr1.string rangeOfString:nameString]];
-    [attrStr1 setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:14.0] range:[attrStr1.string rangeOfString:addressString]];
+    [attrStr1 setFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:22.0]
+                range: [attrStr1.string rangeOfString:nameString]];
+    [attrStr1 setFont: [UIFont fontWithName:@"HelveticaNeue-Medium" size:14.0]
+                range: [attrStr1.string rangeOfString:addressString]];
     [attrStr1 setTextColor:[UIColor whiteColor]];
     [attrStr1 setParagraphStyle:paragraphStyle1];
     bikerNameLabel.attributedText = attrStr1;
     
     NSString *bikeBirds = biker.bikeBirds == nil ? @"0" : [biker.bikeBirds stringValue];
     NSMutableAttributedString *attrStr2 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", bikeBirds, NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
-    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr2.string rangeOfString:bikeBirds]];
-    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr2.string rangeOfString:NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
+    [attrStr2 setFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0]
+                range: [attrStr2.string rangeOfString:bikeBirds]];
+    [attrStr2 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]
+                range: [attrStr2.string rangeOfString:NSLocalizedString(@"factsViewBikerBikebirdsLabel", @"")]];
     [attrStr2 setTextColor:[UIColor whiteColor]];
     [attrStr2 setParagraphStyle:paragraphStyle2];
     bikebirdsLabel.attributedText = attrStr2;
     
     NSString *rankString = biker.rank == nil ? @"0" : [biker.rank stringValue];
     NSMutableAttributedString *attrStr3 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
-    [attrStr3 setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0] range:[attrStr3.string rangeOfString:rankString]];
-    [attrStr3 setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0] range:[attrStr3.string rangeOfString:NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
+    [attrStr3 setFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0]
+                range: [attrStr3.string rangeOfString:rankString]];
+    [attrStr3 setFont: [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]
+                range: [attrStr3.string rangeOfString:NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
     [attrStr3 setTextColor:[UIColor whiteColor]];
     [attrStr3 setParagraphStyle:paragraphStyle2];
     rankLabel.attributedText = attrStr3;
