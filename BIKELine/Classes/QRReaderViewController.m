@@ -91,8 +91,7 @@
     
     [self presentViewController: reader
                        animated: NO
-                     completion: ^(void)completion{
-                         
+                     completion: ^{
                          if (!BLStandardUserDefaults.qrReaderWasAlreadyInUse) {
                              UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
                                                                              message: NSLocalizedString(@"qrScannerFirstTimeUseTeaser", @"")
