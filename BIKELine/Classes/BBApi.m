@@ -83,6 +83,19 @@ const int kMaxRequestRetry = 5;
     return [[BBApiRegistrationOperation alloc] initWithPath:@"registerBiker.php" andParameters:parameters];
 }
 
+- (BBApiUpdateBikerInfoOperation *)updateBikerInfo:(BikerMO *)biker {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: biker.firstName, @"bikerFirstName",
+                                                                           biker.lastName, @"bikerLastName",
+                                                                           biker.eMail, @"bikerEmailAddress",
+                                                                           biker.city, @"bikerCity",
+                                                                           ([biker.sex intValue] == kBikerSexMale ? @"male" : @"female"), @"bikerSex",
+                                                                           biker.userId, @"bikerId",
+                                                                           biker.pin, @"PIN",
+                                                                           BIKEBIRD_API_KEY, @"APIKey", nil];
+    
+    return [[BBApiUpdateBikerInfoOperation alloc] initWithPath:@"updateBiker.php" andParameters:parameters];
+}
+
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys: userId, @"bikerId",
                                                                            code, @"PIN",

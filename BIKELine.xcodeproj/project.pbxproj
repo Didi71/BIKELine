@@ -258,6 +258,12 @@
 		F6F1D9E517E5D94F00B5F3EB /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1D9E317E5D94F00B5F3EB /* InfoView.xib */; };
 		F6F1D9E917E5DA2600B5F3EB /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9E817E5DA2600B5F3EB /* InfoViewController.m */; };
 		F6F1D9EA17E5DA2600B5F3EB /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9E817E5DA2600B5F3EB /* InfoViewController.m */; };
+		F6F1D9EC17E5F38B00B5F3EB /* EditBikerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1D9EB17E5F38B00B5F3EB /* EditBikerInfoView.xib */; };
+		F6F1D9ED17E5F38B00B5F3EB /* EditBikerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1D9EB17E5F38B00B5F3EB /* EditBikerInfoView.xib */; };
+		F6F1D9F017E5F3DE00B5F3EB /* EditBikerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9EF17E5F3DE00B5F3EB /* EditBikerInfoViewController.m */; };
+		F6F1D9F117E5F3DE00B5F3EB /* EditBikerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9EF17E5F3DE00B5F3EB /* EditBikerInfoViewController.m */; };
+		F6F1D9F417E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9F317E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m */; };
+		F6F1D9F517E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F1D9F317E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m */; };
 		F6FFF1D6179ACB53002C547C /* BBApiLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */; };
 		F6FFF1D9179B0274002C547C /* BBApiActivationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */; };
 		F6FFF1DC179B07BF002C547C /* BBApiCheckinOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FFF1DB179B07BF002C547C /* BBApiCheckinOperation.m */; };
@@ -470,6 +476,11 @@
 		F6F1D9E317E5D94F00B5F3EB /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoView.xib; path = Classes/InfoView.xib; sourceTree = "<group>"; };
 		F6F1D9E717E5DA2600B5F3EB /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = Classes/InfoViewController.h; sourceTree = "<group>"; };
 		F6F1D9E817E5DA2600B5F3EB /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = Classes/InfoViewController.m; sourceTree = "<group>"; };
+		F6F1D9EB17E5F38B00B5F3EB /* EditBikerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditBikerInfoView.xib; path = Classes/EditBikerInfoView.xib; sourceTree = "<group>"; };
+		F6F1D9EE17E5F3DE00B5F3EB /* EditBikerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditBikerInfoViewController.h; path = Classes/EditBikerInfoViewController.h; sourceTree = "<group>"; };
+		F6F1D9EF17E5F3DE00B5F3EB /* EditBikerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditBikerInfoViewController.m; path = Classes/EditBikerInfoViewController.m; sourceTree = "<group>"; };
+		F6F1D9F217E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiUpdateBikerInfoOperation.h; path = Classes/API/BBApiUpdateBikerInfoOperation.h; sourceTree = "<group>"; };
+		F6F1D9F317E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiUpdateBikerInfoOperation.m; path = Classes/API/BBApiUpdateBikerInfoOperation.m; sourceTree = "<group>"; };
 		F6FFF1D4179ACB53002C547C /* BBApiLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiLoginOperation.h; path = Classes/API/BBApiLoginOperation.h; sourceTree = "<group>"; };
 		F6FFF1D5179ACB53002C547C /* BBApiLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiLoginOperation.m; path = Classes/API/BBApiLoginOperation.m; sourceTree = "<group>"; };
 		F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiActivationOperation.h; path = Classes/API/BBApiActivationOperation.h; sourceTree = "<group>"; };
@@ -659,6 +670,8 @@
 				F6A21D2F179AA74F0010D145 /* BBApiRegistrationOperation.m */,
 				F6FFF1D7179B0274002C547C /* BBApiActivationOperation.h */,
 				F6FFF1D8179B0274002C547C /* BBApiActivationOperation.m */,
+				F6F1D9F217E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.h */,
+				F6F1D9F317E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m */,
 			);
 			name = "Login / Registration";
 			sourceTree = "<group>";
@@ -749,6 +762,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F1D9E317E5D94F00B5F3EB /* InfoView.xib */,
+				F6F1D9EB17E5F38B00B5F3EB /* EditBikerInfoView.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -977,8 +991,8 @@
 				F69028C4179A682A006FA715 /* Database */,
 				F6F1D9E617E5DA0B00B5F3EB /* InfoViewController */,
 				F6EA789E17996FF30063B0A5 /* LoginViewControllers */,
-				F61B0526179994F300A08BB7 /* Other */,
 				F6EA78A617997B7D0063B0A5 /* RootViewControllers */,
+				F61B0526179994F300A08BB7 /* Other */,
 				F6EA78A717997D630063B0A5 /* Utils */,
 			);
 			name = Classes;
@@ -1091,6 +1105,8 @@
 				F69028CA179A6920006FA715 /* FactsViewController.m */,
 				F637939517A51AF7003FD895 /* JoinTeamSelectTableViewController.h */,
 				F637939617A51AF8003FD895 /* JoinTeamSelectTableViewController.m */,
+				F6F1D9EE17E5F3DE00B5F3EB /* EditBikerInfoViewController.h */,
+				F6F1D9EF17E5F3DE00B5F3EB /* EditBikerInfoViewController.m */,
 			);
 			name = RootViewControllers;
 			sourceTree = "<group>";
@@ -1245,6 +1261,7 @@
 				F690C60217DFB68200ED3E48 /* preis-illustration.png in Resources */,
 				F690C60417DFB68200ED3E48 /* preis-illustration@2x.png in Resources */,
 				F6F1D9E517E5D94F00B5F3EB /* InfoView.xib in Resources */,
+				F6F1D9ED17E5F38B00B5F3EB /* EditBikerInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1310,6 +1327,7 @@
 				F690C60117DFB68200ED3E48 /* preis-illustration.png in Resources */,
 				F690C60317DFB68200ED3E48 /* preis-illustration@2x.png in Resources */,
 				F6F1D9E417E5D94F00B5F3EB /* InfoView.xib in Resources */,
+				F6F1D9EC17E5F38B00B5F3EB /* EditBikerInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,6 +1418,8 @@
 				F690C60A17DFB6D200ED3E48 /* WonPriceViewController.m in Sources */,
 				F62D289B17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */,
 				F6F1D9EA17E5DA2600B5F3EB /* InfoViewController.m in Sources */,
+				F6F1D9F117E5F3DE00B5F3EB /* EditBikerInfoViewController.m in Sources */,
+				F6F1D9F517E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,6 +1478,8 @@
 				F690C60917DFB6D200ED3E48 /* WonPriceViewController.m in Sources */,
 				F62D289A17DFC1D2009C69F3 /* NewStatsViewController.m in Sources */,
 				F6F1D9E917E5DA2600B5F3EB /* InfoViewController.m in Sources */,
+				F6F1D9F017E5F3DE00B5F3EB /* EditBikerInfoViewController.m in Sources */,
+				F6F1D9F417E5FF6B00B5F3EB /* BBApiUpdateBikerInfoOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

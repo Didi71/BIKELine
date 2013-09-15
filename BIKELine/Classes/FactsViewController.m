@@ -9,7 +9,9 @@
 #import "FactsViewController.h"
 #import "CustomTableViewCell.h"
 #import "AppDelegate.h"
+#import "BLNavigationController.h"
 #import "InfoViewController.h"
+#import "EditBikerInfoViewController.h"
 
 @implementation FactsViewController
 
@@ -598,7 +600,8 @@ const int kFactsViewSubViewTableTag = 2;
     }
     
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditProfileTitle", @"")]) {
-        
+        [self.navigationController pushViewController: [[EditBikerInfoViewController alloc] init]
+                                             animated: YES];
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonShowInfoTitle", @"")]) {
         [self.navigationController pushViewController: [[InfoViewController alloc] init]
                                              animated: YES];

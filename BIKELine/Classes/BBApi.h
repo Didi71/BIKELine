@@ -20,6 +20,7 @@
 #import "BBApiUploadAvatarOperation.h"
 #import "BBApiGetCheckinsOperation.h"
 #import "BBApiGetTeamCheckinsOperation.h"
+#import "BBApiUpdateBikerInfoOperation.h"
 
 #define SharedAPI [BBApi sharedAPI]
 
@@ -35,6 +36,7 @@
 
 - (BBApiLoginOperation *)loginUserWitheMail:(NSString *)eMail;
 - (BBApiRegistrationOperation *)registerBikerWithInfo:(BikerMO *)biker;
+- (BBApiUpdateBikerInfoOperation *)updateBikerInfo:(BikerMO *)biker;
 - (BBApiActivationOperation *)activateUserWithId:(NSNumber *)userId andActivationCode:(NSNumber *)code;
 - (BBApiCheckinOperation *)checkinAtPoin:(NSNumber *)pointId withUserId:(NSNumber *)userId teamId:(NSNumber *)teamId andPIN:(NSNumber *)pin;
 - (BBApiGetPricesOperation *)getPricesForUserId:(NSNumber *)userId;
