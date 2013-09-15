@@ -9,6 +9,7 @@
 #import "FactsViewController.h"
 #import "CustomTableViewCell.h"
 #import "AppDelegate.h"
+#import "InfoViewController.h"
 
 @implementation FactsViewController
 
@@ -126,7 +127,7 @@ const int kFactsViewSubViewTableTag = 2;
     [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetProvincesLabel", @"")];
     
     BBApiGetProvincesOperation *op = [SharedAPI getProvinces];
-    __weak BBApiGetProvincesOperation *wop = op;
+    __block BBApiGetProvincesOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -157,7 +158,7 @@ const int kFactsViewSubViewTableTag = 2;
     [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetOrganisationsLabel", @"")];
     
     BBApiGetOrganisationsOperation *op = [SharedAPI getOrganisationsForProvince:result_team_province];
-    __weak BBApiGetOrganisationsOperation *wop = op;
+    __block BBApiGetOrganisationsOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -188,7 +189,7 @@ const int kFactsViewSubViewTableTag = 2;
     [self _showProgressHudWithMessage:NSLocalizedString(@"progressGetTeamsLabel", @"")];
     
     BBApiGetOrganisationBikersOperation *op = [SharedAPI getBikersInOrganisation:result_team_organisation.organisationId];
-    __weak BBApiGetOrganisationBikersOperation *wop = op;
+    __block BBApiGetOrganisationBikersOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -335,8 +336,8 @@ const int kFactsViewSubViewTableTag = 2;
         cell.headerLabel.textColor = [UIColor whiteColor];
         cell.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0];
         
-        NSString *dateString = [NSDate dateWithTimeIntervalSince1970:[price.timeWon doubleValue]];
-        cell.bottomLabel.text = [NSString stringWithFormat:@"%@\n%@ %@, %@", price.sponsorName, NSLocalizedString(@"factsViewInLabel", @""), price.sponsorCity, dateString];
+        NSDate *date= [NSDate dateWithTimeIntervalSince1970:[price.timeWon doubleValue]];
+        cell.bottomLabel.text = [NSString stringWithFormat:@"%@\n%@ %@, %@", price.sponsorName, NSLocalizedString(@"factsViewInLabel", @""), price.sponsorCity, date];
         cell.bottomLabel.textColor = [UIColor whiteColor];
         cell.bottomLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
     }
@@ -426,7 +427,7 @@ const int kFactsViewSubViewTableTag = 2;
     
     BBApiGetCheckinsOperation *op = [SharedAPI getCheckInsWithBikerId: BLStandardUserDefaults.biker.userId
                                                                andPin: BLStandardUserDefaults.biker.pin];
-    __weak BBApiGetCheckinsOperation *wop = op;
+    __block BBApiGetCheckinsOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -474,7 +475,7 @@ const int kFactsViewSubViewTableTag = 2;
     
     BBApiGetTeamCheckinsOperation *op = [SharedAPI getTeamCheckInsWithTeamId: BLStandardUserDefaults.biker.teamId
                                                                       andPin: BLStandardUserDefaults.biker.pin];
-    __weak BBApiGetTeamCheckinsOperation *wop = op;
+    __block BBApiGetTeamCheckinsOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -508,7 +509,7 @@ const int kFactsViewSubViewTableTag = 2;
     }
     
     BBApiGetPricesOperation *op = [SharedAPI getPricesForUserId:BLStandardUserDefaults.biker.userId];
-    __weak BBApiGetPricesOperation *wop = op;
+    __block BBApiGetPricesOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {
@@ -599,11 +600,13 @@ const int kFactsViewSubViewTableTag = 2;
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditProfileTitle", @"")]) {
         
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonShowInfoTitle", @"")]) {
-        
+        [self.navigationController pushViewController: [[InfoViewController alloc] init]
+                                             animated: YES];
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditTeamTitle", @"")]) {
         
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonLogoutTitle", @"")]) {
         [[AppDelegate appDelegate] logoutUser];
+        [BLStandardUserDefaults setBiker:nil];
     }
 }
 

@@ -7,6 +7,8 @@
 //
 
 #import "LoginChooserViewController.h"
+#import "BLNavigationController.h"
+#import "InfoViewController.h"
 
 @implementation LoginChooserViewController
 
@@ -37,7 +39,8 @@
 #pragma mark - IBActions
 
 - (IBAction)infoButtonPressed:(id)sender {
-    
+    [self.navigationController pushViewController: [[InfoViewController alloc] init]
+                                         animated: YES];
 }
 
 
