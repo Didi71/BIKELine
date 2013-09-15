@@ -604,6 +604,15 @@ const int kFactsViewSubViewTableTag = 2;
                                              animated: YES];
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonEditTeamTitle", @"")]) {
         
+        [segmentControl setSelectedSegmentIndex:2];
+        
+        tableView.hidden = YES;
+        factsView.hidden = YES;
+        teamSelectorView.hidden = NO;
+        
+        [self setTitlesForJoinTeamView];
+        [tableView reloadData];
+        
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonLogoutTitle", @"")]) {
         [[AppDelegate appDelegate] logoutUser];
         [BLStandardUserDefaults setBiker:nil];

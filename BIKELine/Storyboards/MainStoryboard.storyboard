@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="1n8-lU-yO3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1n8-lU-yO3">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -12,8 +12,8 @@
                 <navigationController definesPresentationContext="YES" id="yQi-An-GVY" customClass="BLNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="LPC-1F-Sdy"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="nys-sO-IiS">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="nys-sO-IiS">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -34,7 +34,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-bD-yqz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <connections>
                                     <outlet property="delegate" destination="Htc-ZO-4QD" id="5UK-rs-fDG"/>
                                 </connections>
@@ -63,8 +62,8 @@
                 <navigationController definesPresentationContext="YES" id="w6g-jI-bm7" customClass="BLNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="npg-Q0-7J4"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KTv-LZ-ATt">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="KTv-LZ-ATt">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -84,17 +83,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-os-BbJ" userLabel="Image View - Background">
-                                <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="ORw-os-BbJ" userLabel="Image View - Background">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="568" id="Ad1-nR-vJQ"/>
                                 </constraints>
                             </imageView>
                             <view hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-7k-8St" userLabel="View - Facts">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Surename Lastname" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-ra-L5c" customClass="OHAttributedLabel">
-                                        <rect key="frame" x="10" y="26" width="300" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="3gg-yB-HtA"/>
                                         </constraints>
@@ -103,11 +99,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.30000000000000016" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-6U-TwX" userLabel="View - Circle Left">
-                                        <rect key="frame" x="20" y="160" width="135" height="135"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bikebirds" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKS-YU-PbC" userLabel="Attributed Label - Left Label" customClass="OHAttributedLabel">
-                                        <rect key="frame" x="20" y="160" width="135" height="135"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135" id="CEZ-fx-0D5"/>
                                             <constraint firstAttribute="height" constant="135" type="user" id="cwD-CI-pah"/>
@@ -117,11 +111,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.30000000000000016" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1j-hY-6mc" userLabel="View - Circle Right">
-                                        <rect key="frame" x="165" y="160" width="135" height="135"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGO-7o-wui" userLabel="Attributed Label - Right Label" customClass="OHAttributedLabel">
-                                        <rect key="frame" x="165" y="160" width="135" height="135"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="135" id="RMm-rT-O9p"/>
                                         </constraints>
@@ -130,7 +122,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-6Q-RZC" userLabel="Button - SettingsButton">
-                                        <rect key="frame" x="290" y="425" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="KxY-9Q-7Rz"/>
                                         </constraints>
@@ -173,7 +164,6 @@
                                 </constraints>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cp5-D9-gff" userLabel="Table View - Checkins">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3fK-DN-J0H" id="n1w-hD-zH5"/>
@@ -181,10 +171,8 @@
                                 </connections>
                             </tableView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asy-7x-wtV" customClass="BLScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-0N-x3R" userLabel="Label - Teaser Text">
-                                        <rect key="frame" x="20" y="17" width="280" height="136"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="136" id="trA-vR-xDf"/>
                                         </constraints>
@@ -193,7 +181,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grq-bh-hTs">
-                                        <rect key="frame" x="20" y="161" width="280" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ZTW-Dt-glz"/>
                                         </constraints>
@@ -211,7 +198,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-qP-gzO">
-                                        <rect key="frame" x="20" y="208" width="280" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Tsa-97-0yt"/>
                                         </constraints>
@@ -229,7 +215,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-Qo-MoO">
-                                        <rect key="frame" x="20" y="254" width="280" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Dve-PN-EZe"/>
                                         </constraints>
@@ -247,7 +232,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1T-Pk-md5">
-                                        <rect key="frame" x="20" y="312" width="282" height="44"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <size key="titleShadowOffset" width="0.0" height="1"/>
                                         <state key="normal" title="Team beitreten" backgroundImage="RegisterButton.png">
@@ -370,14 +354,12 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-9k-vDu" userLabel="Image View - Background">
-                                <rect key="frame" x="0.0" y="-20" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-9k-vDu" userLabel="Image View - Background">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="568" id="er4-pu-H36"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Checkpoint Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdU-Qr-zpr">
-                                <rect key="frame" x="20" y="40" width="280" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="mqy-fu-vJk"/>
                                 </constraints>
@@ -386,20 +368,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Checkpoint City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nka-oT-Qor">
-                                <rect key="frame" x="20" y="69" width="280" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgR-JT-Jfv" userLabel="View - Circle Left">
-                                <rect key="frame" x="20" y="184" width="135" height="135"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" type="user" id="IJh-jZ-8Q5"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bikebirds" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AA-7a-8Na" customClass="OHAttributedLabel">
-                                <rect key="frame" x="20" y="184" width="135" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="Hx5-jS-PHr"/>
                                     <constraint firstAttribute="height" constant="135" type="user" id="mYX-8U-kIw"/>
@@ -409,11 +388,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2he-3v-Ftu" userLabel="View - Circle Center">
-                                <rect key="frame" x="140" y="136" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="+5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-sI-quH">
-                                <rect key="frame" x="140" y="136" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Knu-fj-0bN"/>
                                     <constraint firstAttribute="height" constant="40" type="user" id="WWA-QT-ReK"/>
@@ -423,14 +400,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVM-cM-OgI" userLabel="View - Circle Right">
-                                <rect key="frame" x="165" y="184" width="135" height="135"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" type="user" id="8qj-lv-hvK"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rank" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpB-bG-DH8" customClass="OHAttributedLabel">
-                                <rect key="frame" x="165" y="184" width="135" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="P29-tV-aAa"/>
                                 </constraints>
@@ -439,7 +414,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-o4-OMH">
-                                <rect key="frame" x="20" y="484" width="280" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Weiter" backgroundImage="LoginButton.png">
@@ -517,7 +491,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="b7V-OP-pbs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="b7V-OP-pbs">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -537,11 +511,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h.png" translatesAutoresizingMaskIntoConstraints="NO" id="icf-NM-epH">
-                                <rect key="frame" x="0.0" y="0.0" width="323" height="548"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="icf-NM-epH"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAa-BZ-E22">
-                                <rect key="frame" x="20" y="471" width="282" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="282" id="fze-SS-pLa"/>
                                 </constraints>
@@ -558,11 +529,8 @@
                                     <segue destination="9ph-38-7kO" kind="push" id="JhP-R8-WOI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="preis-illustration.png" translatesAutoresizingMaskIntoConstraints="NO" id="qVz-ox-6vM">
-                                <rect key="frame" x="90" y="109" width="143" height="160"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="preis-illustration.png" translatesAutoresizingMaskIntoConstraints="NO" id="qVz-ox-6vM"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlW-z3-mGH">
-                                <rect key="frame" x="24" y="47" width="275" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="G9V-61-1ps"/>
                                     <constraint firstAttribute="height" constant="46" id="MoF-ZZ-aZf"/>
@@ -572,7 +540,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="275" translatesAutoresizingMaskIntoConstraints="NO" id="C5J-ln-m44">
-                                <rect key="frame" x="24" y="298" width="275" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="hd3-9d-8nf"/>
                                 </constraints>
@@ -619,8 +586,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h.png" translatesAutoresizingMaskIntoConstraints="NO" id="llr-Ly-LNS" userLabel="Image View - Background">
-                                <rect key="frame" x="0.0" y="-20" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="llr-Ly-LNS" userLabel="Image View - Background">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="568" id="8eC-cj-Vra"/>
                                 </constraints>
@@ -649,11 +615,100 @@
     <resources>
         <image name="LoginButton.png" width="282" height="44"/>
         <image name="RegisterButton.png" width="282" height="44"/>
-        <image name="background-568h.png" width="640" height="1136"/>
+        <image name="background-568h@2x.png" width="640" height="1136"/>
         <image name="emptyButton.png" width="280" height="42"/>
         <image name="preis-illustration.png" width="143" height="160"/>
         <image name="settings.png" width="20" height="20"/>
     </resources>
+    <classes>
+        <class className="BLNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavigationController.h"/>
+        </class>
+        <class className="BLScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLScrollView.h"/>
+        </class>
+        <class className="BLSegmentedControl" superclassName="UISegmentedControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLSegmentedControl.h"/>
+        </class>
+        <class className="BLTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLTabBarController.h"/>
+        </class>
+        <class className="FactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="joinTeamButtonPressed:"/>
+                <relationship kind="action" name="segmentControlChangedValue:"/>
+                <relationship kind="action" name="settingsButtonPressed:"/>
+                <relationship kind="action" name="teamOrganisationButtonPressed:"/>
+                <relationship kind="action" name="teamProvinceButtonPressed:"/>
+                <relationship kind="action" name="teamTeamButtonPressed:"/>
+                <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="bikerNameLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="factsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="leftCircleView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="progressHud" candidateClass="MBProgressHUD"/>
+                <relationship kind="outlet" name="rankLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="rightCircleView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="segmentControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="teamSelector" candidateClass="JoinTeamSelectTableViewController"/>
+                <relationship kind="outlet" name="teamSelectorView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="teamTeaserLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teamViewJoinTeamButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewOrganisationButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewProvinceButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="teamViewTeamButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="JoinTeamSelectTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinTeamSelectTableViewController.h"/>
+        </class>
+        <class className="MBProgressHUD" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MBProgressHUD.h"/>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="progressHud" candidateClass="MBProgressHUD"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewStatsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewStatsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bikebirdCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bikebirdName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bikebirds" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bikebirdsLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rank" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rankLabel" candidateClass="OHAttributedLabel"/>
+                <relationship kind="outlet" name="wonBikebirds" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wonBikebirdsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OHAttributedLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OHAttributedLabel.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="QRReaderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QRReaderViewController.h"/>
+        </class>
+        <class className="WonPriceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WonPriceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="priceTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

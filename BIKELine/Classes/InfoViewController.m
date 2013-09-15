@@ -45,7 +45,23 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    CGSize sizeOfLabel = [[teaserLabel.attributedText string] sizeWithFont: teaserLabel.font
+                                                         constrainedToSize: CGSizeMake(teaserLabel.frame.size.width, CGFLOAT_MAX)];
     
+    if (sizeOfLabel.height > teaserLabel.frame.size.height) {
+        CGRect teaserFrame = teaserLabel.frame;
+        teaserFrame.size.height = sizeOfLabel.height;
+        teaserLabel.frame = teaserFrame;
+        
+        [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width, sizeOfLabel.height)];
+        [scrollView setScrollEnabled:YES];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (scrollView.scrollEnabled) {
+        [scrollView flashScrollIndicators];
+    }
 }
 
 

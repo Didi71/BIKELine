@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <OHAttributedLabel/OHAttributedLabel.h>
+#import "BLScrollView.h"
 
 @interface InfoViewController : UIViewController {
-    IBOutlet UIScrollView *scrollView;
+    IBOutlet BLScrollView *scrollView;
     IBOutlet OHAttributedLabel *teaserLabel;
 }
 
