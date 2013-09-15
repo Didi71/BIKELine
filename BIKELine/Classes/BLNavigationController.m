@@ -15,7 +15,22 @@
     
     if (self) {
         [self.navigationBar setBarStyle:UIBarStyleBlack];
-        [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+        
+        [self.navigationBar setBackgroundImage: [UIImage imageNamed:@"navbar.png"]
+                                 forBarMetrics: UIBarMetricsDefault];
+    }
+    
+    return self;
+}
+
+- (id)initWithRootViewController:(UIViewController *)rootViewController {
+    self = [super initWithRootViewController:rootViewController];
+    
+    if (self) {
+        [self.navigationBar setBarStyle:UIBarStyleBlack];
+        
+        [self.navigationBar setBackgroundImage: [UIImage imageNamed:@"navbar.png"]
+                                 forBarMetrics: UIBarMetricsDefault];
     }
     
     return self;

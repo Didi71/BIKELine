@@ -121,7 +121,7 @@
     
     // Setup API-Call
     BBApiLoginOperation *op = [SharedAPI loginUserWitheMail:bikerInfo.eMail];
-    __weak BBApiLoginOperation *wop = op;
+    __block BBApiLoginOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] == 32) {

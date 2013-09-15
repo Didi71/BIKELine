@@ -82,7 +82,7 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
     
     BBApiGetCheckPointsOperation *op = [SharedAPI getCheckPointsWithLatitude: map.userLocation.coordinate.latitude
                                                                 andLongitude: map.userLocation.coordinate.longitude];
-    __weak BBApiGetCheckPointsOperation *wop = op;
+    __block BBApiGetCheckPointsOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode integerValue] > 0) {

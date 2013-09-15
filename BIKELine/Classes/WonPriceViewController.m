@@ -8,8 +8,10 @@
 
 #import "WonPriceViewController.h"
 #import "QRReaderViewController.h"
+#import "NewStatsViewController.h"
 
 @implementation WonPriceViewController
+@synthesize checkinResponse;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -33,19 +35,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-}
-
-
-#pragma mark
-#pragma mark - Custom Getters & Setters
-
-- (void)setCheckinResponse:(BBApiCheckinResponse *)checkinResponse {
-    bufferResponse = checkinResponse;
+    
     priceTextLabel.text = checkinResponse.priceText;
 }
 
-- (BBApiCheckinResponse *)checkinResponse {
-    return bufferResponse;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue destinationViewController] isKindOfClass:[NewStatsViewController class]]) {
+        NewStatsViewController *newStatsView = [segue destinationViewController];
+        newStatsView.checkinResponse = checkinResponse;
+    }
 }
 
 @end

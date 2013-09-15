@@ -239,7 +239,7 @@ static inline UIImage *ContextCreateRoundedMask(CGRect rect, CGFloat radius_tl, 
     
     // Call API
     BBApiRegistrationOperation *op = [SharedAPI registerBikerWithInfo:bikerInfo];
-    __weak BBApiRegistrationOperation *wop = op;
+    __block BBApiRegistrationOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] > 0) {

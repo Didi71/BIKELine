@@ -123,7 +123,7 @@
     // Call API
     BBApiActivationOperation *op = [SharedAPI activateUserWithId: bikerInfo.userId
                                                andActivationCode: bikerInfo.pin];
-    __weak BBApiActivationOperation *wop = op;
+    __block BBApiActivationOperation *wop = op;
     
     [op setCompletionBlock:^{
         if ([wop.response.errorCode intValue] > 0) {

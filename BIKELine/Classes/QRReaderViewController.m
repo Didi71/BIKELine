@@ -35,7 +35,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-#warning TODO - Werte werden nicht korrekt übergeben
     if ([[segue destinationViewController] isKindOfClass:[WonPriceViewController class]]) {
         WonPriceViewController *wonPriceView = [segue destinationViewController];
         wonPriceView.checkinResponse = responsePuffer;
@@ -137,7 +136,7 @@
                                                   withUserId: BLStandardUserDefaults.biker.userId
                                                       teamId: BLStandardUserDefaults.biker.teamId
                                                       andPIN: BLStandardUserDefaults.biker.pin];
-        __weak BBApiCheckinOperation *wop = op;
+        __block BBApiCheckinOperation *wop = op;
         
         [op setCompletionBlock:^{
             if ([wop.response.errorCode intValue] > 0) {

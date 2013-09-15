@@ -13,8 +13,6 @@
     IBOutlet UILabel *topLabel;
     IBOutlet UILabel *priceTextLabel;
     IBOutlet UIButton *nextButton;
-    
-    BBApiCheckinResponse *bufferResponse;
 }
 
 @property (nonatomic, retain) BBApiCheckinResponse *checkinResponse;
