@@ -39,6 +39,7 @@
     
     bikebirdName.text = checkinResponse.checkPointName;
     bikebirdCity.text = checkinResponse.checkPointCity;
+    wonBikebirdsLabel.text = [NSString stringWithFormat:@"%d", ([checkinResponse.bikebirds intValue] - [checkinResponse.bikebirdsOld intValue])];
     
     OHParagraphStyle *paragraphStyle = [OHParagraphStyle defaultParagraphStyle];
     paragraphStyle.textAlignment = kCTCenterTextAlignment;
