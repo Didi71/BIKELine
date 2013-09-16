@@ -78,7 +78,10 @@ const int kUpdateCheckpointTimerIntervall = 2.0;
 #pragma mark - Private methods
 
 - (void)getCheckPoints {
-    [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadCheckPointsLabel", @"")];
+    
+    if (!result_checkpoints) {
+        [self _showProgressHudWithMessage:NSLocalizedString(@"progressLoadCheckPointsLabel", @"")];
+    }
     
     BBApiGetCheckPointsOperation *op = [SharedAPI getCheckPointsWithLatitude: map.userLocation.coordinate.latitude
                                                                 andLongitude: map.userLocation.coordinate.longitude];
