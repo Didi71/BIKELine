@@ -13,7 +13,7 @@
 #import "JoinTeamSelectTableViewController.h"
 #import "BBApi.h"
 
-@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JoinTeamSelectorDelegate, UIActionSheetDelegate> {
+@interface FactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, JoinTeamSelectorDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     IBOutlet UISegmentedControl *segmentControl;
     IBOutlet UIView *factsView;
     IBOutlet UITableView *tableView;

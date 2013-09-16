@@ -618,6 +618,26 @@ const int kFactsViewSubViewTableTag = 2;
         [tableView reloadData];
         
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonLogoutTitle", @"")]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: nil
+                                                        message: NSLocalizedString(@"alertLogoutText", @"")
+                                                       delegate: self
+                                              cancelButtonTitle: NSLocalizedString(@"buttonNoTitle", @"")
+                                              otherButtonTitles: NSLocalizedString(@"buttonYesTitle", @""), nil];
+        
+        [alert show];
+    }
+}
+
+
+#pragma mark
+#pragma mark - UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.cancelButtonIndex == buttonIndex) {
+        return;
+    }
+    
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"buttonYesTitle", @"")]) {
         [[AppDelegate appDelegate] logoutUser];
         [BLStandardUserDefaults setBiker:nil];
     }
