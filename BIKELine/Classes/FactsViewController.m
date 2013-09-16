@@ -413,7 +413,7 @@ const int kFactsViewSubViewTableTag = 2;
     bikebirdsLabel.attributedText = attrStr2;
     
     NSString *rankString = biker.rank == nil ? @"0" : [biker.rank stringValue];
-    NSMutableAttributedString *attrStr3 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
+    NSMutableAttributedString *attrStr3 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@.\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
     [attrStr3 setFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0]
                 range: [attrStr3.string rangeOfString:rankString]];
     [attrStr3 setFont: [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]

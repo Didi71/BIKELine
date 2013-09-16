@@ -56,7 +56,7 @@
     bikebirdsLabel.attributedText = attrStr1;
     
     NSString *rankString = checkinResponse.rank == nil ? @"0" : [checkinResponse.rank stringValue];
-    NSMutableAttributedString *attrStr2 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
+    NSMutableAttributedString *attrStr2 = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@.\n%@", rankString, NSLocalizedString(@"factsViewBikerRankLabel", @"")]];
     [attrStr2 setFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:45.0]
                 range: [attrStr2.string rangeOfString:rankString]];
     [attrStr2 setFont: [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]
