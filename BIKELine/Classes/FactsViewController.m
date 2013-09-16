@@ -231,10 +231,11 @@ const int kFactsViewSubViewTableTag = 2;
                                               cancelButtonTitle: nil
                                          destructiveButtonTitle: nil
                                               otherButtonTitles: nil];
-
-    [sheet addButtonWithTitle:NSLocalizedString(@"buttonEditProfileTitle", @"")];
+    
     [sheet addButtonWithTitle:NSLocalizedString(@"buttonShowInfoTitle", @"")];
+    [sheet addButtonWithTitle:NSLocalizedString(@"buttonEditProfileTitle", @"")];
     [sheet addButtonWithTitle:NSLocalizedString(@"buttonEditTeamTitle", @"")];
+    
     sheet.destructiveButtonIndex = [sheet addButtonWithTitle:NSLocalizedString(@"buttonLogoutTitle", @"")];
     sheet.cancelButtonIndex = [sheet addButtonWithTitle:NSLocalizedString(@"buttonCancelTitle", @"")];
     
