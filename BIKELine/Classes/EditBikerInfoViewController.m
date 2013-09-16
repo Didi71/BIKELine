@@ -32,6 +32,7 @@
     [super loadView];
     
     [teaserLabel setText:NSLocalizedString(@"editBikerInfoTeaserText", @"")];
+    [changeUserInfoButton setTitle:NSLocalizedString(@"buttonSaveTitle", @"") forState:UIControlStateNormal];
 }
 
 
