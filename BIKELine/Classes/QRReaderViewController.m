@@ -58,7 +58,7 @@
     }
     
     if (![progressHud.superview isEqual:self.view]) {
-        [self.view addSubview:progressHud];
+        [self.presentedViewController.view addSubview:progressHud];
     }
     
     [progressHud setLabelText:message];
@@ -124,10 +124,10 @@
     NDCLog(@"BARCODE = %@", symbol.data);
     NDCLog(@"SYMBOL  = %@", hiddenData);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
-    });
+    
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
+    
     
     if ([hiddenData hasPrefix:BIKEBIRD_QRCODE_VERIFICATION_PREFIX]) {
 
@@ -166,7 +166,9 @@
                     [self performSegueWithIdentifier:@"QRReaderToNewStatsSegue" sender:nil];
                 }
                 
-                [picker dismissViewControllerAnimated:YES completion:nil];
+                [picker dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
             });
         }];
         
