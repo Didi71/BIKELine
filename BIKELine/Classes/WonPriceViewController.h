@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "BBApiCheckinOperation.h"
 
 @interface WonPriceViewController : UIViewController {
     IBOutlet UILabel *topLabel;
     IBOutlet UILabel *priceTextLabel;
     IBOutlet UIButton *nextButton;
+    
+    AVAudioPlayer *player;
 }
 
 @property (nonatomic, retain) BBApiCheckinResponse *checkinResponse;

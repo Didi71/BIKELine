@@ -39,6 +39,12 @@
     priceTextLabel.text = checkinResponse.priceText;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSURL *fanFarePath = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"fanfare" ofType:@"mp3"]];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:fanFarePath error:nil];
+    [player play];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue destinationViewController] isKindOfClass:[NewStatsViewController class]]) {
         NewStatsViewController *newStatsView = [segue destinationViewController];

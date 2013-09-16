@@ -142,6 +142,8 @@
 		F652FF9A179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */; };
 		F6646F9617A2FBBE00BA2261 /* cameraButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9417A2FBBE00BA2261 /* cameraButton.png */; };
 		F6646F9717A2FBBE00BA2261 /* cameraButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */; };
+		F6677F7A17E77DA600E0C3AC /* fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6677F7917E77DA600E0C3AC /* fanfare.mp3 */; };
+		F6677F7B17E77DA600E0C3AC /* fanfare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F6677F7917E77DA600E0C3AC /* fanfare.mp3 */; };
 		F667B555179EFB16009E97BC /* BBApiGetPricesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */; };
 		F667C25817C9C71F0044F1CE /* BLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C25717C9C71F0044F1CE /* BLSegmentedControl.m */; };
 		F667C25917C9C71F0044F1CE /* BLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F667C25717C9C71F0044F1CE /* BLSegmentedControl.m */; };
@@ -339,6 +341,7 @@
 		F652FF99179F0D8E008A6E00 /* BBApiGetCheckPointsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetCheckPointsOperation.m; path = Classes/API/BBApiGetCheckPointsOperation.m; sourceTree = "<group>"; };
 		F6646F9417A2FBBE00BA2261 /* cameraButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraButton.png; sourceTree = "<group>"; };
 		F6646F9517A2FBBE00BA2261 /* cameraButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraButton@2x.png"; sourceTree = "<group>"; };
+		F6677F7917E77DA600E0C3AC /* fanfare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fanfare.mp3; path = Data/fanfare.mp3; sourceTree = "<group>"; };
 		F667B553179EFB16009E97BC /* BBApiGetPricesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBApiGetPricesOperation.h; path = Classes/API/BBApiGetPricesOperation.h; sourceTree = "<group>"; };
 		F667B554179EFB16009E97BC /* BBApiGetPricesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBApiGetPricesOperation.m; path = Classes/API/BBApiGetPricesOperation.m; sourceTree = "<group>"; };
 		F667C25617C9C71F0044F1CE /* BLSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLSegmentedControl.h; path = Classes/BLSegmentedControl.h; sourceTree = "<group>"; };
@@ -722,6 +725,14 @@
 			name = "User Statistics";
 			sourceTree = "<group>";
 		};
+		F6677F7817E77D9D00E0C3AC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F6677F7917E77DA600E0C3AC /* fanfare.mp3 */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		F667C25A17C9C8AB0044F1CE /* SegmentControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1013,7 @@
 		F6EA787E17996BC30063B0A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6677F7817E77D9D00E0C3AC /* Data */,
 				F667C2A517CA00900044F1CE /* Nibs */,
 				F6EA789B17996C1C0063B0A5 /* Storyboards */,
 				F6EA789A17996C0F0063B0A5 /* Images */,
@@ -1219,6 +1231,7 @@
 				F6055F2E17A566590001271E /* RegisterFormBackground@2x.png in Resources */,
 				F6055F2F17A566590001271E /* emptyButton.png in Resources */,
 				F6055F3017A566590001271E /* emptyButton@2x.png in Resources */,
+				F6677F7B17E77DA600E0C3AC /* fanfare.mp3 in Resources */,
 				F6055F3117A566590001271E /* LoginButton.png in Resources */,
 				F6055F3217A566590001271E /* LoginButton@2x.png in Resources */,
 				F6055F3317A566590001271E /* RegisterButton.png in Resources */,
@@ -1285,6 +1298,7 @@
 				F6E5F8AE17A2C0FC0036D3C1 /* RegisterFormBackground@2x.png in Resources */,
 				F6E5F8B617A2C1070036D3C1 /* emptyButton.png in Resources */,
 				F6E5F8B717A2C1070036D3C1 /* emptyButton@2x.png in Resources */,
+				F6677F7A17E77DA600E0C3AC /* fanfare.mp3 in Resources */,
 				F6E5F8B817A2C1070036D3C1 /* LoginButton.png in Resources */,
 				F6E5F8B917A2C1070036D3C1 /* LoginButton@2x.png in Resources */,
 				F6E5F8BA17A2C1070036D3C1 /* RegisterButton.png in Resources */,
