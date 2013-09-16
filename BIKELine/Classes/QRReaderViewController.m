@@ -13,6 +13,7 @@
 #import "BBApi.h"
 #import "WonPriceViewController.h"
 #import "NewStatsViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation QRReaderViewController
 @synthesize lastSelectedIndex;
@@ -124,6 +125,7 @@
     NDCLog(@"SYMBOL  = %@", hiddenData);
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         [self _showProgressHudWithMessage:NSLocalizedString(@"progressCheckInTitle", @"")];
     });
     
